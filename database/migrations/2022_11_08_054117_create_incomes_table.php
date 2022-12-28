@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateIncomesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('incomes', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id');
+            $table->integer('approved_by')->nullable();
+            $table->float('amount');
+            $table->date('date');
+            $table->string('income_type');
+            $table->string('transection_no');
+            $table->string('transection_phone');
+            $table->integer('status');
+            $table->integer('donate_id')->nullable();
+            $table->integer('payment_type')->nullable();
+            $table->timestamps();
+            
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('incomes');
+    }
+}
