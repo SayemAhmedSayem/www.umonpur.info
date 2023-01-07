@@ -1044,6 +1044,7 @@ p.phone > i{
     border: 1px solid var(--grey-color);
     border-radius: 4px;
     width: 100%!important;
+    height: 300px;
 }
 .single-album .album-title h2{
     font-size: 24px;
