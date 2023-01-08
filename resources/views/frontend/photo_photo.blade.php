@@ -21,9 +21,7 @@
     <div class="container">
       <div class="section-title">
         <h2>{{$year->year}}</h2>
-        <p>গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের ব্যবস্থা চালু হয়।
-          বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p>
+        <p>উমনপুর গ্রামে প্রতি বছরের স্তির চিত্রের রেকর্ড ধারণ করে রাখা হয়।</p>
       </div>
       <div class="row row-cols-1 row-cols-2 row-cols-sm-3 row-cols-md-4">
         @foreach(App\Models\Photo::where('year_id', $year->id)->orderBy('created_at','desc')->get() as $photo)
