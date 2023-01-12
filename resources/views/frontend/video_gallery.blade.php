@@ -26,7 +26,7 @@
       </div>
       <div class="albums">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-            @foreach(App\Models\Album::where('type', 'Video')->orderBy('created_at','desc')->get() as $album)
+            @foreach(App\Models\Album::where('type', 'Video')->orderBy('created_at','asc')->get() as $album)
           <div class="col">
             <a href="{{route('web-video-video', $album->id)}}">
               <div class="single-album">
