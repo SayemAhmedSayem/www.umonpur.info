@@ -21,8 +21,7 @@
     <div class="container">
       <div class="section-title">
         <h2>গ্যালারি এ্যালবাম</h2>
-        <p>গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়</p>
+        <p>উমনপুর গ্রামের প্রতি বছরের রেকর্ড।<</p>
       </div>
       <div class="albums">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
