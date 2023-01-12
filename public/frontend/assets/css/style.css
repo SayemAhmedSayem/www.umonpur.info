@@ -1098,6 +1098,7 @@ p.phone > i{
   }
 .single-photo a img{
     width: 100%;
+    height: 260px;
 }
 .video-post-info p {
     display: inline-block;
