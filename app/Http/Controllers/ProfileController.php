@@ -70,13 +70,23 @@ class ProfileController extends Controller
     }
     public function memberStore(Request $request)
     {
-       $member = new ProfileMember();
+       
+        $member = new ProfileMember();
        $member->profile_id = $request->profile_id;
        $member->user_id = $request->user_id;
        $member->save();
        return redirect()->back();
 
     }
+
+    public function memberDelete($id)
+    {
+       
+        $cat =  ProfileMember::find($id);
+        $cat->delete();
+        return redirect()->back();
+    }
+
     
     /**
      * Show the form for editing the specified resource.
