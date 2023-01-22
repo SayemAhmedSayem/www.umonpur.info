@@ -22,9 +22,9 @@
                         @csrf
 
                <div class="mb-3 text-start">
-                  <label class="form-label" for="email">Email address</label>
+                  <label class="form-label" for="email">আপনার ইমেইল দিন</label>
                   <div class="form-icon-container">
-                  <input id="email" type="email" class="form-control form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                  <input id="email" type="email" class="form-control form-icon-input @error('email') is-invalid @enderror" name="email" placeholder="আপনার ইমেইল লিখুন" value="{{ old('email') }}" required autocomplete="email" autofocus>
                       <span class="fas fa-user text-900 fs--1 form-icon"></span>
                       @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -34,9 +34,9 @@
                    </div>
                </div>
                <div class="mb-3 text-start">
-                  <label class="form-label" for="password">Password</label>
+                  <label class="form-label" for="password">পাসওয়ার্ড</label>
                   <div class="form-icon-container">
-                  <input id="password" type="password" class="form-control form-icon-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                  <input id="password" type="password" class="form-control form-icon-input @error('password') is-invalid @enderror" name="password" placeholder="আপনার পাসওয়ার্ড লিখুন" required autocomplete="current-password">
                       <span class="fas fa-user text-900 fs--1 form-icon"></span>
                     </div>
                </div>
@@ -46,16 +46,16 @@
                       
                          <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                         <label class="form-check-label mb-0" for="basic-checkbox">Remember me</label></div>
+                         <label class="form-check-label mb-0" for="basic-checkbox">সাইন ইন মনে রাখুন</label></div>
                   </div>
                   @if (Route::has('password.request'))
-                  <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">Forgot Password?</a></div>
+                  <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">পাসওয়ার্ড ভুলে গিয়েছেন?</a></div>
                                     
                                 @endif
              
                </div>
-               <button class="btn btn-primary w-100 mb-3" type="submit">Sign In</button>
-               <div class="text-center">If you don't have an account please<a class="fs--1 fw-bold" href="{{route('register')}}"> <span style="font-size:20px;">Click Here</span></a> <br> to become a member.</div>
+               <button class="btn btn-primary w-100 mb-3" type="submit">সাইন ইন</button>
+               <div class="text-center">যদি আপনার কোন একাউন্ট না থাকে<a class="fs--1 fw-bold" href="{{route('register')}}"> <span style="font-size:20px;"><br>এইখানে দেখুন </span></a> <br>একজন সদস্য হতে চাইলে.</div>
             </div>
             </form>
          </div>

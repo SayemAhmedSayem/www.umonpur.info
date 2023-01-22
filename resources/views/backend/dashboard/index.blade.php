@@ -28,7 +28,7 @@
 
 
 			    
-			    <h1 class="app-page-title">Dashboard</h1>
+			    <h1 class="app-page-title">ড্যাশবোর্ড</h1>
 			    
 		
    
@@ -36,7 +36,7 @@
 				    <div class="col-6 col-lg-3">
 					    <div class="app-card app-card-stat shadow-sm h-100" style="background: #1a8917;">
 						    <div class="app-card-body p-3 p-lg-4" >
-							    <h4 class="stats-type mb-2 c-f">Total Members</h4>
+							    <h4 class="stats-type mb-2 c-f">সর্বমোট সদস্য</h4>
 							    <div class="stats-figure"><h4 class="c-f">{{$memebrs}}</h4></div>
 							    <div class="stats-meta text-success">
 			</div>
@@ -48,7 +48,7 @@
 				    <div class="col-6 col-lg-3">
 					    <div class="app-card app-card-stat shadow-sm h-100" style="background: #0277d7;">
 						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-2 c-f">Total Incomes</h4>
+							    <h4 class="stats-type mb-2 c-f">সর্বমোট আয়</h4>
 							    <div class="stats-figure c-f">৳{{$incomes ?? ''}}</div>
 							  
 						    </div><!--//app-card-body-->
@@ -58,7 +58,7 @@
 				    <div class="col-6 col-lg-3">
 					    <div class="app-card app-card-stat shadow-sm h-100" style="background: #fe0000;">
 						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1 c-f">Total Expenses</h4>
+							    <h4 class="stats-type mb-1 c-f">সর্বমোট ব্যয়</h4>
 							    <div class="stats-figure c-f">৳{{$expenses ?? ''}}</div>
 							  
 						    </div><!--//app-card-body-->
@@ -81,7 +81,7 @@
 					        <div class="app-card-header p-3">
 						        <div class="row justify-content-between align-items-center">
 							        <div class="col-auto">
-						                <h4 class="app-card-title">Latest Updates</h4>
+						                <h4 class="app-card-title">সর্বশেষ আপডেট</h4>
 							        </div><!--//col-->
 							        <div class="col-auto">
 								        <div class="card-header-action">
@@ -100,8 +100,8 @@
 
                             <th scope="col">Date</th>
                             <th scope="col" >Author</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Category</th>
+                            <th scope="col">শিরোনাম</th>
+                            <th scope="col">ক্যাটাগরি</th>
                    
                           </tr>
                         </thead>
@@ -129,7 +129,7 @@
 					        <div class="app-card-header p-3">
 						        <div class="row justify-content-between align-items-center">
 							        <div class="col-auto">
-						                <h4 class="app-card-title">Latest Members</h4>
+						                <h4 class="app-card-title">সর্বশেষ মেম্বার</h4>
 							        </div><!--//col-->
 							        <div class="col-auto">
 								        <div class="card-header-action">
