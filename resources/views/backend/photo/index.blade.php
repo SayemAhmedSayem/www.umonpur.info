@@ -7,23 +7,23 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Photos</h2>
+              <h2 class="mb-0">ফটো সমূহ</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
 
                   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Photo
+  ফটো যুক্ত করুন
 </button>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Albums</a></li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">এ্যালবাম সমূহ</a></li>
               <li class="breadcrumb-item"><a href="{{route('album.show', $album->id)}}">{{$album->name}}</a></li>
               <li class="breadcrumb-item active">{{$year->year}}</li>
-              <li class="breadcrumb-item active">Photos</li>
+              <li class="breadcrumb-item active">ফটো সমূহ</li>
             </ol>
           </nav>
           </div>
@@ -71,7 +71,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Photo</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ফটো যুক্ত করুন</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -82,17 +82,17 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">title</label>
+               <label class="form-label">শিরোনাম</label>
                <input class="form-control" type="text" name="title" required>
                <input type="hidden" value="{{$year->id}}" name="year_id">
             </div>
             <div class="col-sm-12">
-               <label class="form-label">Description</label>
+               <label class="form-label">সংকিপ্ত বর্ণনা</label>
           
            <textarea name="description" id="" class="form-control" cols="30" rows="10"></textarea>
             </div>
             <div class="col-sm-12">
-               <label class="form-label">Photo</label>
+               <label class="form-label">ফটো</label>
           
                <input type="file" class="form-control dropify" name="image">
             </div>
@@ -106,8 +106,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+        <button type="submit" class="btn btn-primary">যুক্ত করুন</button>
       </div>
     </div>
     </form>

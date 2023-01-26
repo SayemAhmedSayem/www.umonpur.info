@@ -7,19 +7,19 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Album List</h2>
+              <h2 class="mb-0">এ্যালবাম তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('album.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add Album
+                  <span class="fas fa-plus me-2"></span>এ্যালবাম যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Album</a></li>
-              <li class="breadcrumb-item active">Album List</li>
+              <li class="breadcrumb-item"><a href="#!">এ্যালবাম</a></li>
+              <li class="breadcrumb-item active">এ্যালবাম তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -30,7 +30,7 @@
                           <tr>
                             <th scope="col">SL</th>
                             <th scope="col">Thumbnail</th>
-                            <th scope="col">Album Name</th>
+                            <th scope="col">এ্যালবাম নাম</th>
                             <th scope="col" width="30%">Album Type</th>
                             <th scope="col">Actions</th>
                           </tr>

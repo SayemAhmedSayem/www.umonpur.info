@@ -7,15 +7,15 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Photos</h2>
+              <h2 class="mb-0">ফটো সমূহ</h2>
             </div>
       
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Albums</a></li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">এ্যালবাম</a></li>
               <li class="breadcrumb-item"><a href="{{route('album.show', $album->id)}}">{{$album->name}}</a></li>
               <li class="breadcrumb-item"><a href="{{route('year.show', $year->id)}}">{{$year->year}}</a></li>
-              <li class="breadcrumb-item active">Photos</li>
+              <li class="breadcrumb-item active">ফটো সমূহ</li>
               <li class="breadcrumb-item active">Editing {{$photo->title}}</li>
             </ol>
           </nav>
@@ -29,19 +29,19 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-12">
-             <label class="form-label">title</label>
+             <label class="form-label">শিরোনাম</label>
              <input class="form-control" type="text" value="{{$photo->title}}" name="title" required>
              <input type="hidden" value="{{$year->id}}" name="year_id">
           </div>
           <div class="col-sm-12">
-             <label class="form-label">Description</label>
+             <label class="form-label">বর্ণনা</label>
         
          <textarea name="description" id="" class="form-control" cols="30" rows="10">{{$photo->description}}</textarea>
           </div>
           <img src="{{ asset('uploads/album/photos/'.$photo->image) }}" class="card-image-top" height="200" alt="thumbnail">
           <div class="col-sm-12">
         
-             <label class="form-label">Change Photo</label>
+             <label class="form-label">ফটো পরিবর্তন করুন</label>
             
              <input type="file" class="form-control dropify" name="image">
           </div>
@@ -55,8 +55,8 @@
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+      <button type="submit" class="btn btn-primary">আপডেট করুন</button>
     </div>
   </div>
   </form>

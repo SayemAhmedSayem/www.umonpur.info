@@ -7,14 +7,14 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Editing {{$album->name}}</h2>
+              <h2 class="mb-0">এডিট {{$album->name}}</h2>
             </div>
 
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Album</a></li>
-              <li class="breadcrumb-item active">Album </li>
-              <li class="breadcrumb-item active">Editing {{$album->name}}</li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">এ্যালবাম</a></li>
+              <li class="breadcrumb-item active">এ্যালবাম </li>
+              <li class="breadcrumb-item active">এডিট {{$album->name}}</li>
             </ol>
           </nav>
           </div>
@@ -27,7 +27,7 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-12">
-             <label class="form-label">Album Name</label>
+             <label class="form-label">এ্যালবাম নাম</label>
              <input class="form-control" type="text" value="{{$album->name}}" name="name" required>
           </div>
       
@@ -38,7 +38,7 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-12">
-             <label class="form-label">Album Type</label>
+             <label class="form-label">এ্যালবাম টাইপ</label>
              <select class="form-control" name="type" id="" required>
                 <option value="Photo" {{$album->type=='Photo' ? 'selected' : ''}}>Photo</option>
                 <option value="Video" {{$album->type=='Video' ? 'selected' : ''}}>Video</option>
@@ -50,7 +50,7 @@
     </div>
  </div>
  <div class="mb-0">
-    <label class="form-label">Description</label> 
+    <label class="form-label">সংকিপ্ত বর্ণনা</label> 
     <textarea class="form-control" name="description" rows="3"> {{$album->description}} </textarea>
  </div>
 <br>
@@ -68,7 +68,7 @@
     <div class="d-flex align-items-right">
        <button type="submit" class="btn btn-primary">
        <span class="fas fa-plus me-2"></span>
-       Update Album
+       আপডেট এ্যালবাম
        </button>
     </div>
  </div>

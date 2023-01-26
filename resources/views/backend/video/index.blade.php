@@ -7,22 +7,22 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Videos</h2>
+              <h2 class="mb-0">ভিডিও সমূহ</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
 
                   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Videos
+  ভিডিও যুক্ত করুন
 </button>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Albums</a></li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">এ্যালবাম সমূহ</a></li>
               <li class="breadcrumb-item"><a href="{{route('album.show', $album->id)}}">{{$album->name}}</a></li>
-              <li class="breadcrumb-item active">Videos</li>
+              <li class="breadcrumb-item active">ভিডিও সমূহ</li>
             </ol>
           </nav>
           </div>

@@ -7,14 +7,14 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Video</h2>
+              <h2 class="mb-0">ভিডিও</h2>
             </div>
       
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Albums</a></li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">এ্যালবাম সমূহ</a></li>
               <li class="breadcrumb-item"><a href="{{route('album.show', $album->id)}}">{{$album->name}}</a></li>
-              <li class="breadcrumb-item active">Video</li>
+              <li class="breadcrumb-item active">ভিডিও</li>
               <li class="breadcrumb-item active">Editing {{$video->title}}</li>
             </ol>
           </nav>
@@ -28,7 +28,7 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-12">
-             <label class="form-label">title</label>
+             <label class="form-label">শিরোনাম</label>
              <input class="form-control" type="text" value="{{$video->title}}" name="title" required>
              <input type="hidden" value="{{$album->id}}" name="album_id">
           </div>
@@ -37,7 +37,7 @@
              <input class="form-control" type="text" value="{{$video->url}}" name="url" required>
           </div>
           <div class="col-sm-12">
-             <label class="form-label">Description</label>
+             <label class="form-label">সংকিপ্ত বর্ণনা</label>
         
          <textarea name="description" id="" class="form-control" cols="30" rows="10">{{$video->description}}</textarea>
           </div>
@@ -58,8 +58,8 @@
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+      <button type="submit" class="btn btn-primary">আপডেট করুন</button>
     </div>
   </div>
   </form>

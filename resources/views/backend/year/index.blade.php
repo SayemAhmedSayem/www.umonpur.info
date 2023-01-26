@@ -7,22 +7,22 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Year List</h2>
+              <h2 class="mb-0">বছরের তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
 
                   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Year
+  বছর যুক্ত করুন
 </button>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Albums</a></li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">এ্যালবাম সমূহ</a></li>
               <li class="breadcrumb-item active">{{$album->name}}</li>
-              <li class="breadcrumb-item active">Years List</li>
+              <li class="breadcrumb-item active">বছরের তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -32,7 +32,7 @@
                         <thead>
                           <tr>
                             <th scope="col" width="10%">SL</th>
-                            <th scope="col" width="70%">Year Name</th>
+                            <th scope="col" width="70%">বছরের নাম</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>
@@ -78,7 +78,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Year</h5>
+        <h5 class="modal-title" id="exampleModalLabel">বছর যুক্ত করুন</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -89,7 +89,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Year Name</label>
+               <label class="form-label">বছরের নাম</label>
                <input class="form-control" type="text" name="year" required>
                <input type="hidden" value="{{$album->id}}" name="album_id">
             </div>
@@ -104,8 +104,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+        <button type="submit" class="btn btn-primary">সেভ করুন</button>
       </div>
     </div>
     </form>
