@@ -4,19 +4,19 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
 <div class="col-auto">
-              <h2 class="mb-0">link List</h2>
+              <h2 class="mb-0">লিংক তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('link.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add link
+                  <span class="fas fa-plus me-2"></span>লিংক যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">links</a></li>
-              <li class="breadcrumb-item active">link List</li>
+              <li class="breadcrumb-item"><a href="#!">লিংক</a></li>
+              <li class="breadcrumb-item active">লিংক তালিকা</li>
             </ol>
           </nav>
    </div>

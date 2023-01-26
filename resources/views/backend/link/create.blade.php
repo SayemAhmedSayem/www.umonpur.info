@@ -3,12 +3,12 @@
 
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Add Link</h2>
+         <h2 class="mb-0">লিংক যুক্ত করুন</h2>
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Links</a></li>
-            <li class="breadcrumb-item active">Add Link</li>
+            <li class="breadcrumb-item"><a href="#!">লিঙ্ক সমূহ</a></li>
+            <li class="breadcrumb-item active">লিঙ্ক যুক্ত করুন</li>
          </ol>
       </nav>
    </div>
@@ -19,20 +19,20 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Link Name</label>
-               <input class="form-control" type="text" name="name">
+               <label class="form-label">লিংক নাম</label>
+               <input class="form-control" type="text" name="name" required>
             </div>
             <div class="col-sm-12">
                <label class="form-label">URL</label>
-               <input class="form-control" type="text" name="link">
+               <input class="form-control" type="text" name="link" required>
             </div>
             <div class="col-sm-12">
-               <label class="form-label">Link Name</label>
+               <label class="form-label">লিংক নাম</label>
                <select name="type" class="form-control" id="">
-                  <option value="1">Footer One</option>
-                  <option value="2">Footer Two</option>
-                  <option value="3">Footer Three</option>
-                  <option value="4">Footer Four</option>
+                  <option value="1">Footer one</option>
+                  <option value="2">Footer two</option>
+                  <option value="3">Footer three</option>
+                  <option value="4">Footer four</option>
                </select>
             </div>
         
@@ -44,7 +44,7 @@
       <div class="d-flex align-items-right">
          <button type="submit" class="btn btn-primary">
          <span class="fas fa-plus me-2"></span>
-         Add Link
+         লিংক যুক্ত করুন
          </button>
       </div>
    </div>
