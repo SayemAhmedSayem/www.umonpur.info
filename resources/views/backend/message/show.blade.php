@@ -7,11 +7,11 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Messages</h2>
+              <h2 class="mb-0">বার্তা সমূহ</h2>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{route('album.index')}}">Messages</a></li>
+              <li class="breadcrumb-item"><a href="{{route('album.index')}}">বার্তা </a></li>
  
             </ol>
           </nav>
@@ -20,7 +20,7 @@
           <div class="row">
           <div class="col-sm-4" style="background:#ffffff;">
        <br>
-          <h5 class="text-semi-bold text-black mb-4 pt-3">Messages</h5>
+          <h5 class="text-semi-bold text-black mb-4 pt-3">বার্তা সমূহ</h5>
        @foreach($messages as $message)
           <div class="row align-items-md-center mb-4 g-3">
             <div class="col-auto">
