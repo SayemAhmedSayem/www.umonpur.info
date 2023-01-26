@@ -3,12 +3,12 @@
 <div class="content">
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Update Testimonial</h2>
+         <h2 class="mb-0">আপডেট প্রশংসাপত্র</h2>
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Testimonials</a></li>
-            <li class="breadcrumb-item active">Update Testimonial</li>
+            <li class="breadcrumb-item"><a href="#!">প্রশংসাপত্র সমূহ</a></li>
+            <li class="breadcrumb-item active">আপডেট প্রশংসাপত্র</li>
          </ol>
       </nav>
    </div>
@@ -20,7 +20,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Member Name</label>
+               <label class="form-label">সদস্যদের নাম</label>
                <input class="form-control" value="{{$testimonial->name}}"  type="text" name="name">
             </div>
         
@@ -29,7 +29,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Designation</label>
+               <label class="form-label">পেশা</label>
                <input class="form-control" value="{{$testimonial->designation}}" type="text" name="designation">
             </div>
         
@@ -37,12 +37,12 @@
       </div>
    </div>
    <div class="mb-0">
-      <label class="form-label">Message</label> 
+      <label class="form-label">বার্তা</label> 
       <textarea class="form-control" name="message" rows="3">{{$testimonial->message}} </textarea>
    </div>
    <div class="mb-0">
    <img src="{{ asset('uploads/testimonial/'.$testimonial->image) }}" alt="" width="53">
-      <label class="form-label">Profile Photo</label> 
+      <label class="form-label">প্রোফাইল ফটো</label> 
       <input type="file" class="form-control dropify" name="image">
    </div>
    <div class="col-auto pt-3">

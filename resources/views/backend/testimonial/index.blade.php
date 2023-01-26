@@ -7,19 +7,19 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Testimonial List</h2>
+              <h2 class="mb-0">প্রশংসাপত্র তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('testimonial.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Testimonial Post
+                  <span class="fas fa-plus me-2"></span>প্রশংসাপত্র পোস্ট
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Testimonial</a></li>
-              <li class="breadcrumb-item active">Testimonial List</li>
+              <li class="breadcrumb-item"><a href="#!">প্রশংসাপত্র</a></li>
+              <li class="breadcrumb-item active">প্রশংসাপত্র তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -31,8 +31,8 @@
                             <th scope="col" width="5%">SL</th>
                             <th scope="col" width="5%">Images</th>
                             <th scope="col" width="10%">Member Name</th>
-                            <th scope="col" width="10%">Designation</th>
-                            <th scope="col" width="10%">Message</th>
+                            <th scope="col" width="10%">পেশাগত</th>
+                            <th scope="col" width="10%">বার্তা</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>
