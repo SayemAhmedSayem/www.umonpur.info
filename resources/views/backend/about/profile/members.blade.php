@@ -6,7 +6,7 @@
 <div class="content">
 <div class="row align-items-center justify-content-between g-3 mb-4">
             <div class="col-auto">
-              <h2 class="mb-0">Profile List</h2>
+              <h2 class="mb-0">প্রোফাইল তালিকা</h2>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">

@@ -5,7 +5,7 @@
 
 <div class="content">
 <div class="row align-items-center justify-content-between g-3 mb-4">
-<ul class="nav nav-links mb-2 mx-n2">
+            <ul class="nav nav-links mb-2 mx-n2">
               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">About <span class="text-700 fw-semi-bold">(5)</span></a></li>
               <li class="nav-item"><a class="nav-link" href="{{route('profile.index')}}">Profile <span class="text-700 fw-semi-bold">(6)</span></a></li>
               <li class="nav-item"><a class="nav-link" href="#">Statistics <span class="text-700 fw-semi-bold">(17)</span></a></li>

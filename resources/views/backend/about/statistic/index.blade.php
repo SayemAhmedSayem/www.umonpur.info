@@ -7,20 +7,20 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">statistic List</h2>
+              <h2 class="mb-0">পরিসংখ্যান তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                     <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add statistic
+  পরিসংখ্যান যুক্ত করুন
 </button>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">statistic</a></li>
-              <li class="breadcrumb-item active">statistic List</li>
+              <li class="breadcrumb-item"><a href="#!">পরিসংখ্যান</a></li>
+              <li class="breadcrumb-item active">পরিসংখ্যান তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -31,8 +31,8 @@
                           <tr>
                             <th scope="col" width="5%">SL</th>
                             <th scope="col" width="15%">Icon</th>
-                            <th scope="col" width="25%">Name</th>
-                            <th scope="col" width="30%">Value</th>
+                            <th scope="col" width="25%">নাম</th>
+                            <th scope="col" width="30%">সংখ্যা মান</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>
@@ -77,7 +77,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add statistic</h5>
+        <h5 class="modal-title" id="exampleModalLabel">পরিসংখ্যান যুক্ত করুন</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -88,18 +88,18 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Name</label>
+               <label class="form-label">নাম</label>
                <input class="form-control" type="text" name="name" required>
            
             </div>
             <div class="col-sm-12">
-               <label class="form-label">Value</label>
+               <label class="form-label">সংখ্যা মান</label>
                <input class="form-control" type="text" name="value" required>
            
             </div>
          
             <div class="col-sm-12">
-               <label class="form-label">Icon</label>
+               <label class="form-label">আইকন যুক্ত করুন</label>
           
                <input type="text" class="form-control" name="image">
             </div>
