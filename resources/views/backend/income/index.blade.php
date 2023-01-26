@@ -4,12 +4,12 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Income List</h2>
+         <h2 class="mb-0">আয়ের তালিকা</h2>
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Income</a></li>
-            <li class="breadcrumb-item active">Income List</li>
+            <li class="breadcrumb-item"><a href="#!">আয়</a></li>
+            <li class="breadcrumb-item active"> আয়ের তালিকা</li>
          </ol>
       </nav>
    </div>

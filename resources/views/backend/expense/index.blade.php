@@ -4,21 +4,21 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Expense List</h2>
+         <h2 class="mb-0"> ব্যয় তালিকা</h2>
       </div>
       <div class="col-auto">
               <div class="d-flex align-items-center">
 
                   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Expense
+  ব্যয় যুক্ত করুন
 </button>
               </div>
             </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Expenses</a></li>
-            <li class="breadcrumb-item active">Expense List</li>
+            <li class="breadcrumb-item"><a href="#!">ব্যয় সমূহ</a></li>
+            <li class="breadcrumb-item active">ব্যয় তালিকা</li>
          </ol>
       </nav>
    </div>
@@ -86,7 +86,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Expense</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ব্যয় যুক্ত করুন</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -97,18 +97,18 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Date</label>
+               <label class="form-label">তারিখ</label>
                <input class="form-control" type="date" name="date" required>
              
             </div>
             <div class="col-sm-12">
-               <label class="form-label">Amount</label>
+               <label class="form-label">টাকার পরিমাণ</label>
                <input class="form-control" type="number" name="amount" required>
              
             </div>
 
             <div class="col-sm-12">
-               <label class="form-label">Description</label>
+               <label class="form-label">বিস্তারিত বর্ণনা</label>
                <textarea   class="form-control" id="" cols="30"   name="description"  rows="10"></textarea>       
             </div>
 

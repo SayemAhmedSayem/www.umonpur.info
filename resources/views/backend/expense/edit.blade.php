@@ -4,13 +4,13 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Expense Edit</h2>
+         <h2 class="mb-0">ব্যয় এডিট করুন</h2>
       </div>
 
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Expenses</a></li>
-            <li class="breadcrumb-item active">Expense Edit</li>
+            <li class="breadcrumb-item"><a href="#!">ব্যয়</a></li>
+            <li class="breadcrumb-item active">ব্যয় এডিট করুন</li>
          </ol>
       </nav>
    </div>
