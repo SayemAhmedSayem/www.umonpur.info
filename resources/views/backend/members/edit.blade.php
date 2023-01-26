@@ -53,52 +53,52 @@
   </div>
 @endif
    <div class="col-sm-4">
-   <div class="mb-3"><label class="form-label" for="basic-form-name">Serial</label> <input class="form-control" id="basic-form-name" value="{{$member->nid->serial ?? ''}}" name="serial" required></div>
+   <div class="mb-3"><label class="form-label" for="basic-form-name">সিরিয়াল নং</label> <input class="form-control" id="basic-form-name" value="{{$member->nid->serial ?? ''}}" name="serial" required></div>
    </div>
    <div class="col-sm-4">
-   <div class="mb-3"><label class="form-label" for="basic-form-name">Name</label> <input class="form-control" id="basic-form-name" value="{{$member->name}}" name="name" required></div>
+   <div class="mb-3"><label class="form-label" for="basic-form-name">নাম (ইংরেজী)</label> <input class="form-control" id="basic-form-name" value="{{$member->name}}" name="name" required></div>
    </div>
    <div class="col-sm-4">
-   <div class="mb-3"><label class="form-label" for="basic-form-name">Name Bangla</label> <input class="form-control" id="basic-form-name" value="{{$member->nid->name_bn ?? ''}}" name="name_bn" required></div>
+   <div class="mb-3"><label class="form-label" for="basic-form-name">নাম (বাংলা)</label> <input class="form-control" id="basic-form-name" value="{{$member->nid->name_bn ?? ''}}" name="name_bn" required></div>
    </div>
    <div class="col-sm-4">
-   <div class="mb-3"><label class="form-label" for="basic-form-nid">NID / Birth Certificate No.</label> <input class="form-control" id="basic-form-nid" type="number" value="{{$member->nid->nid}}" name="nid" required></div>
+   <div class="mb-3"><label class="form-label" for="basic-form-nid">এনআইডি/ জন্মনিব্ধন নাম্বার</label> <input class="form-control" id="basic-form-nid" type="number" value="{{$member->nid->nid}}" name="nid" required></div>
    </div>
    <div class="col-sm-4">
         
-   <div class="mb-3"><label class="form-label" for="basic-form-gender">Gender</label> <select class="form-select" id="basic-form-gender" aria-label="Default select example" name="gender" required>
+   <div class="mb-3"><label class="form-label" for="basic-form-gender">লিঙ্গ</label> <select class="form-select" id="basic-form-gender" aria-label="Default select example" name="gender" required>
                           
-                          <option value="male" {{$member->nid->gender=='male' ? 'selected' : ''}}>Male</option>
-                          <option value="female" {{$member->nid->gender=='female' ? 'selected' : ''}}>Female</option>
-                          <option value="other">Other</option>
+                          <option value="male" {{$member->nid->gender=='male' ? 'selected' : ''}}> পুরুষ</option>
+                          <option value="female" {{$member->nid->gender=='female' ? 'selected' : ''}}> নারী</option>
+                          <option value="other"> অন্যান্য</option>
                         </select></div>
    </div>
    <div class="col-sm-4">
-   <div class="mb-3"><label class="form-label" for="basic-form-dob">Date of Birth</label> <input class="form-control" id="basic-form-dob" type="date" value="{{$member->nid->dob}}" name="dob" required></div>
+   <div class="mb-3"><label class="form-label" for="basic-form-dob">জন্ম তারিখ</label> <input class="form-control" id="basic-form-dob" type="date" value="{{$member->nid->dob}}" name="dob" required></div>
   </div>
   <div class="col-sm-4">
-  <div class="mb-3"><label class="form-label" for="basic-form-father">Father Name</label> <input class="form-control" id="basic-form-father" value="{{$member->nid->father}}" name="father" required></div>
+  <div class="mb-3"><label class="form-label" for="basic-form-father">পিতার নাম</label> <input class="form-control" id="basic-form-father" value="{{$member->nid->father}}" name="father" required></div>
   </div>
   <div class="col-sm-4">
-  <div class="mb-3"><label class="form-label" for="basic-form-mother">Mother Name</label> <input class="form-control" id="basic-form-mother" value="{{$member->nid->mother}}" name="mother"required></div>
+  <div class="mb-3"><label class="form-label" for="basic-form-mother">মাতার নাম</label> <input class="form-control" id="basic-form-mother" value="{{$member->nid->mother}}" name="mother"required></div>
                 
   </div>
   <div class="col-sm-4">
-  <div class="mb-3"><label class="form-label" for="basic-form-name">Phone No.</label> <input class="form-control" id="basic-form-name" name="phone" value="{{$member->nid->phone ?? ''}}" required></div>
+  <div class="mb-3"><label class="form-label" for="basic-form-name">ফোন নাম্বার</label> <input class="form-control" id="basic-form-name" name="phone" value="{{$member->nid->phone ?? ''}}" required></div>
   </div>
   <div class="col-sm-4">
-  <div class="mb-3"><label class="form-label" for="basic-form-address">Address</label> <textarea class="form-control" id="basic-form-address" rows="3" value="" name="address" required>{{$member->nid->address}}</textarea></div>
+  <div class="mb-3"><label class="form-label" for="basic-form-address">ঠিকানা</label> <textarea class="form-control" id="basic-form-address" rows="3" value="" name="address" required>{{$member->nid->address}}</textarea></div>
   </div>
   <div class="col-sm-4">
-  <div class="mb-3"><label class="form-label" for="basic-form-holding_no">Holding No.</label> <input class="form-control" id="basic-form-holding_no" type="text" value="{{$member->nid->holding_no}}" name="holding_no" required></div>
+  <div class="mb-3"><label class="form-label" for="basic-form-holding_no">হোল্ডিং নং</label> <input class="form-control" id="basic-form-holding_no" type="text" value="{{$member->nid->holding_no}}" name="holding_no" required></div>
   </div>
 
 
   <div class="col-sm-4">
-  <div class="mb-3 text-start"><label class="form-label" for="email">Email address</label><input class="form-control" name="email" id="email" type="email" value="{{$member->email}}" required></div>
+  <div class="mb-3 text-start"><label class="form-label" for="email"> ইমেইল ঠিকানা</label><input class="form-control" name="email" id="email" type="email" value="{{$member->email}}" required></div>
   </div>
   <div class="col-sm-4">
-  <div class="mb-3 text-start"><label class="form-label" for="email">Designation</label><input class="form-control" name="designation"  type="text" value="{{$member->designation ?? ''}}"></div>
+  <div class="mb-3 text-start"><label class="form-label" for="email">পেশা</label><input class="form-control" name="designation"  type="text" value="{{$member->designation ?? ''}}"></div>
   </div>
 
 
@@ -107,7 +107,7 @@
 
         <!-- End Coll -->
         <div class="col-sm-4 pt-5">
-    <div class=""> <button type="submit" class="btn btn-primary w-100 mb-3">Update Member</button></div>
+    <div class=""> <button type="submit" class="btn btn-primary w-100 mb-3">আপডেট করুন</button></div>
        
        
             

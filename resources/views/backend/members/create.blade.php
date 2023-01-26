@@ -3,12 +3,12 @@
 <div class="content">
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Add Member</h2>
+         <h2 class="mb-0">সদস্য যুক্ত করুন</h2>
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Member</a></li>
-            <li class="breadcrumb-item active">Add Member</li>
+            <li class="breadcrumb-item"><a href="#!">সদস্য</a></li>
+            <li class="breadcrumb-item active">সদস্য যুক্ত করুন</li>
          </ol>
       </nav>
    </div>
@@ -28,7 +28,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">phone</label>
+               <label class="form-label">Phone</label>
                <input class="form-control" type="text" name="phone">
             </div>
         

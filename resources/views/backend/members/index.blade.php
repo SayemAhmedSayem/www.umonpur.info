@@ -44,7 +44,7 @@
                             <th scope="col" width="5%">SL</th>
                             <th scope="col" width="5%">Images</th>
                             <th scope="col" width="10%">Name</th>
-                            <th scope="col" width="10%">Name Bangla</th>
+                            <th scope="col" width="10%">নাম</th>
                             <th scope="col" width="20%">Phone</th>
                             <th scope="col" width="20%">NID / Birth Id.</th>
                             <th scope="col" width="10%">Role</th>
