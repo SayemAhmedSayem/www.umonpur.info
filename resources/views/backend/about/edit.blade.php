@@ -3,12 +3,12 @@
 <div class="content">
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Add About</h2>
+         <h2 class="mb-0">আমাদের সম্পর্কে যুক্ত করুন</h2>
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">About</a></li>
-            <li class="breadcrumb-item active">Add About</li>
+            <li class="breadcrumb-item"><a href="#!">সম্পর্কে</a></li>
+            <li class="breadcrumb-item active">সম্পর্কে যুক্ত করুন</li>
          </ol>
       </nav>
    </div>
@@ -20,7 +20,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-6">
-               <label class="form-label" for="date">Date </label>
+               <label class="form-label" for="date">তারিখ </label>
                <input class="form-control"  name="date" value="{{$about->date}}" type="date">
             </div>
             <div class="col-sm-6">
@@ -31,18 +31,18 @@
 </div>
             </div>
             <div class="col-sm-12">
-               <label class="form-label" for="date"> Title </label>
+               <label class="form-label" for="date"> শিরোনাম </label>
                <input class="form-control" type="text" value="{{$about->title}}" name="title">
             </div>
          </div>
       </div>
    </div>
    <div class="mb-0">
-      <label class="form-label" for="exampleTextarea">Description</label> 
+      <label class="form-label" for="exampleTextarea">বিস্তারিত</label> 
       <textarea class="form-control" name="description" rows="3"> {{$about->description}}</textarea>
    </div>
    <div class="mb-3">
-      <label class="form-label" for="customFile">About Image</label>
+      <label class="form-label" for="customFile">সম্পর্কিত ফটো</label>
    
                                     <input type="file" class="form-control dropify" name="image">
                                
@@ -51,7 +51,7 @@
       <div class="d-flex align-items-right">
          <button type="submit" class="btn btn-primary">
          <span class="fas fa-plus me-2"></span>
-         Add About
+         সম্পর্কে যুক্ত করুন
          </button>
       </div>
    </div>

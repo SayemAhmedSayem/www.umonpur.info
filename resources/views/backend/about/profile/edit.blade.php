@@ -11,20 +11,20 @@
               <li class="nav-item"><a class="nav-link" href="#">Statistics <span class="text-700 fw-semi-bold">(17)</span></a></li>
             </ul>
             <div class="col-auto">
-              <h2 class="mb-0">Profile List</h2>
+              <h2 class="mb-0">প্রোফাইল তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                     <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Profile
+প্রোফাইল যুক্ত করুন
 </button>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Profile</a></li>
-              <li class="breadcrumb-item active">Profile List</li>
+              <li class="breadcrumb-item"><a href="#!">প্রোফাইল</a></li>
+              <li class="breadcrumb-item active">প্রোফাইল তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -38,17 +38,17 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-12">
-             <label class="form-label">Name</label>
+             <label class="form-label">প্রোফাইল নাম দিন</label>
              <input class="form-control" type="text" value="{{$profile->name}}" name="name" required>
          
           </div>
           <div class="col-sm-12">
-             <label class="form-label">Description</label>
+             <label class="form-label">বিস্তারিত লিখুন</label>
         
          <textarea name="description" id="" class="form-control" cols="30" rows="10">{{$profile->description}}</textarea>
           </div>
           <div class="col-sm-12">
-             <label class="form-label">Photo</label>
+             <label class="form-label">প্রোফাইল আইকন যুক্ত করুন</label>
         
              <input type="file" class="form-control dropify" name="image">
           </div>
@@ -61,8 +61,8 @@
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Save changes</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
+      <button type="submit" class="btn btn-primary">সেভ করুন</button>
     </div>
   </div>
   </form>

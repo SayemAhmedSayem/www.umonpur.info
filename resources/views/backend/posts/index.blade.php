@@ -7,19 +7,19 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Posts List</h2>
+              <h2 class="mb-0">পোস্ট তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('posts.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add Post
+                  <span class="fas fa-plus me-2"></span>পোস্ট যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Posts</a></li>
-              <li class="breadcrumb-item active">Posts List</li>
+              <li class="breadcrumb-item"><a href="#!">পোস্ট সমূহ</a></li>
+              <li class="breadcrumb-item active">পোস্ট তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -49,9 +49,9 @@
                             <th scope="col" width="5%">Images</th>
                             <th scope="col"width="10%">Date</th>
                             <th scope="col" width="10%">Author</th>
-                            <th scope="col" width="20%">Post Title</th>
-                            <th scope="col"  width="15%">Category</th>
-                            <th scope="col" width="15%">Descriptions</th>
+                            <th scope="col" width="20%">পোস্ট শিরোনাম</th>
+                            <th scope="col"  width="15%">ক্যাটাগরি</th>
+                            <th scope="col" width="15%">পোস্ট বিস্তারিত</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>

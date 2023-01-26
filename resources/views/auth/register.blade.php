@@ -12,9 +12,6 @@
                   <h3>Membership Registration Form</h3>
                   <p class="text-700">Get access to your account</p>
                </div>
-              
-         
-   
          </div>
          <div class="row">
         <div class="col-sm-6 pb-5">
@@ -30,7 +27,7 @@
                         <div class="mb-3"><label class="form-label" for="basic-form-gender">লিঙ্গ</label> <select class="form-select" id="basic-form-gender" aria-label="Default select example" name="gender" required>
                             <option selected="selected">লিঙ্গ নির্বাচন করুন</option>
                             <option value="male">পুরুষ</option>
-                            <option value="female">মহিলা</option>
+                            <option value="female">নারী</option>
                             <option value="other">অন্যান্য</option>
                           </select></div>
                           <div class="mb-3"><label class="form-label" for="basic-form-dob">জন্ম তারিখ</label> <input autocomplete="false" class="form-control" id="basic-form-dob" type="date" name="dob" required></div>
@@ -46,9 +43,6 @@
                         <div class="mb-3"><label class="form-label">ফটো নির্বাচন করুন</label> <input autocomplete="false" class="form-control" name="image" type="file" required></div>
                       
                   
-                  
-                  
-                   
                     
    <!-- end input -->
         </div>

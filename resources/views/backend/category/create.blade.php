@@ -3,12 +3,12 @@
 
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Add Category</h2>
+         <h2 class="mb-0">ক্যাটাগরি যুক্ত করুন</h2>
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Categories</a></li>
-            <li class="breadcrumb-item active">Add Category</li>
+            <li class="breadcrumb-item"><a href="#!">ক্যাটাগরি সমূহ</a></li>
+            <li class="breadcrumb-item active">ক্যাটাগরি যুক্ত করুন</li>
          </ol>
       </nav>
    </div>
@@ -19,7 +19,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Category Name</label>
+               <label class="form-label">ক্যাটাগরি নাম</label>
                <input class="form-control" type="text" name="name">
             </div>
         
@@ -27,7 +27,7 @@
       </div>
    </div>
    <div class="mb-0">
-      <label class="form-label">Description</label> 
+      <label class="form-label">বিস্তারিত লিখুন</label> 
       <textarea class="form-control" name="description" rows="3"> </textarea>
    </div>
 
@@ -35,7 +35,7 @@
       <div class="d-flex align-items-right">
          <button type="submit" class="btn btn-primary">
          <span class="fas fa-plus me-2"></span>
-         Add Category
+         ক্যাটাগরি যুক্ত করুন
          </button>
       </div>
    </div>

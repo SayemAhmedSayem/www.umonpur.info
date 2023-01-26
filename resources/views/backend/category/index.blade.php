@@ -4,19 +4,19 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
 <div class="col-auto">
-              <h2 class="mb-0">Category List</h2>
+              <h2 class="mb-0">ক্যাটাগরি তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('category.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add Category
+                  <span class="fas fa-plus me-2"></span>ক্যাটাগরি যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Categories</a></li>
-              <li class="breadcrumb-item active">Category List</li>
+              <li class="breadcrumb-item"><a href="#!">ক্যাটাগরি সমূহ</a></li>
+              <li class="breadcrumb-item active">ক্যাটাগরি তালিকা</li>
             </ol>
           </nav>
    </div>
@@ -32,8 +32,8 @@
                         <thead>
                           <tr>
                             <th scope="col">SL</th>
-                            <th scope="col">Category Name</th>
-                            <th scope="col" width="30%">Category Descriptions</th>
+                            <th scope="col">ক্যাটাগরি নাম</th>
+                            <th scope="col" width="30%">ক্যাটাগরি বর্ণনা</th>
                             <th scope="col">Total Post</th>
                             <th scope="col">Actions</th>
                           </tr>

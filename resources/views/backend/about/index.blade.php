@@ -7,19 +7,19 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">About List</h2>
+              <h2 class="mb-0">আমাদের সম্পর্কে তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('about.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add About
+                  <span class="fas fa-plus me-2"></span>সম্পর্কে যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">About</a></li>
-              <li class="breadcrumb-item active">About List</li>
+              <li class="breadcrumb-item"><a href="#!">সম্পর্ক</a></li>
+              <li class="breadcrumb-item active">সম্পর্কিত তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -32,8 +32,8 @@
                             <th scope="col" width="5%">Date</th>
                             <th scope="col" width="5%">Images</th>
                             <th scope="col" width="5%">Author</th>
-                            <th scope="col" width="20%">Title</th>
-                            <th scope="col" width="15%">Descriptions</th>
+                            <th scope="col" width="20%">শিরোনাম</th>
+                            <th scope="col" width="15%">বিস্তারিত</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>

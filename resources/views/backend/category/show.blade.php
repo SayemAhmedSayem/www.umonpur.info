@@ -7,15 +7,15 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Category Show</h2>
+              <h2 class="mb-0">ক্যাটাগরি দেখুন</h2>
             </div>
             <div class="col-auto">
      
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Categories</a></li>
-              <li class="breadcrumb-item active">Category Show</li>
+              <li class="breadcrumb-item"><a href="#!">ক্যাটাগরি সমূহ</a></li>
+              <li class="breadcrumb-item active">ক্যাটাগরি দেখুন</li>
             </ol>
           </nav>
           </div>
@@ -24,9 +24,9 @@
                       <div class="card-body">
                           <table>
                               <tr>
-                                <strong>  Category Name:</strong> {{$category->name}}
+                                <strong>ক্যাটাগরি নাম:</strong> {{$category->name}}
                                   <p>
-                                  <strong>Category Description:</strong> {{$category->descriptions}}
+                                  <strong>ক্যাটাগরি বিস্তারিত:</strong> {{$category->descriptions}}
                                   </p>
                               </tr>
                              

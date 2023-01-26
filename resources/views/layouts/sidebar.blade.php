@@ -11,9 +11,9 @@ $messages = App\Models\Message::where('status', 0)->get();
    </div>
 </nav>
 <nav class="navbar navbar-light navbar-top navbar-expand">
-<div class="navbar-logo"><button class="btn navbar-toggler navbar-toggler-humburger-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button> <a class="navbar-brand me-1 me-sm-3" href="index.html">
+<div class="navbar-logo"><button class="btn navbar-toggler navbar-toggler-humburger-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button> <a class="navbar-brand me-1 me-sm-3" href="index.php">
 <div class="d-flex align-items-center">
-<div class="d-flex align-items-center"><img src="{{asset('template/assets/img/icons/logo.png')}}" alt="phoenix" width="32">
+<div class="d-flex align-items-center"><img src="{{asset('template/assets/img/icons/logo-2.png')}}" alt="umonpur logo" width="32">
 <p class="logo-text ms-2 d-none d-sm-block">Umonpur</p>
 </div>
 </div>
