@@ -7,8 +7,8 @@
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Slider</a></li>
-            <li class="breadcrumb-item active">Add Slider</li>
+            <li class="breadcrumb-item"><a href="#!">স্লাইডার</a></li>
+            <li class="breadcrumb-item active">স্লাইড যুক্ত করুন</li>
          </ol>
       </nav>
    </div>
@@ -19,7 +19,7 @@
       <div class="form-group">
          <div class="row">
             <div class="col-sm-12">
-               <label class="form-label">Title</label>
+               <label class="form-label">শিরোনাম</label>
                <input class="form-control" type="text" name="title">
             </div>
         
@@ -28,18 +28,18 @@
 
    </div>
    <div class="mb-0">
-      <label class="form-label">Description</label> 
+      <label class="form-label">সংকিপ্ত বর্ণনা</label> 
       <textarea class="form-control" name="desscriptions" rows="3"> </textarea>
    </div>
    <div class="mb-0">
-      <label class="form-label">Slider Image</label> 
+      <label class="form-label">স্লাইডার ফটো</label> 
       <input type="file" class="form-control dropify" name="image">
    </div>
    <div class="col-auto pt-3">
       <div class="d-flex align-items-right">
          <button type="submit" class="btn btn-primary">
          <span class="fas fa-plus me-2"></span>
-         Add Slider
+         স্লাইডার যুক্ত করুন
          </button>
       </div>
    </div>

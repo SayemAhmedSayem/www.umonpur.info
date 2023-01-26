@@ -7,19 +7,19 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Slider List</h2>
+              <h2 class="mb-0">স্লাইডার তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('sliders.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add Slider
+                  <span class="fas fa-plus me-2"></span>স্লাইডার যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Slider</a></li>
-              <li class="breadcrumb-item active">Slider List</li>
+              <li class="breadcrumb-item"><a href="#!">স্লাইডার</a></li>
+              <li class="breadcrumb-item active">স্লাইডার তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -29,9 +29,9 @@
                         <thead>
                           <tr>
                             <th scope="col" width="5%">SL</th>
-                            <th scope="col" width="30%">Slider Image</th>
-                            <th scope="col" width="25%">Title</th>
-                            <th scope="col" width="25%">Description</th>
+                            <th scope="col" width="30%">স্লাইডার ফটো</th>
+                            <th scope="col" width="25%">শিরোনাম</th>
+                            <th scope="col" width="25%"> সংকিপ্ত বর্ণনা</th>
                             <th scope="col" width="15%">Actions</th>
                           </tr>
                         </thead>
