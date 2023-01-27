@@ -4,19 +4,19 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Donate Request List</h2>
+         <h2 class="mb-0">সাহায্য করুন তালিকা</h2>
       </div>
       <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('donate.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add Donate Request
+                  <span class="fas fa-plus me-2"></span>সাহায্য যুক্ত করুন
                   </a>
               </div>
             </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#!">Donate</a></li>
-            <li class="breadcrumb-item active">Donate Request List</li>
+            <li class="breadcrumb-item active">সাহায্য করুন তালিকা</li>
          </ol>
       </nav>
    </div>
@@ -33,9 +33,9 @@
                     <tr>
                      <th>SL</th>
                      <th>Image</th>
-                     <th>Title</th>
-                     <th>Goal</th>
-                     <th>Description</th>
+                     <th>শিরোনাম</th>
+                     <th>আমাদের লক্ষ্য</th>
+                     <th>বিস্তারিত বর্ণনা</th>
                      <th>
                       Action
                      </th>

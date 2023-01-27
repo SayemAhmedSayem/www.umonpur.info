@@ -7,19 +7,19 @@
 <div class="row align-items-center justify-content-between g-3 mb-4">
 
             <div class="col-auto">
-              <h2 class="mb-0">Versions List</h2>
+              <h2 class="mb-0">ভার্সন তালিকা</h2>
             </div>
             <div class="col-auto">
               <div class="d-flex align-items-center">
                   <a href="{{route('version.create')}}" class="btn btn-primary">
-                  <span class="fas fa-plus me-2"></span>Add Version
+                  <span class="fas fa-plus me-2"></span>ভার্সন যুক্ত করুন
                   </a>
               </div>
             </div>
             <nav class="mb-2" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#!">Version</a></li>
-              <li class="breadcrumb-item active">Version List</li>
+              <li class="breadcrumb-item"><a href="#!">ভার্সন</a></li>
+              <li class="breadcrumb-item active"> ভার্সন তালিকা</li>
             </ol>
           </nav>
           </div>
@@ -29,9 +29,9 @@
                         <thead>
                           <tr>
                             <th scope="col" width="5%">SL</th>
-                            <th scope="col" width="5%">Screenshot</th>
-                            <th scope="col" width="20%">Year</th>
-                            <th scope="col"  width="15%">Version Name</th>
+                            <th scope="col" width="5%">স্ক্রিনশট ফটো</th>
+                            <th scope="col" width="20%"> বছর</th>
+                            <th scope="col"  width="15%">ভার্সন নাম</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>

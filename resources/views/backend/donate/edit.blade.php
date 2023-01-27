@@ -4,13 +4,13 @@
 
 <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
-         <h2 class="mb-0">Donate Request Create</h2>
+         <h2 class="mb-0">সাহায্য করুন পোস্ট</h2>
       </div>
 
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Donate</a></li>
-            <li class="breadcrumb-item active">Donate Request Create</li>
+            <li class="breadcrumb-item"><a href="#!">ডনেশন</a></li>
+            <li class="breadcrumb-item active">সাহায্য করুন পোস্ট করুন</li>
          </ol>
       </nav>
    </div>
@@ -27,19 +27,19 @@
              <input class="form-control"  value="{{$donate->name}}"  name="name" type="text" required>
           </div>
           <div class="col-sm-4">
-             <label class="form-label" for="date">Goal </label>
+             <label class="form-label" for="date">আমাদের লক্ষ্য </label>
              <input class="form-control"  value="{{$donate->goal}}" name="goal" type="number" required>
        
           </div>
           <div class="col-sm-4">
           <div  class="align-middle white-space-nowrap py-0"><img src="{{ asset('uploads/donate/'.$donate->image) }}" alt="" width="200"></div>
-          <label class="form-label" for="customFile">Donate Image</label>
+          <label class="form-label" for="customFile">সাহায্য করুন ফটো</label>
  
  <input type="file" class="form-control dropify" name="image">
        
           </div>
           <div class="col-sm-12">
-          <label class="form-label" for="exampleTextarea">Description</label> 
+          <label class="form-label" for="exampleTextarea">বিস্তারিত বর্ণনা</label> 
     <textarea class="form-control"  name="description" rows="3"> {{$donate->description}} </textarea required>
        
           </div>

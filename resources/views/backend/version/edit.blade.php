@@ -7,7 +7,7 @@
       </div>
       <nav class="mb-2" aria-label="breadcrumb">
          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="{{route('version.index')}}">Versions</a></li>
+            <li class="breadcrumb-item"><a href="{{route('version.index')}}">ভার্সন সমূহ</a></li>
             <li class="breadcrumb-item active"> {{$version->version_title}}</li>
          </ol>
       </nav>
@@ -20,7 +20,7 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-6">
-             <label class="form-label" for="date">Version Year </label>
+             <label class="form-label" for="date">ভার্সনের বছর </label>
              <input class="form-control"  name="year" value="{{$version->year}}" type="text">
           </div>
           <div class="col-sm-6">
@@ -29,30 +29,30 @@
           </div>
 
           <div class="col-sm-12">
-             <label class="form-label" for="date">Version Title </label>
+             <label class="form-label" for="date">ভার্সন শিরোনাম </label>
              <input class="form-control" type="text" value="{{$version->version_title}}" name="version_title">
           </div>
           <div class="col-sm-12">
-             <label class="form-label" for="date">Version Sub Title </label>
+             <label class="form-label" for="date">ভার্সন শিরোনাম ২ </label>
              <input class="form-control" type="text" value="{{$version->version_subtitle}}" name="version_subtitle">
           </div>
           <div class="col-sm-6">
-             <label class="form-label" for="date">Description  Title Part One </label>
+             <label class="form-label" for="date">ভার্সন শিরোনাম ৩ </label>
              <input class="form-control" type="text" value="{{$version->description_title_p1}}" name="description_title_p1">
           </div>
           <div class="col-sm-6">
-             <label class="form-label" for="date">Description Title Part One </label>
+             <label class="form-label" for="date">ভার্সন শিরোনাম ৪ </label>
              <input class="form-control" type="text" value="{{$version->description_title_p2}}" name="description_title_p2">
           </div>
        </div>
     </div>
  </div>
  <div class="mb-0">
-    <label class="form-label" for="exampleTextarea">Description Dtails</label> 
+    <label class="form-label" for="exampleTextarea">বিস্তারিত বর্ণনা</label> 
     <textarea class="form-control" name="description_details" rows="3">{{$version->description_details}} </textarea>
  </div>
  <div class="mb-3">
-    <label class="form-label" for="customFile">Version Screenshot</label>
+    <label class="form-label" for="customFile"> ভার্সন স্ক্রিনশট</label>
  
                                   <input type="file" class="form-control dropify" name="image">
                              
@@ -62,7 +62,7 @@
                               
                                     <button type="submit" class="btn btn-primary btn-sm m-3">
        <span class="fas fa-plus me-2"></span>
-       Update Version
+       আপডেট ভার্সন করুন
        </button>
        </form>
         
