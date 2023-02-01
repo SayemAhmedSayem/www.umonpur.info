@@ -32,7 +32,7 @@
                             <th scope="col" width="5%">SL</th>
                             <th scope="col" width="15%">Icon</th>
                             <th scope="col" width="25%">নাম</th>
-                            <th scope="col" width="30%">সংখ্যা মান</th>
+                            <th scope="col" width="30%">সংখ্যা মান(ইংরেজী)</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
                         </thead>
@@ -93,13 +93,13 @@
            
             </div>
             <div class="col-sm-12">
-               <label class="form-label">সংখ্যা মান</label>
+               <label class="form-label">সংখ্যা মান (ইংরেজী)</label>
                <input class="form-control" type="text" name="value" required>
            
             </div>
          
             <div class="col-sm-12">
-               <label class="form-label">আইকন যুক্ত করুন</label>
+               <label class="form-label">আইকন কোড যুক্ত করুন</label>
           
                <input type="text" class="form-control" name="image">
             </div>

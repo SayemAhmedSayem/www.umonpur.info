@@ -35,7 +35,7 @@
            
             </div>
             <div class="col-sm-12">
-               <label class="form-label">সংখ্যা মান</label>
+               <label class="form-label">সংখ্যা মান(ইংরেজী)</label>
                <input class="form-control" type="text" value="{{$statistic->value}}" name="value" required>
            
             </div>
