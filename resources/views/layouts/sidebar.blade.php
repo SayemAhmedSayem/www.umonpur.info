@@ -14,7 +14,7 @@ $messages = App\Models\Message::where('status', 0)->get();
 <div class="navbar-logo"><button class="btn navbar-toggler navbar-toggler-humburger-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button> <a class="navbar-brand me-1 me-sm-3" href="index.php">
 <div class="d-flex align-items-center">
 <div class="d-flex align-items-center"><img src="{{asset('template/assets/img/icons/logo-2.png')}}" alt="umonpur logo" width="32">
-<p class="logo-text ms-2 d-none d-sm-block">Umonpur</p>
+<p class="logo-text ms-2 d-none d-sm-block">উমনপুর</p>
 </div>
 </div>
 </a></div>
@@ -23,7 +23,7 @@ $messages = App\Models\Message::where('status', 0)->get();
 <form class="position-relative" data-bs-toggle="search" data-bs-display="static"><input class="form-control form-control-sm search-input search min-h-auto" type="search" placeholder="Search..." aria-label="Search"> <span class="fas fa-search search-box-icon"></span></form>
 </div>
 <ul class="navbar-nav navbar-nav-icons ms-auto flex-row">
-   <li class="nav-item mx-5"><a href="{{route('web-home')}}" target="_blank" rel="noopener noreferrer"> <i class="fas fa-globe"></i> Website </a> </li>
+   <li class="nav-item mx-5"><a href="{{route('web-home')}}" target="_blank" rel="noopener noreferrer"> <i class="fas fa-globe"></i> ওয়েবসাইট দেখুন</a> </li>
 @if(Auth::user()->user_type=='user')
 <li class="nav-item dropdown"><a class="av-link notification-indicator notification-indicator-primary" id="navbarDropdownNindeDots" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -71,7 +71,7 @@ $messages = App\Models\Message::where('status', 0)->get();
 <div class="card bg-white position-relative border-0">
 <div class="card-body p-0 overflow-auto scrollbar" style="height: 18rem;">
 <div class="text-center pt-4 pb-3">
-<div class="avatar avatar-xl"><img class="rounded-circle" src="{{ asset('uploads/members/'.Auth::user()->nid->image) }}" alt=""></div>
+<div class="avatar avatar-xl"><img class="rounded-circle" style="width: 50px; height: 50px; padding: 2px; background-color:red" src="{{ asset('uploads/members/'.Auth::user()->nid->image) }}" alt=""></div>
 <h6 class="mt-2">{{Auth::user()->name ?? ''}}</h6>
 </div>
 <ul class="nav d-flex flex-column mb-2 pb-1">

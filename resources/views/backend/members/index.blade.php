@@ -66,7 +66,7 @@
                             <td>  <span class="badge bg-warning">{{$member->role->name}}</span> </td>
                             <td>
                               @if($member->status==0)
-                          <span class="badge bg-danger">Inactive</span>
+                          <span class="badge bg-danger">InActive</span>
                           @elseif($member->status==1)
                           <span class="badge bg-success">Active</span>
                           @endif

@@ -226,13 +226,13 @@ onclick="event.preventDefault();
               </div> -->
             </div>
             <div class="billing-address">
-              <div class="sm-title">
-                <h2 style="font-size: 21px;font-weight: bold;">বিকাশ/নগদ/রকেট -</br> ০১৬৮৭৮৩৮১৬১</h2>
+              <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
+                <h2 style="font-size: 21px;font-weight: bold;">বিকাশ/নগদ/রকেট -</br>০১৫১১ ৮৩৮ ১৬১</h2>
               </div>
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে পাঠিয়েছেন</label>
+                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে টাকা পাঠিয়েছেন</label>
                     <input type="text" class="form-control" name="transection_phone" id="cardNo" required>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ onclick="event.preventDefault();
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label for="CitySelect" class="form-label">ধরন</label>
+                    <label for="CitySelect" class="form-label">ধরন নির্বাচন করুন</label>
                     <select name="payment_type" class="form-select" id="CitySelect" required>
                       <!-- <option selected disabled>নির্বাচন করুন</option> -->
                       <option value="1">বিকাশ</option>

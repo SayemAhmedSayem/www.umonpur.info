@@ -34,7 +34,7 @@
                 <h5>  {{ Carbon\Carbon::parse($post->date)->format('d') }}</h5><span>{{ Carbon\Carbon::parse($post->date)->format('M , Y') }}</span>
                 </div>
                 <div class="post-content">
-                  <h4><i class="fa-solid fa-user"></i>{{$post->user->name ?? ''}}</h4>
+                  <h4><i class="fa-solid fa-user"></i>{{$post->user->name_bn ?? ''}}</h4>
                   <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
                 </div>
               </div>

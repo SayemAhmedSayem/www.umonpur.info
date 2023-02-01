@@ -29,8 +29,8 @@
                         <thead>
                           <tr>
                             <th scope="col" width="5%">SL</th>
-                            <th scope="col" width="5%">স্ক্রিনশট ফটো</th>
-                            <th scope="col" width="20%"> বছর</th>
+                            <th scope="col" width="15%">স্ক্রিনশট ফটো</th>
+                            <th scope="col" width="10%"> বছর</th>
                             <th scope="col"  width="15%">ভার্সন নাম</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>
