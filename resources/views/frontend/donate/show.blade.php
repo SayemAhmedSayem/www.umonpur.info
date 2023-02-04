@@ -83,7 +83,7 @@
               </div>
               <ul class="" style="padding-left: 0px !important;">
                 <li class="clearfix border-bottom"><span class="pull-left">দাতাগণ -</span> <strong class="pull-right">{{ $number }}</strong></li>
-                <li class="clearfix border-bottom"><span class="pull-left">লক্ষ্য -</span> <strong class="pull-right">৳{{$donate->goal}}</strong></li>
+                <li class="clearfix border-bottom"><span class="pull-left">আমাদের লক্ষ্য -</span> <strong class="pull-right">৳{{$donate->goal}}</strong></li>
                 <li class="clearfix border-bottom"><span class="pull-left">সংগৃহীত -</span> <strong class="pull-right">৳{{$income}}</strong></li>
               <div class="row">
                 

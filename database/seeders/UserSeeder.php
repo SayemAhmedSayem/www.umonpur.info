@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             array('id' => '1',
             'name' => 'Sayem Ahmed',
             'email' => 'sayemahmed92@gmail.com',
-            'password' => bcrypt('Sayemahmed92@#'),
+            'password' => bcrypt('Sayemahmed92@##'),
             'status' => '1',
             'user_type' => 'user',
 
