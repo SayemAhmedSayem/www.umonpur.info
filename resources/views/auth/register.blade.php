@@ -21,26 +21,26 @@
             
         <form class="pt-5" method="post" action="{{ route('member-register') }}" enctype="multipart/form-data" autocomplete="off">
             @csrf
-                        <div class="mb-3"><label class="form-label" for="basic-form-name">নাম (ইংরেজী) </label> <input autocomplete="false" class="form-control" id="basic-form-name" placeholder="আপনার ইংরেজী নাম" name="name" required></div>
-                        <div class="mb-3"><label class="form-label" for="basic-form-name">নাম (বাংলা)</label> <input autocomplete="false" class="form-control" id="basic-form-name" placeholder="আপনার বাংলা নাম" name="name_bn" required></div>
-                        <div class="mb-3"><label class="form-label" for="basic-form-nid"> এনআইডি / জন্মনিবন্ধন নং</label> <input autocomplete="false" class="form-control" id="basic-form-nid" type="number" placeholder="আপনার এনআইডি / জন্মনিবন্ধন নং" name="nid" required></div>
-                        <div class="mb-3"><label class="form-label" for="basic-form-gender">লিঙ্গ</label> <select class="form-select" id="basic-form-gender" aria-label="Default select example" name="gender" required>
+                        <div class="mb-3"><label class="form-label" for="basic-form-name">নাম (ইংরেজী) * </label> <input autocomplete="false" class="form-control" id="basic-form-name" placeholder="Enter your name" name="name" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-name">নাম (বাংলা) *</label> <input autocomplete="false" class="form-control" id="basic-form-name" placeholder="আপনার বাংলা নাম" name="name_bn" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-nid"> এনআইডি / জন্মনিবন্ধন নং (ইংরেজী) *</label> <input autocomplete="false" class="form-control" id="basic-form-nid" type="number" placeholder="Enter your NID/ Birth ID" name="nid" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-gender">লিঙ্গ *</label> <select class="form-select" id="basic-form-gender" aria-label="Default select example" name="gender" required>
                             <option selected="selected">লিঙ্গ নির্বাচন করুন</option>
                             <option value="male">পুরুষ</option>
                             <option value="female">নারী</option>
                             <option value="other">অন্যান্য</option>
                           </select></div>
-                          <div class="mb-3"><label class="form-label" for="basic-form-dob">জন্ম তারিখ</label> <input autocomplete="false" class="form-control" id="basic-form-dob" type="date" name="dob" required></div>
-                        <div class="mb-3"><label class="form-label" for="basic-form-father">পিতার নাম (বাংলা)</label> <input autocomplete="false" class="form-control" id="basic-form-father" placeholder="আপনার পিতার নাম" name="father" required></div>
-                        <div class="mb-3"><label class="form-label" for="basic-form-mother">মাতার নাম (বাংলা)</label> <input autocomplete="false" class="form-control" id="basic-form-mother" placeholder="আপনার মাতার নাম" name="mother"required></div>
+                          <div class="mb-3"><label class="form-label" for="basic-form-dob">জন্ম তারিখ*</label> <input autocomplete="false" class="form-control" id="basic-form-dob" type="date" name="dob" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-father">পিতার নাম (বাংলা) *</label> <input autocomplete="false" class="form-control" id="basic-form-father" placeholder="আপনার পিতার নাম" name="father" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-mother">মাতার নাম (বাংলা) *</label> <input autocomplete="false" class="form-control" id="basic-form-mother" placeholder="আপনার মাতার নাম" name="mother"required></div>
                 
-                        <div class="mb-3"><label class="form-label" for="basic-form-name">ফোন নাম্বার</label> <input autocomplete="false" class="form-control" id="basic-form-name" name="phone" placeholder="Enter your phone number" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-name">ফোন নাম্বার (ইংরেজী) *</label> <input autocomplete="false" class="form-control" id="basic-form-name" name="phone" placeholder="Enter your phone number" required></div>
 
-                        <div class="mb-3"><label class="form-label" for="basic-form-address">ঠিকানা</label> <textarea class="form-control" id="basic-form-address" rows="3" placeholder="আপনার ঠিকানা" name="address" required></textarea></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-address">ঠিকানা *</label> <textarea class="form-control" id="basic-form-address" rows="3" placeholder="আপনার ঠিকানা" name="address" required></textarea></div>
 
-                        <div class="mb-3"><label class="form-label" for="basic-form-holding_no">হোল্ডিং নং</label> <input autocomplete="false" class="form-control" id="basic-form-holding_no" type="text" placeholder="63/1" name="holding_no" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-holding_no">হোল্ডিং নং *</label> <input autocomplete="false" class="form-control" id="basic-form-holding_no" type="text" placeholder="63/1" name="holding_no" required></div>
                        
-                        <div class="mb-3"><label class="form-label">ফটো নির্বাচন করুন</label> <input autocomplete="false" class="form-control" name="image" type="file" required></div>
+                        <div class="mb-3"><label class="form-label">ফটো নির্বাচন করুন *</label> <input autocomplete="false" class="form-control" name="image" type="file" required></div>
                       
                   
                     
@@ -53,10 +53,10 @@
             </h4>
            
             <div class="pt-5">
-                <div class="mb-3 text-start"><label class="form-label" for="email">ইমেইল</label><input autocomplete="false" class="form-control" name="email" id="email" type="email" placeholder="Enter your email" required></div>
+                <div class="mb-3 text-start"><label class="form-label" for="email">ইমেইল *</label><input autocomplete="false" class="form-control" name="email" id="email" type="email" placeholder="Enter your email" required></div>
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6"><label class="form-label" for="password">পাসওয়ার্ড</label><input autocomplete="false" class="form-control form-icon-input" type="password" name="password" placeholder=" Enter your Password" required></div>
-                  <div class="col-md-6"><label class="form-label" for="confirm_password">কনফার্ম পাসওয়ার্ড</label><input autocomplete="false" class="form-control form-icon-input" name="password_confirmation" type="password" placeholder="Confirm Password" required></div>
+                  <div class="col-md-6"><label class="form-label" for="password">পাসওয়ার্ড *</label><input autocomplete="false" class="form-control form-icon-input" type="password" name="password" placeholder=" Enter your Password" required></div>
+                  <div class="col-md-6"><label class="form-label" for="confirm_password">কনফার্ম পাসওয়ার্ড *</label><input autocomplete="false" class="form-control form-icon-input" name="password_confirmation" type="password" placeholder="Confirm Password" required></div>
                 </div>
                 <div class="form-check mb-3"><input autocomplete="false" class="form-check-input" id="termsService" type="checkbox"><label class="form-label" for="termsService">আমি <a href="#!">শর্তাবলী </a>এবং <a href="#!">গোপনীয় </a>নীতি মেনে চলবো।</label></div>
                 <button type="submit" class="btn btn-primary w-100 mb-3">রেজিস্ট্রেশন করুন</button>
