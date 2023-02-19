@@ -134,7 +134,7 @@
 							<tr>
 								<td>
 									www.umonpur.info<br />
-									Umonpur,Horipur<br />
+									Umonpur - উমনপুর<br />
 									Sylhet, 1220
 								</td>
                                <?php 

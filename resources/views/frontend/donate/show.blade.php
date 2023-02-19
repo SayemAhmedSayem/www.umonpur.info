@@ -351,7 +351,7 @@
       <div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
+						<img src="https://scontent.fdac137-1.fna.fbcdn.net/v/t39.30808-6/309294201_469339115223257_5721430476327181466_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=KwhicEwx8UoAX-z2TkO&_nc_oc=AQk3-46ONi5Co1WE5T0eWH9qnoT8FxAZAtdzOt-_v9Vrr3OEXLUqiHF3v3VqssBC8Qk&_nc_ht=scontent.fdac137-1.fna&oh=00_AfBvHze9u8PQ6Nt8k7mF1FYXB-yiXM7qdN9JHsNJerFRsQ&oe=63E673F3" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
