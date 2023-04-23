@@ -23,7 +23,8 @@
             <div class="single-post">
               <div class="post-content-announce">
                 <h4><a href="#">{{$notice->title}}</a> <i class="fa-solid fa-bullhorn"></i></h4>
-                <p>{{$notice->description}}</p>
+                {{-- <p>{{$notice->description}}</p> --}}
+                <p>{!! $notice->description !!}</p>
               </div>
             </div>
             

@@ -351,7 +351,7 @@
       <div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="https://scontent.fdac137-1.fna.fbcdn.net/v/t39.30808-6/309294201_469339115223257_5721430476327181466_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=KwhicEwx8UoAX-z2TkO&_nc_oc=AQk3-46ONi5Co1WE5T0eWH9qnoT8FxAZAtdzOt-_v9Vrr3OEXLUqiHF3v3VqssBC8Qk&_nc_ht=scontent.fdac137-1.fna&oh=00_AfBvHze9u8PQ6Nt8k7mF1FYXB-yiXM7qdN9JHsNJerFRsQ&oe=63E673F3" class="brand_logo" alt="Logo">
+						<img src="{{asset('frontend/logo/logo-1.png')}}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
@@ -361,7 +361,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter your email" required autocomplete="email" autofocus>
                     
                       @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -373,27 +373,27 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" Enter your Password" required autocomplete="current-password">
                     
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+								<label class="custom-control-label" for="customControlInline">সাইনইন মনে রাখুন</label>
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn">Login</button>
+				 	<button type="submit" name="button" class="btn login_btn">সাইনইন</button>
 				   </div>
 					</form>
 				</div>
 		
 				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{{route('register')}}" class="ml-2">Sign Up</a>
+					<div class="d-flex justify-content-center links">যদি আপনার কোন একাউন্ট না থাকে<br>
+            <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
 					</div>
 					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
+						<a href="#">পাসওয়ার্ড ভুলে গিয়েছেন?</a>
 					</div>
 				</div>
 			</div>

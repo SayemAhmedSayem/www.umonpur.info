@@ -59,7 +59,7 @@
         <!-- First Content -->
         <div class="col-md-4 .first-content">
           <div class="sm-title">
-            <h3><i class="fa-solid fa-calendar-days"></i>এইমাত্র পাওয়া খাবর</h3>
+            <h3><i class="fa-solid fa-calendar-days"></i>এইমাত্র পাওয়া খবর</h3>
           </div>
           <div class="content">
             @foreach($latests as $post)
@@ -67,13 +67,14 @@
               <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="Blog Image">
               <div class="post-content-news">
                 <h4><a href="{{route('web-post-show', $post->id)}}">{{$post->title}}</a></h4>
-                <p>{{ Str::limit($post->description, 80) }}</p>
+                {{-- <p>{{ Str::limit($post->description, 80) }}</p> --}}
+                <p>{!! Str::limit($post->description, 80) !!}</p>
               </div>
             </div>
         @endforeach
           </div>
           <div class="post-btn">
-            <a href="{{route('web-post-list')}}" class="btn-post">সকল খাবর দেখুন</a>
+            <a href="{{route('web-post-list')}}" class="btn-post">সকল খবর দেখুন</a>
           </div>
         </div>
         <!-- Second Content -->
@@ -87,7 +88,8 @@
 
               <div class="post-content-announce">
                 <h4><a href="{{route('web-notice-show', $notice->id)}}">{{$notice->title}}</a></h4>
-                <p>{{ Str::limit($notice->description, 200) }}</p>
+                {{-- <p>{{ Str::limit($notice->description, 200) }}</p> --}}
+                <p>{!! Str::limit($notice->description, 100) !!}</p>
               </div>
             </div>
             @endforeach
@@ -111,7 +113,8 @@
                 </div>
                 <div class="post-content">
                   <h4><a href="{{route('web-event-show', $event->id)}}">{{$event->title}}</a></h4>
-                  <p>{{ Str::limit($event->description, 80) }}</p>
+                  {{-- <p>{{ Str::limit($event->description, 80) }}</p> --}}
+                  <p>{!! Str::limit($event->description, 80) !!}</p>
                 </div>
               </div>
             </div>

@@ -227,7 +227,7 @@ onclick="event.preventDefault();
             </div>
             <div class="billing-address">
               <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
-                <h2 style="font-size: 21px;font-weight: bold;">বিকাশ/নগদ/রকেট -</br>০১৫১১ ৮৩৮ ১৬১</h2>
+                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট টাকা পাঠান-<br>01511 838 161</h2>
               </div>
               <div class="row">
                 <div class="col">
@@ -248,7 +248,9 @@ onclick="event.preventDefault();
                   <div class="mb-3">
                     <label for="CitySelect" class="form-label">ধরন নির্বাচন করুন</label>
                     <select name="payment_type" class="form-select" id="CitySelect" required>
-                      <!-- <option selected disabled>নির্বাচন করুন</option> -->
+                    
+                      {{-- <option selected="selected">নির্বাচন করুন</option> --}}
+                      
                       <option value="1">বিকাশ</option>
                       <option value="2">নগদ</option>
                       <option value="3">রকেট</option>
@@ -397,7 +399,7 @@ onclick="event.preventDefault();
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter your email" required autocomplete="email" autofocus>
                     
                       @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -409,29 +411,29 @@ onclick="event.preventDefault();
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" Enter your Password" required autocomplete="current-password">
                     
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+								<label class="custom-control-label" for="customControlInline">সাইনইন মনে রাখুন</label>
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn">Login</button>
+				 	<button type="submit" name="button" class="btn login_btn">সাইনইন</button>
 				   </div>
 					</form>
 				</div>
 		
 				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{{route('register')}}" class="ml-2">Sign Up</a>
+					<div class="d-flex justify-content-center links">যদি আপনার কোন একাউন্ট না থাকে<br>
+            <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
 					</div>
 					<div class="d-flex justify-content-center links">
 					
             @if (Route::has('password.request'))
-                  <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">Forgot Password?</a></div>
+                  <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">পাসওয়ার্ড ভুলে গিয়েছেন?</a></div>
                                     
                                 @endif
 					</div>

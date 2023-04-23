@@ -63,9 +63,10 @@
                      <div class="text-start mb-1-6 wow fadeIn">
                         <h2 class="mb-0 text-primary">{{$post->title}}</h2>
                     </div>
-                    <p class="mb-4 pt-3">
+                    {{-- <p class="mb-4 pt-3">
                         {{$post->description}}
-                    </p>
+                    </p> --}}
+                    <p>{!! $post->description !!}</p>
                      </div>
                      <div class="col-sm-4">
                      <div class="text-start mb-1-6 wow fadeIn">

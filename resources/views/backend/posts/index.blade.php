@@ -66,7 +66,8 @@
                             <td>{{$post->title}}</td>
                             <td>{{$post->category->name ?? ''}}</td>
                            
-                            <td>{{ Str::limit($post->description, 10) }}</td>
+                            {{-- <td>{{ Str::limit($post->description, 10) }}</td> --}}
+                            <td>{!! Str::limit($post->description, 10) !!}</td>
                             <td>
                                <div class="button-group" style="display:flex !important;">
                                <form action="{{route('posts.destroy',$post->id)}}" method="POST">

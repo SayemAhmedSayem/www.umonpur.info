@@ -30,7 +30,8 @@
               <small class="text-muted"><i class="fa-solid fa-clock"></i>১৪ এপ্রিল, ২০২০</small>
             </div>
             <div class="blog-desc">
-              <p>{{$post->description}}
+              {{-- <p>{{$post->description}}</p> --}}
+              {!! $post->description !!}
             </div>
             <div class="blog-share">
               <h5>শেয়ার করুনঃ</h5>

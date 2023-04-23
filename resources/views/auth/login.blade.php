@@ -46,7 +46,7 @@
                       
                          <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                         <label class="form-check-label mb-0" for="basic-checkbox">সাইন ইন মনে রাখুন</label></div>
+                         <label class="form-check-label mb-0" for="basic-checkbox">সাইনইন মনে রাখুন</label></div>
                   </div>
                   @if (Route::has('password.request'))
                   <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">পাসওয়ার্ড ভুলে গিয়েছেন?</a></div>
@@ -54,7 +54,7 @@
                                 @endif
              
                </div>
-               <button class="btn btn-primary w-100 mb-3" type="submit">সাইন ইন</button>
+               <button class="btn btn-primary w-100 mb-3" type="submit">সাইনইন</button>
                <div class="text-center">যদি আপনার কোন একাউন্ট না থাকে<a class="fs--1 fw-bold" href="{{route('register')}}"> <span style="font-size:20px;"><br>এইখানে দেখুন </span></a> <br>একজন সদস্য হতে চাইলে.</div>
             </div>
             </form>

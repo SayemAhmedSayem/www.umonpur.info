@@ -34,7 +34,8 @@
             <h2>{{$ab->title}}</h2>
           </div>
           <div class="about-content">
-          <p>{{ Str::limit($ab->description, 530) }}</p>
+          {{-- <p>{{ Str::limit($ab->description, 530) }}</p> --}}
+          <p>{!! Str::limit($ab->description, 530) !!}</p>
             <a href="{{route('web-about-show', $ab->id)}}" class="btn btn-box">আরও পড়ুন...</a>
           </div>
         </div>
@@ -49,7 +50,8 @@
             </div>
             <div class="about-post-desc">
               <h3>{{$about->title}}</h3>
-              <p>{{ Str::limit($about->description, 130) }}</p>
+              {{-- <p>{{ Str::limit($about->description, 130) }}</p> --}}
+              <p>{!! Str::limit($about->description, 130) !!}</p>
               <a href="{{route('web-about-show', $about->id)}}" class="btn btn-box">বিস্তারিত</a>
             </div>
 

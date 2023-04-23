@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-check mb-3"><input autocomplete="false" class="form-check-input" id="termsService" type="checkbox"><label class="form-label" for="termsService">আমি <a href="#!">শর্তাবলী </a>এবং <a href="#!">গোপনীয় </a>নীতি মেনে চলবো।</label></div>
                 <button type="submit" class="btn btn-primary w-100 mb-3">রেজিস্ট্রেশন করুন</button>
-                <div class="text-center"><a class="fs--1 fw-bold" href="{{route('login')}}">অ্যাকাউন্ট থাকলে সাইন ইন করুন</a></div>
+                <div class="text-center"><a class="fs--1 fw-bold" href="{{route('login')}}">অ্যাকাউন্ট থাকলে সাইনইন করুন</a></div>
                 </div>
              </form>
         </div>
