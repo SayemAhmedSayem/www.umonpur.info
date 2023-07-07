@@ -18,9 +18,7 @@
     <div class="container-sm">
       <div class="section-title">
         <h2>আমাদের সকল পোস্ট</h2>
-        <p>গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে। উদ্বোধনের পর একটি লঞ্চ বিকল হয়, বাকি দুটি নিয়মিত চলছে না। এ অবস্থায় শ্যালো ইঞ্জিনচালিত নৌকায়
-          ঝুঁকি নিয়ে পারাপার করানো হচ্ছে যাত্রীদের</p>
+        <p>উমনপুর গ্রামের সকল পোস্ট ক্যাটাগরি অনুসারে দৃশ্যমান হবে।</p>
       </div>
       <!-- First Category Content Post -->
       <div class="row">
@@ -34,7 +32,7 @@
                 <h5>  {{ Carbon\Carbon::parse($post->date)->format('d') }}</h5><span>{{ Carbon\Carbon::parse($post->date)->format('M , Y') }}</span>
                 </div>
                 <div class="post-content">
-                  <h4><i class="fa-solid fa-user"></i>{{$post->user->name_bn ?? ''}}</h4>
+                  <h4><i class="fa-solid fa-user"></i>{{$post->user->name}}</h4>
                   <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
                 </div>
               </div>

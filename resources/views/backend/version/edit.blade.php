@@ -52,7 +52,7 @@
     <textarea class="form-control" name="description_details" rows="3">{{$version->description_details}} </textarea>
  </div>
  <div class="mb-3">
-    <label class="form-label" for="customFile"> ভার্সন স্ক্রিনশট</label>
+    <label class="form-label" for="customFile"> ভার্সন স্ক্রিনশর্ট</label>
  
                                   <input type="file" class="form-control dropify" name="image">
                              
