@@ -158,7 +158,7 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
@@ -256,7 +256,7 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
@@ -274,7 +274,7 @@
      $ht =  $healths[0]->cat_id;
       ?>
       <div class="post_category_title">
-        <h2><a href="{{route('web-post-category', $ht)}}">আমাদের <span>স্বাস্থ্য কপ্লেক্স</span></a></h2>
+        <h2><a href="{{route('web-post-category', $ht)}}">আমাদের <span>স্বাস্থ্য কমপ্লেক্স</span></a></h2>
       </div>
       <div class="row  post-slide">
       @foreach($healths as $village)
@@ -288,7 +288,7 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>

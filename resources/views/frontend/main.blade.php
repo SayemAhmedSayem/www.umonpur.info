@@ -518,7 +518,7 @@ onclick="event.preventDefault();
               <a href="https://www.facebook.com/UmonpurGovermentPrimarySchool" class="nav-link"><i class="fa-brands fa-facebook-square"></i><span>স্কুল</span></a>
               <a href="https://www.facebook.com/JameyaMahmudiyaMajharulUlumUmonpur" class="nav-link"><i class="fa-brands fa-facebook-square"></i><span>মাদ্রসা</span></a>
               <a href="https://www.facebook.com/UmonpurSportsClub" class="nav-link"><i class="fa-brands fa-facebook-square"></i><span>খেলাধুলা</span></a>
-              <a href="https://www.facebook.com/ChiknagulHealthComplexUmonpur" class="nav-link"><i class="fa-brands fa-facebook-square"></i><span>স্বাস্থ্য কপ্লেক্স</span></a>
+              <a href="https://www.facebook.com/ChiknagulHealthComplexUmonpur" class="nav-link"><i class="fa-brands fa-facebook-square"></i><span>স্বাস্থ্য কমপ্লেক্স</span></a>
               
             </nav>
           </div>
