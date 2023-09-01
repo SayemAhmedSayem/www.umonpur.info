@@ -173,9 +173,9 @@
                   <img src="{{asset('frontend/assets/img/nid-header-logo.jpg')}}" alt="NID Header">
                 </div>
                 <div class="header-content">
-                  <h4>গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</h4>
-                  <p>Government of the People's Republic of Bangladesh</p>
-                  <p><span>National ID Card</span> / জাতীয় পরিচয় পত্র</p>
+                  <h4>www.umonpur.info</h4>
+                  <p>উমনপুর গ্রামের ওয়েবসাইটে আপনার ভোটার তালিকার সিরিয়াল অন্তর্ভুক্ত।</p>
+                  <p>  উমনপুর গ্রামের পরিচয় পত্র</p>
                 </div>
               </div>
               <div class="main-voter-info">

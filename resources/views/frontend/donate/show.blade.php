@@ -190,7 +190,7 @@
             </div>
             <div class="billing-address">
               <div class="sm-title">
-                <h2 style="font-size: 21px;font-weight: bold;">বিকাশ/নগদ/রকেট -</br> ০১৬৮৭৮৩৮১৬১</h2>
+                <h2 style="font-size: 21px;font-weight: bold;"> বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে পাঠান চাপুন। <br>--------------------<br> 01511 838 161</h2>
               </div>
               <div class="row">
                 <div class="col">

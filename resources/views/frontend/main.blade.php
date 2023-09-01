@@ -227,7 +227,7 @@ onclick="event.preventDefault();
             </div>
             <div class="billing-address">
               <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
-                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট টাকা পাঠান-<br>01511 838 161</h2>
+                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে পাঠান চাপুন। <br>--------------------<br>01511 838 161</h2>
               </div>
               <div class="row">
                 <div class="col">

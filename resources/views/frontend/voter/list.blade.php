@@ -27,7 +27,7 @@
       <div class="row">
         <div class="search-area my-4 col-md-6">
           <form class="d-flex" id="frm1">
-            <input class="form-control me-2" name="search" type="text" placeholder="এখানে ভোটার নাম্বার খুজুন..."
+            <input class="form-control me-2" name="search" type="text" placeholder="এখানে এনআইডি নাম্বার দিন..."
               aria-label="Search">
             <button class="btn btn-outline-success" id="toggle-class" type="button">খুজুন</button>
           </form>
@@ -48,8 +48,8 @@
                   <img src="{{asset('frontend/assets/img/nid-header-logo.jpg')}}" alt="NID Header">
                 </div>
                 <div class="header-content">
-                  <h4>ভোটার তালিকা</h4>
-                  <p>উমনপুর গ্রামের ভোটার এর তালিকায় আপনার যে সিরিয়াল অন্তর্ভুক্ত।</p>
+                  <h4>www.umonpur.info</h4>
+                  <p>উমনপুর গ্রামের ওয়েবসাইটে আপনার ভোটার তালিকার সিরিয়াল অন্তর্ভুক্ত।</p>
                   <p>  উমনপুর গ্রামের পরিচয় পত্র</p>
                 </div>
               </div>
@@ -67,8 +67,8 @@
                   <p><span class="name-title-father">পিতা:</span> <span id="father" class="name-father">উমনপুর </span></p>
                   <p><span class="name-title-mother">মাতা:</span> <span id="mother" class="name-mother">উমনপুর </span></p>
                   <p><span class="birth-date-title">Date of Birth</span>   <span id="dob" class="date-birth">01 January,
-                      1900</span></p>
-                  <p><span class="id-title">ID NO:</span> <span id="nid" class="voter-id">474754949493</span></p>
+                      1700</span></p>
+                  <p><span class="id-title">ID NO:</span> <span id="nid" class="voter-id">2020202120222023</span></p>
                   <p><span class="name-title">সিরিয়াল নং:</span> <span id="sl2" class="name">০১</span></p>
                 </div>
               </div>
