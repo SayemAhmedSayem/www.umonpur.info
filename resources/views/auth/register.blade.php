@@ -38,7 +38,7 @@
 
                         <div class="mb-3"><label class="form-label" for="basic-form-address">ঠিকানা *</label> <textarea class="form-control" id="basic-form-address" rows="3" placeholder="আপনার ঠিকানা" name="address" required></textarea></div>
 
-                        <div class="mb-3"><label class="form-label" for="basic-form-holding_no">হোল্ডিং নং *</label> <input autocomplete="false" class="form-control" id="basic-form-holding_no" type="text" placeholder="63/1" name="holding_no" required></div>
+                        <div class="mb-3"><label class="form-label" for="basic-form-holding_no">হোল্ডিং নং (ইংরেজী) *</label> <input autocomplete="false" class="form-control" id="basic-form-holding_no" type="text" placeholder="63/1" name="holding_no" required></div>
                        
                         <div class="mb-3"><label class="form-label">ফটো নির্বাচন করুন *</label> <input autocomplete="false" class="form-control" name="image" type="file" required></div>
                       
