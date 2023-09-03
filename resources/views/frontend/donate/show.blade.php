@@ -361,7 +361,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter your email" required autocomplete="email" autofocus>
+              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="আপনার ইমেইল লিখুন" required autocomplete="email" autofocus>
                     
                       @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -373,7 +373,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" Enter your Password" required autocomplete="current-password">
+              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" আপনার পাসওয়ার্ড লিখুন" required autocomplete="current-password">
                     
 						</div>
 						<div class="form-group">
@@ -383,17 +383,19 @@
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn">সাইনইন</button>
+				 	<button type="submit" name="button" class="btn login_btn">সাইনইন করুন</button>
 				   </div>
 					</form>
 				</div>
 		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">যদি আপনার কোন একাউন্ট না থাকে<br>
-            <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
+            <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; color:green; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
 					</div>
-					<div class="d-flex justify-content-center links">
-						<a href="#">পাসওয়ার্ড ভুলে গিয়েছেন?</a>
+					<div class="d-flex justify-content-center links">পাসওয়ার্ড ভুলে গিয়েছেন?
+						@if (Route::has('password.request'))
+            <a href="{{ route('password.request') }}" style="font-weight:bold; color: red; margin-left: 5px">এইখানে দেখুন </a>
+            @endif
 					</div>
 				</div>
 			</div>
