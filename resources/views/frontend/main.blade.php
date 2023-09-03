@@ -386,56 +386,54 @@ onclick="event.preventDefault();
     <div class="modal-dialog">
       <div class="modal-content">
       
-      <div class="user_card">
-				<div class="d-flex justify-content-center">
-					<div class="brand_logo_container">
-						<img src="{{asset('frontend/logo/logo-1.png')}}" class="brand_logo" alt="Logo">
-					</div>
-				</div>
-				<div class="d-flex justify-content-center form_container">
-        <form method="POST" action="{{ route('login') }}">
-                        @csrf
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter your email" required autocomplete="email" autofocus>
-                    
-                      @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" Enter your Password" required autocomplete="current-password">
-                    
-						</div>
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">সাইনইন মনে রাখুন</label>
-							</div>
-						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn">সাইনইন</button>
-				   </div>
-					</form>
-				</div>
-		
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">যদি আপনার কোন একাউন্ট না থাকে<br>
-            <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
-					</div>
-					<div class="d-flex justify-content-center links">
-					
-            @if (Route::has('password.request'))
-                  <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">পাসওয়ার্ড ভুলে গিয়েছেন?</a></div>
-                                    
-                                @endif
+        <div class="user_card">
+          <div class="d-flex justify-content-center">
+            <div class="brand_logo_container">
+              <img src="{{asset('frontend/logo/logo-1.png')}}" class="brand_logo" alt="Logo">
+            </div>
+          </div>
+          <div class="d-flex justify-content-center form_container">
+          <form method="POST" action="{{ route('login') }}">
+                          @csrf
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="আপনার ইমেইল লিখুন" required autocomplete="email" autofocus>
+                      
+                        @error('email')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" আপনার পাসওয়ার্ড লিখুন" required autocomplete="current-password">
+                      
+              </div>
+              <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customControlInline">
+                  <label class="custom-control-label" for="customControlInline">সাইনইন মনে রাখুন</label>
+                </div>
+              </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+             <button type="submit" name="button" class="btn login_btn">সাইনইন করুন</button>
+             </div>
+            </form>
+          </div>
+      
+          <div class="mt-4">
+            <div class="d-flex justify-content-center links">যদি আপনার কোন একাউন্ট না থাকে<br>
+              <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; color:green; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
+            </div>
+            <div class="d-flex justify-content-center links">পাসওয়ার্ড ভুলে গিয়েছেন?
+              @if (Route::has('password.request'))
+              <a href="{{ route('password.request') }}" style="font-weight:bold; color: red; margin-left: 5px">এইখানে দেখুন </a>
+              @endif
 					</div>
 				</div>
 			</div>
