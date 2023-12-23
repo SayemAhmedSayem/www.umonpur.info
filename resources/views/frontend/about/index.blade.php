@@ -152,12 +152,12 @@
     <div class="container">
       <div class="section-title">
         <h2>আমাদের দাতাগণের তালিকা</h2>
-        <p>ওয়েবসাইট উদ্বোধনের পর থেকে আমাদের প্লাটফর্মে অর্থ দিয়ে সাহায্য করেছেন তাদের তালিকা</p>
+        <p>আমাদের প্লাটফর্মে আর্থিকভাবে যারা সাহায্য করেছেন তাদের তালিকা নিম্নে দেওয়া হল</p>
       </div>
       <div class="row">
         <div class="col">
           <div class="sm-title">
-            <h2>দানকরুন তালিকা</h2>
+            <h2>তহবিলে দাতাকারীদের তালিকা</h2>
           </div>
           <div class="table-responsive">
             <table class="table table-hover">
@@ -195,7 +195,7 @@
       
         <div class="col">
           <div class="sm-title">
-            <h2>সাহায্য করুন তালিকা</h2>
+            <h2>আর্থিক সহায়তায় দাতাকারীদের তালিকা</h2>
           </div>
           <div class="table-responsive">
         

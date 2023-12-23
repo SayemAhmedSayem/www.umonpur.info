@@ -45,7 +45,7 @@
             <div class="single-voter-card">
               <div class="voter-card-header">
                 <div class="voter-card-header-img">
-                  <img src="{{asset('frontend/assets/img/nid-header-logo.jpg')}}" alt="NID Header">
+                  <img src="{{asset('frontend/assets/img/UP L3_40x40 22.png')}}" alt="NID Header">
                 </div>
                 <div class="header-content">
                   <h4>www.umonpur.info</h4>
