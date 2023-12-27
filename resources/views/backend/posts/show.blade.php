@@ -24,7 +24,7 @@
                                 <div class="card-body">
                                     <i class="ti-bookmark-alt icon-box medium rounded-3 mb-4"></i>
                                     <h3 class="h5 mb-3">Post Author</h3>
-                                    <p class="mb-0">{{$post->user->name;}}</p>
+                                    <p class="mb-0">{{$post->user->name}}</p>
                                 </div>
                             </div>
                         </div>

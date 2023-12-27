@@ -116,7 +116,7 @@
                         <div class="" style="padding-right:15px;"><img style="border-radius:5px; height:70px; width:100px;padding-right:2px;" src="{{ asset('uploads/members/'.$user->nid->image) }}" alt=""></div>
                         <div class="statis-sayem">
                           <span class="" style="color:green;font-weight:900;">৳{{$income->amount}}</span> </br><span class="" style="font-size:14x"> {{$user->nid->name}}</span>
-                          <br><div style="font-size:12px;color:#ff7720;font-weigt:500;"> {{$time->created_at->format('Y-m-d - H:i A');}}</div>
+                          <br><div style="font-size:12px;color:#ff7720;font-weigt:500;"> {{$time->created_at->format('Y-m-d - H:i A')}}</div>
                       </div>
                         
                   </div>
