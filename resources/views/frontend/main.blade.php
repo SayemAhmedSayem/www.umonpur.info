@@ -525,7 +525,7 @@ onclick="event.preventDefault();
       <div class="row">
         <div class="col-md-12">
           <div class="footer-description">
-            <p>&copy; 2023, Design and Developed by <a href="https://sayemahmedsayem.online/" class="credit" style="border: 1px solid;padding: 3px;">_S@YEM_</a></p>
+            <p>&copy; 2020 - 2024 || Design and Developed by <a href="https://sayemahmedsayem.online/" class="credit" style="border: 1px solid;padding: 3px;">_S@YEM_</a></p>
           </div>
         </div>
       </div>
