@@ -321,7 +321,8 @@
           <div class="test-content">
             <h4>{{$testimonial->name}}</h4>
             <small>{{$testimonial->designation}}</small>
-            <p><i class="fa-solid fa-quote-left"></i>{{$testimonial->message}} <i class="fa-solid fa-quote-right"></i></p>
+            <!-- <p><i class="fa-solid fa-quote-left"></i>{{$testimonial->message}} <i class="fa-solid fa-quote-right"></i></p> -->
+            <p><i class="fa-solid fa-quote-left"></i>{{ Str::limit($testimonial->message, 100) }} <i class="fa-solid fa-quote-right"></i></p>
 
           </div>
         </div>
