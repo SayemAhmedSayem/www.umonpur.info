@@ -195,7 +195,7 @@
       
         <div class="col">
           <div class="sm-title">
-            <h2>আর্থিক সহায়তায় দাতাকারীদের তালিকা</h2>
+            <h2>আর্থিক সাহায্যে দাতাকারীদের তালিকা</h2>
           </div>
           <div class="table-responsive">
         

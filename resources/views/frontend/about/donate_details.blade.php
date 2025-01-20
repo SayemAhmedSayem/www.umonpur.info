@@ -50,7 +50,7 @@
                 ?>
                 <tr>
                   <th scope="row">{{$key + 1}}</th>
-                  <td><img src="{{ asset('uploads/members/'.$user->nid->image) }}" alt="Donar Img" height="100"></td>
+                  <td><img src="{{ asset('uploads/members/'.$user->nid->image) }}" alt="Donar Img" height="100" width="100"></td>
                   <td>{{  $user->name ?? ''}}</td>
                   <td>{{  $user->nid->phone ?? ''}}</td>
                   <td>৳{{  $d->amount ?? ''}}</td>
