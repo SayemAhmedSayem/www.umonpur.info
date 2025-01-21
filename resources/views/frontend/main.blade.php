@@ -173,7 +173,7 @@ onclick="event.preventDefault();
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="donationModalLabel">এখনি দান করুন</h5>
+          <h5 class="modal-title" id="donationModalLabel">দান করুন</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -183,7 +183,7 @@ onclick="event.preventDefault();
             <input type="hidden" name="income_type" value="general">
             <input type="hidden" name="donate_id" value="">
             <div class="sm-title">
-              <h2>টাকার পরিমাণ</h2>
+              <h2>টাকার পরিমাণ নির্বাচন করুন</h2>
             </div>
             <div class="money-amount">
               <div class="row">
@@ -227,26 +227,13 @@ onclick="event.preventDefault();
             </div>
             <div class="billing-address">
               <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
-                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে পাঠান চাপুন। <br>--------------------<br>01511 838 161</h2>
+                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে পাঠিয়ে দিন।<br>--------------------<br>01511 838 161</h2>
               </div>
+
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে টাকা পাঠিয়েছেন</label>
-                    <input type="text" class="form-control" name="transection_phone" id="cardNo" required>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
-                    <input type="text" class="form-control" name="transection_no" required>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="CitySelect" class="form-label">ধরন নির্বাচন করুন</label>
+                    <label for="CitySelect" class="form-label">টাকা পাঠানোর ধরন নির্বাচন করুন</label>
                     <select name="payment_type" class="form-select" id="CitySelect" required>
                     
                       {{-- <option selected="selected">নির্বাচন করুন</option> --}}
@@ -260,11 +247,29 @@ onclick="event.preventDefault();
                 </div>
                 <div class="col">
                   <div class="mb-3">
+                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
+                    <input type="text" class="form-control" name="transection_no" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে টাকা পাঠিয়েছেন</label>
+                    <input type="text" class="form-control" name="transection_phone" id="cardNo" required>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
                     <label for="userZipCode" class="form-label">আপনার নাম</label>
                     <input type="text" value="{{Auth::user()->name}}" class="form-control" id="userZipCode"  readonly>
                   </div>
                 </div>
               </div>
+              
+              
+
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
