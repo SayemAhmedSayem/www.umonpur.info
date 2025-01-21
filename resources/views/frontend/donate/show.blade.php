@@ -143,10 +143,10 @@
           <form method="POST" action="{{route('web-income-store')}}">
             @csrf
 
-            <input type="hidden" name="income_type" value="{{$donate->name}}">
-            <input type="hidden" name="donate_id" value="{{$donate->id}}">
+            <input type="hidden" name="income_type" value="general">
+            <input type="hidden" name="donate_id" value="">
             <div class="sm-title">
-              <h2>টাকার পরিমাণ</h2>
+              <h2>টাকার পরিমাণ নির্বাচন করুন</h2>
             </div>
             <div class="money-amount">
               <div class="row">
@@ -189,43 +189,55 @@
               </div> -->
             </div>
             <div class="billing-address">
-              <div class="sm-title">
-                <h2 style="font-size: 21px;font-weight: bold;"> বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে পাঠান চাপুন। <br>--------------------<br> 01511 838 161</h2>
+              <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
+                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে সেন্ড করুন।
+                  <br>01511 838 161<br>--------------------<br>ব্যাংকে পাঠাতে হলে অগ্রনী ব্যাংক হরিপুর গ্যাস ফিল্ড শাখা। <br> A/C No - 0200021507827</h2>
               </div>
+
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে পাঠিয়েছেন</label>
-                    <input type="text" class="form-control" name="transection_phone" id="cardNo" required>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
-                    <input type="text" class="form-control" name="transection_no" required>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="CitySelect" class="form-label">ধরন</label>
+                    <label for="CitySelect" class="form-label">টাকা পাঠানোর ধরন নির্বাচন করুন</label>
                     <select name="payment_type" class="form-select" id="CitySelect" required>
-                      <!-- <option selected disabled>নির্বাচন করুন</option> -->
+                    
+                      {{-- <option selected="selected">নির্বাচন করুন</option> --}}
+                      
                       <option value="1">বিকাশ</option>
                       <option value="2">নগদ</option>
                       <option value="3">রকেট</option>
-                      <option value="4">অন্যান্য</option>
+                      <option value="4">ব্যাংক</option>
                     </select>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে টাকা পাঠিয়েছেন</label>
+                    <input type="text" class="form-control" name="transection_phone" id="cardNo" >
+                  </div>
+                </div>
+
+                
+
+              </div>
+
+              <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
+                    <input type="text" class="form-control" name="transection_no" >
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-3">
                     <label for="userZipCode" class="form-label">আপনার নাম</label>
-                    <input type="text" value="{{Auth::user()->name ?? ''}}" class="form-control" id="userZipCode"  readonly>
+                    <input type="text" value="{{Auth::user()->name}}" class="form-control" id="userZipCode"  readonly>
                   </div>
                 </div>
               </div>
+              
+              
+
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
@@ -235,7 +247,7 @@
                 </div>
                 <div class="col">
                   <div class="mb-3">
-                    <label for="userEmail" class="form-label">ফোন নম্বর</label>
+                    <label for="userEmail" class="form-label">ফোন নাম্বার</label>
                     <input type="number" value="{{Auth::user()->nid->phone}}" class="form-control" id="userEmail"  readonly>
                   </div>
                 </div>

@@ -227,7 +227,8 @@ onclick="event.preventDefault();
             </div>
             <div class="billing-address">
               <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
-                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে পাঠিয়ে দিন।<br>--------------------<br>01511 838 161</h2>
+                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে সেন্ড করুন।
+                  <br>01511 838 161<br>--------------------<br>ব্যাংকে পাঠাতে হলে অগ্রনী ব্যাংক হরিপুর গ্যাস ফিল্ড শাখা। <br> A/C No - 0200021507827</h2>
               </div>
 
               <div class="row">
@@ -241,23 +242,27 @@ onclick="event.preventDefault();
                       <option value="1">বিকাশ</option>
                       <option value="2">নগদ</option>
                       <option value="3">রকেট</option>
-                      <option value="4">অন্যান্য</option>
+                      <option value="4">ব্যাংক</option>
                     </select>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
-                    <input type="text" class="form-control" name="transection_no" required>
-                  </div>
-                </div>
-              </div>
 
-              <div class="row">
                 <div class="col">
                   <div class="mb-3">
                     <label for="cardNo" class="form-label">যেই নাম্বার থেকে টাকা পাঠিয়েছেন</label>
-                    <input type="text" class="form-control" name="transection_phone" id="cardNo" required>
+                    <input type="text" class="form-control" name="transection_phone" id="cardNo" >
+                  </div>
+                </div>
+
+                
+
+              </div>
+
+              <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
+                    <input type="text" class="form-control" name="transection_no" >
                   </div>
                 </div>
                 <div class="col">
@@ -279,7 +284,7 @@ onclick="event.preventDefault();
                 </div>
                 <div class="col">
                   <div class="mb-3">
-                    <label for="userEmail" class="form-label">ফোন নম্বর</label>
+                    <label for="userEmail" class="form-label">ফোন নাম্বার</label>
                     <input type="number" value="{{Auth::user()->nid->phone}}" class="form-control" id="userEmail"  readonly>
                   </div>
                 </div>
