@@ -143,8 +143,8 @@
           <form method="POST" action="{{route('web-income-store')}}">
             @csrf
 
-            <input type="hidden" name="income_type" value="general">
-            <input type="hidden" name="donate_id" value="">
+            <input type="hidden" name="income_type" value="{{$donate->name}}">
+            <input type="hidden" name="donate_id" value="{{$donate->id}}">
             <div class="sm-title">
               <h2>টাকার পরিমাণ নির্বাচন করুন</h2>
             </div>
@@ -231,7 +231,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label for="userZipCode" class="form-label">আপনার নাম</label>
-                    <input type="text" value="{{Auth::user()->name}}" class="form-control" id="userZipCode"  readonly>
+                    <input type="text" value="{{Auth::user()->name ?? ''}}" class="form-control" id="userZipCode"  readonly>
                   </div>
                 </div>
               </div>
