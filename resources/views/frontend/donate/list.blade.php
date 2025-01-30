@@ -88,7 +88,6 @@
                 <li class="clearfix border-bottom"><span class="pull-left">আমাদের লক্ষ্য -</span> <strong class="pull-right">৳{{$donate->goal}}</strong></li>
                 <li class="clearfix border-bottom"><span class="pull-left">সংগৃহীত -</span> <strong class="pull-right">৳{{$income}}</strong></li>
               <div class="row">
-       
                 <div class="col-sm-12">
                   <a href="{{route('web-donate-show', $donate->id)}}" class="btn btn-box btn-sayem pull-right" >বিস্তারিত দেখুন</a>
                 </div>
@@ -113,7 +112,7 @@
   <!-- About Area Starts  -->
   <section class="about-area">
     <div class="container">
-  <h1>অনুদান  সংগ্রহীত </h1>
+  <h1>অনুদান সংগ্রহীত </h1>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 about-post" style="font-family: lato;">
       @foreach($donatesc as $donate)
     
