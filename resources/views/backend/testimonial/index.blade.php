@@ -31,7 +31,7 @@
                             <th scope="col" width="5%">SL</th>
                             <th scope="col" width="5%">Images</th>
                             <th scope="col" width="10%">Member Name</th>
-                            <th scope="col" width="10%">পেশাগত</th>
+                            <th scope="col" width="10%">পেশা</th>
                             <th scope="col" width="10%">বার্তা</th>
                             <th scope="col" width="20%">Actions</th>
                           </tr>

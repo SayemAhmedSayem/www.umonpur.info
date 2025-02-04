@@ -45,9 +45,7 @@
     <div class="container">
       <div class="banner-title">
         <h2><span> {{$donate->name}}</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
+        <!-- <h2><span> {!! Str::limit($donate->name, 20) !!}</span></h2> -->
         <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সাহায্য করুন</span></p>
       </div>
     </div>
