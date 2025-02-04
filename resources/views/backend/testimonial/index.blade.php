@@ -28,9 +28,9 @@
                       <table class="table table-striped" width="100%">
                         <thead>
                           <tr>
-                            <th scope="col" width="5%">SL</th>
-                            <th scope="col" width="5%">Images</th>
-                            <th scope="col" width="10%">Member Name</th>
+                            <th scope="col" width="5%">সিরিয়াল নং</th>
+                            <th scope="col" width="5%">ছবি</th>
+                            <th scope="col" width="10%">নাম</th>
                             <th scope="col" width="10%">পেশা</th>
                             <th scope="col" width="10%">বার্তা</th>
                             <th scope="col" width="20%">Actions</th>
