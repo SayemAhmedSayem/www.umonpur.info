@@ -33,7 +33,7 @@
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              </div><hr>
+              </div>
               <p class="phone"><i class="fa-solid fa-phone-flip"></i>{{$profile->user->nid->phone}}</p>
             </div>
           </div>
