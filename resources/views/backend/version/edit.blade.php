@@ -20,7 +20,7 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-6">
-             <label class="form-label" for="date">ভার্সন নাম </label>
+             <label class="form-label" for="date">রিলিজ ভার্সনের বছর </label>
              <input class="form-control"  name="year" value="{{$version->year}}" type="text">
           </div>
           <div class="col-sm-6">
@@ -29,11 +29,11 @@
           </div>
 
           <div class="col-sm-12">
-             <label class="form-label" for="date">ভার্সন টপ শিরোনাম </label>
+             <label class="form-label" for="date">রিলিজ ভার্সন নাম </label>
              <input class="form-control" type="text" value="{{$version->version_title}}" name="version_title">
           </div>
           <div class="col-sm-12">
-             <label class="form-label" for="date">ভার্সন টপ সংকিপ্ত বিবরণ </label>
+             <label class="form-label" for="date">রিলিজ ভার্সন সংকিপ্ত বিবরণ </label>
              <input class="form-control" type="text" value="{{$version->version_subtitle}}" name="version_subtitle">
           </div>
           <div class="col-sm-6">
