@@ -20,7 +20,7 @@
     <div class="container">
       <div class="section-title">
         <h2>ছবির বছর</h2>
-        <p> প্রতি বছরের স্তির চিত্রের রেকর্ড সর্বশেষ হালনাগাদ।</p>
+        <p>এ্যালবাম আকারে প্রতি বছরের স্তির চিত্রের রেকর্ড সর্বশেষ হালনাগাদ।</p>
       </div>
       <div class="row row-cols-2 row-cols-md-4">
         @foreach(App\Models\Year::where('album_id', $album->id)->orderBy('created_at','desc')->get() as $year)
