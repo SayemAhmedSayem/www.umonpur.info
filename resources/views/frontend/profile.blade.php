@@ -28,12 +28,12 @@
             <img src="{{ asset('uploads/members/'.$profile->user->nid->image) }}" alt="Profile Image">
             <div class="profile-caption">
               <h2 class="name">{{$profile->user->name}}</h2>
-              <p class="designation">{{$profile->user->designation ?? ''}}</p>
-              <!-- <div class="profile-social-icons">
+              <!-- <p class="designation">{{$profile->user->designation ?? ''}}</p> -->
+              <div class="profile-social-icons">
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              </div> -->
+              </div>
               <p class="phone"><i class="fa-solid fa-phone-flip"></i>{{$profile->user->nid->phone}}</p>
             </div>
           </div>
