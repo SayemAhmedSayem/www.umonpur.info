@@ -318,7 +318,7 @@
     <div class="container">
       <div class="section-title">
         <a href="{{route('web-testimonial')}}"><h2>প্রশংসা পত্র</h2></a>
-        <p>সর্বশেষ হালনাগাদ প্রশংসা পত্রের রেকর্ড</p>
+        <p>সর্বশেষ হালনাগাদ প্রশংসা পত্রের রেকর্ড দেখতে উপরের প্রশংসা পত্র টেক্সটের উপর ক্লিক করুন।</p>
       </div>
       <div class="test-slide">
        @foreach($testimonials as $testimonial)
