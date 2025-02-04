@@ -52,8 +52,8 @@
   <section class="top-content">
     <div class="container">
       <div class="section-title">
-        <h2>নোটিশ</h2>
-        <p>সর্বশেষ হালনাগাদের মধ্য দিয়ে উমনপুর গ্রামের সকল খবর, নোটিশ করে অবগত করে এবং একটি ইভেন্টের মধ্য দিয়ে সবাই মিলিত হোন।   </p>
+        <h2>নোটিশ বোর্ড</h2>
+        <p>নোটিশ বোর্ড তিনটি আংশে বিভক্ত যেমন সর্বশেষ হালনাগাদ এইমাত্র পাওয়া খবর, সকল নোটিশ ও সকল ইভেন্ট।</p>
       </div>
       <div class="row">
         <!-- First Content -->
@@ -162,7 +162,8 @@
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -196,7 +197,9 @@
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <h5 class="card-title">{{ Str::limit($village->title, 40) }}</h5> -->
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -228,7 +231,8 @@
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -260,7 +264,8 @@
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -292,7 +297,8 @@
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
+              
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
