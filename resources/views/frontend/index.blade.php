@@ -59,7 +59,7 @@
         <!-- First Content -->
         <div class="col-md-4 .first-content">
           <div class="sm-title">
-            <h3><i class="fa-solid fa-calendar-days"></i>এইমাত্র পাওয়া খবর</h3>
+            <h3><i class="fa-solid fa-calendar-days"></i>সর্বশেষ খবর</h3>
           </div>
           <div class="content">
             @foreach($latests as $post)
