@@ -53,7 +53,7 @@
     <div class="container">
       <div class="section-title">
         <h2>নোটিশ বোর্ড</h2>
-        <p>নোটিশ বোর্ড তিনটি আংশে বিভক্ত যেমন সর্বশেষ হালনাগাদ এইমাত্র পাওয়া খবর, সকল নোটিশ ও সকল ইভেন্ট।</p>
+        <p>নোটিশ বোর্ডটি তিনটি সেকশনে বিভক্ত: খবর, নোটিশ, এবং ইভেন্ট।</p>
       </div>
       <div class="row">
         <!-- First Content -->
@@ -135,8 +135,8 @@
   <section class="post-area">
     <div class="container-sm">
       <div class="section-title">
-        <h2>আমাদের সর্বশেষ পোস্ট</h2>
-        <p> ক্যাটাগরি অনুসারে সকল পোস্টের সর্বশেষ হালনাগাদ </p>
+        <h2>আমাদের ক্যাটাগরি</h2>
+        <p> ক্যাটাগরি অনুসারে আমাদের সর্বশেষ হালনাগাদ </p>
       </div>
       <!-- First Category Content Post -->
       <?php 
