@@ -21,13 +21,13 @@
     <div class="container-md">
       <div class="section-title">
         <h2>ভোটার তালিকা</h2>
-        <p>উমনপুর গ্রামের সকল ভোটার রেকর্ড সংযুক্ত রয়েছে এবং এনাইডি নাম্বার অনুসন্ধানের মাধ্যমে ভোটার তার সিরিয়াল নং জানতে পারবেন। </p>
+        <p>উমনপুর গ্রামের ভোটারদের রেকর্ড সংযুক্ত রয়েছে এবং এনাইডি নাম্বার অনুসন্ধানের মাধ্যমে ভোটার তার সিরিয়াল নং জানতে পারবেন।</p>
       </div>
       <!-- Voter Search  -->
       <div class="row">
         <div class="search-area my-4 col-md-6">
           <form class="d-flex" id="frm1">
-            <input class="form-control me-2" name="search" type="text" placeholder="এখানে এনআইডি নাম্বার দিন..."
+            <input class="form-control me-2" name="search" type="text" placeholder="এখানে এনআইডি নাম্বার দিয়ে অনুসন্ধান করুন"
               aria-label="Search">
             <button class="btn btn-outline-success" id="toggle-class" type="button">খুজুন</button>
           </form>
@@ -81,16 +81,11 @@
                 @csrf
                   <button type="submit" class="btn btn-box">প্রিন্টের জন্য এইখানে ক্লিক করুন</button>
                 </form>
-      
-               
               </div>
             </div>
           </div>
         </div>
       </div>
-
-     
-
     </div>
   </section>
   <!-- Voter List Area Ends  -->
@@ -104,14 +99,9 @@
 });
   </script>
   <script type="text/javascript">
-            
            $("#toggle-class").click(function(){
-               
             var search =  document.getElementsByName('search')[0].value;
-
-    
                $.ajax({
-
                      type: "post",
                      url: "{{ route('voter.search') }}",
                      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -119,7 +109,6 @@
                      data: {'search': search},
                      success: function(data){
                      $.each(data.nids, function (key, value) {
-      
                         $('#name').html(value.name);
                         $('#nameb').html(value.name_bn);
                         $('#father').html(value.father);
@@ -131,20 +120,12 @@
                         $('#sl2').html(value.serial);
                         $('#img').html('<img src="uploads/members/'+value.image+'" alt="Voter Image" >');
                         $("#userID").val(value.id);
-  
                      });
-                  
-
-               
-
-                   
-         
                   },
                error: function error() {
                $("#help-block").text("Sorry, An error has occurred");
                }
                }, "json");   
-      
          });
       </script>
 @endpush	  
