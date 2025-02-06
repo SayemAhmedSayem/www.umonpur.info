@@ -18,8 +18,8 @@
   <section class="profile-area">
     <div class="container">
       <div class="section-title">
-        <h2>আমাদের সদস্যগণ</h2>
-        <p>উমনপুর গ্রামের ওয়েবসাইট বর্তমান পরিচালনা কমিটিগণের  প্রোফাইল রেকর্ড।</p>  
+        <h2>প্রোফাইল</h2>
+        <p>আমাদের সদস্যগনের সর্বশেষ প্রোফাইল রেকর্ড।</p>  
       </div>
       <div class="row">
         @foreach($profiles as $profile)
