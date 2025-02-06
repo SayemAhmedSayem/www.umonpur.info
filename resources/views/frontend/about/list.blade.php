@@ -6,9 +6,8 @@
     <div class="container">
       <div class="banner-title">
         <h2><span> সম্পর্কে</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ </p> -->
         <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i><a href="about.html">সম্পর্কে</a>
-          <i class="fa fa-angle-right"></i> <span>সম্পর্কে_আরো</span></p>
+          <i class="fa fa-angle-right"></i> <span>সম্পর্কে_আরো তালিকা</span></p>
       </div>
     </div>
   </section>
