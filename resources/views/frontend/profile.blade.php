@@ -19,7 +19,7 @@
     <div class="container">
       <div class="section-title">
         <h2>প্রোফাইল</h2>
-        <p>আমাদের সদস্যগনের সর্বশেষ প্রোফাইল রেকর্ড।</p>  
+        <p>আমাদের কমিটির সর্বশেষ প্রোফাইল রেকর্ড।</p>  
       </div>
       <div class="row">
         @foreach($profiles as $profile)
