@@ -37,7 +37,7 @@
                 </div>
               </div>
               <h5 class="card-title">{{$post->title}}</h5>
-              <p>{{ Str::limit($post->description, 200) }}</p>
+              <p>{!! Str::limit($post->description, 150) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $post->id)}}">আরও পড়ুন...</a>
