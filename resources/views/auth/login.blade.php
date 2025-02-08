@@ -7,7 +7,7 @@
          <div class="row flex-center min-vh-100 py-5">
             <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3">
                <a class="d-flex flex-center text-decoration-none mb-4" href="../../../index.php">
-                  <div class="d-flex align-items-center"><img src="{{asset('frontend/logo/logo-1.png')}}" alt="Umonpur logo" width="58"></div>
+                  <div class="d-flex align-items-center"><img src="{{asset('frontend/logo/logo.png')}}" alt="logo" width="58"></div>
                </a>
                <div class="text-center mb-7">
                   <h3>সাইনইন করুন</h3>
