@@ -1,6 +1,6 @@
 @extends('layouts.header')
 @section('content')
-<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.25.1/standard/ckeditor.js"></script>
 <div class="content">
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
