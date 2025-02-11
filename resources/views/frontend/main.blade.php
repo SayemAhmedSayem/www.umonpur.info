@@ -159,7 +159,7 @@ onclick="event.preventDefault();
             </nav>
           </div>
           <div class="col-md-4">
-            <a href="#" class="btn donation btn-box" data-bs-toggle="modal" data-bs-target="#donationModal">দান করুন</a>
+            <a href="#" class="btn donation btn-box" data-bs-toggle="modal" data-bs-target="#donationModal">তহবিলে দান করুন</a>
           </div>
         </div>
       </div>
