@@ -63,7 +63,9 @@
                    
                         </tbody>
                       </table>
-                    
+                      <div class="d-flex">
+                {!! $slider->links() !!}
+            </div>
                     </div>
         </div>
     
