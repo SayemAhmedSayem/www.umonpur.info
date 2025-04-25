@@ -62,16 +62,15 @@
             <h3><i class="fa-solid fa-calendar-days"></i>সর্বশেষ আপডেট</h3>
           </div>
           <div class="content">
-            @foreach($latests as $post)
-            <div class="single-post">
+          @foreach($latests as $post)
+          <div class="single-post">
               <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="Blog Image">
               <div class="post-content-news">
-                <h4><a href="{{route('web-post-show', $post->id)}}">{{$post->title}}</a></h4>
-                {{-- <p>{{ Str::limit($post->description, 80) }}</p> --}}
-                <p>{!! Str::limit($post->description, 80) !!}</p>
+                  <h4><a href="{{ route('web-post-show', $post->id) }}">{{$post->title}}</a></h4>
+                  {{ Str::limit(strip_tags(html_entity_decode($post->description)), 80) }}
               </div>
-            </div>
-        @endforeach
+          </div>
+          @endforeach
           </div>
           <div class="post-btn">
             <a href="{{route('web-post-list')}}" class="btn-post">সকল খবর দেখুন</a>
