@@ -53,13 +53,13 @@
     <div class="container">
       <div class="section-title">
         <h2>নোটিশ বোর্ড</h2>
-        <p>নোটিশ বোর্ডটি তিনটি সেকশনে বিভক্ত: খবর, নোটিশ, এবং ইভেন্ট।</p>
+        <p>নোটিশ বোর্ডটি তিনটি সেকশনে বিভক্ত: সর্বশেষ আপডেট, নোটিশ, এবং ইভেন্ট।</p>
       </div>
       <div class="row">
         <!-- First Content -->
         <div class="col-md-4 .first-content">
           <div class="sm-title">
-            <h3><i class="fa-solid fa-calendar-days"></i>সর্বশেষ খবর</h3>
+            <h3><i class="fa-solid fa-calendar-days"></i>সর্বশেষ আপডেট</h3>
           </div>
           <div class="content">
             @foreach($latests as $post)
