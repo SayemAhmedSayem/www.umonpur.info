@@ -1,51 +1,43 @@
 @extends('frontend.main')
 
+@section('title', $year->name ?? 'ছবি')
+
 @section('content')
 
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-    <div class="banner-title">
-        <h2><span>গ্যালারি</span></h2>
-        <p><a href="{{route('web-home')}}">হোম</a> <i class="fa fa-angle-right"></i> <span>গ্যালারি</span> <i class="fa fa-angle-right"></i>
-          <a href="{{route('web-photo')}}">ছবি</a><i class="fa fa-angle-right"></i> <a href="{{route('web-year', $album->id)}}">{{$album->name}}</a> <i class="fa fa-angle-right"></i> <span>{{$year->year}}</span>
-        </p>
-      </div>
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span>
+      <a href="{{ route('web-photo') }}">ছবি গ্যালারি</a> <span>/</span>
+      <a href="{{ route('web-year', $album->id) }}">{{ $album->name }}</a> <span>/</span>
+      <span>{{ $year->name }}</span>
     </div>
-    </div>
-  </section>
-  <!-- Post Banner Area Ends -->
+    <h1 class="um-page-hero__title">{{ $year->name }} — ছবি সংগ্রহ</h1>
+    <p class="um-page-hero__subtitle">{{ $photos->total() }} টি ছবি পাওয়া গেছে</p>
+  </div>
+</section>
 
-  <!-- Photo Area Starts -->
-  <section class="photo-area">
-    <div class="container">
-      <div class="section-title">
-        <h2>{{$year->year}}</h2>
-        <p>প্রতি বছরের স্তির চিত্রের রেকর্ড সর্বশেষ হালনাগাদ।</p>
-      </div>
-      <div class="row row-cols-1 row-cols-2 row-cols-sm-3 row-cols-md-4">
-        @foreach(App\Models\Photo::where('year_id', $year->id)->orderBy('created_at','desc')->get() as $photo)
-        <div class="col">
-          <div class="single-photo">
-            <a href="{{ asset('uploads/album/photos/'.$photo->image) }}" class="image"><img src="{{ asset('uploads/album/photos/'.$photo->image) }}" style="width:320px !important; height:200px !important;" alt="Photo"></a>
-            <div class="photo-desc">
-              <h4>{{$photo->title}}</h4>
-              <p>{{$photo->description}}</p>
-              <div class="video-post-info">
-                <p><i class="fa-solid fa-calendar-days"></i><span class="video-post-date">{{ Carbon\Carbon::parse($photo->date)->format('d-M-Y') }}</span></p>
-                <p><i class="fa-solid fa-user"></i><span class="video-posted-by">{{$photo->user->name ?? ''}}</span></p>
-              </div>
-            </div>
+<section class="um-section">
+  <div class="um-container">
+    @if($photos->isNotEmpty())
+      <div class="um-photo-masonry" data-reveal>
+        @foreach($photos as $photo)
+          <div class="um-photo-tile">
+            @if($photo->image)
+              <img src="{{ umonpur_asset('uploads/album/photos/' . $photo->image, 'photo') }}" alt="" loading="lazy">
+            @endif
+            <div class="um-photo-tile__zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
-        </div>
-   @endforeach
+        @endforeach
       </div>
-    </div>
-  </section>
-  <!-- Photo Area Ends -->
-@push('scripts')
+      <div class="um-pagination">{{ $photos->links() }}</div>
+    @else
+      <div class="um-empty">
+        <div class="um-empty__icon"><i class="fa-regular fa-image"></i></div>
+        <h3 class="um-empty__title">এই বছরে কোন ছবি নেই</h3>
+      </div>
+    @endif
+  </div>
+</section>
 
-<script src="{{asset('template/assets/js/magnific_popup.min.js')}}"></script>
-@endpush
 @endsection
-     

@@ -993,3 +993,43 @@ if (!function_exists('get_time_format')) {
         return $time_format;
     }
 }
+/**
+ * Umonpur Redesign Helpers
+ * Check if an uploaded asset exists on disk, else return a placeholder.
+ * Usage in Blade: <img src="{{ umonpur_asset('uploads/posts/'.$post->image, 'post') }}">
+ */
+if (! function_exists('umonpur_asset')) {
+    function umonpur_asset($path, $type = 'default') {
+        $fullPath = public_path($path);
+        if (!empty($path) && file_exists($fullPath) && is_file($fullPath)) {
+            return asset($path);
+        }
+        // Return a themed SVG placeholder (emerald + gold) with the type label
+        $labels = [
+            'post'      => 'ছবি নেই',
+            'slider'    => 'স্লাইডার',
+            'donate'    => 'দান',
+            'about'     => 'আমাদের সম্পর্কে',
+            'profile'   => 'ব্যক্তি',
+            'member'    => 'সদস্য',
+            'testimonial' => 'মতামত',
+            'photo'     => 'ছবি',
+            'video'     => 'ভিডিও',
+            'default'   => 'ছবি',
+        ];
+        $label = $labels[$type] ?? 'ছবি';
+        $encoded = rawurlencode($label);
+        return "data:image/svg+xml;utf8," . rawurlencode('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B6E4F"/><stop offset="1" stop-color="#064E3B"/></linearGradient></defs><rect width="600" height="400" fill="url(#g)"/><circle cx="300" cy="160" r="42" fill="#E2A853" opacity="0.85"/><rect x="252" y="220" width="96" height="6" rx="3" fill="#E2A853" opacity="0.85"/><rect x="276" y="238" width="48" height="4" rx="2" fill="#E2A853" opacity="0.6"/><text x="300" y="320" font-family="Hind Siliguri, sans-serif" font-size="22" font-weight="600" fill="#fff" text-anchor="middle">' . $label . '</text></svg>');
+    }
+}
+
+/**
+ * Get only sliders whose image file actually exists on disk.
+ */
+if (! function_exists('umonpur_sliders')) {
+    function umonpur_sliders() {
+        return \App\Models\Slider::all()->filter(function ($slide) {
+            return !empty($slide->image) && file_exists(public_path('uploads/sliders/' . $slide->image));
+        })->values();
+    }
+}

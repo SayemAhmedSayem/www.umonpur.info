@@ -1,56 +1,52 @@
 @extends('frontend.main')
 
+@section('title', 'মতামত')
+
 @section('content')
-   <!-- Post Banner Area Starts -->
-   <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2><span> সম্পর্কে</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
-        <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সম্পর্কে</span></p>
-      </div>
+
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span> <span>মতামত</span>
     </div>
-  </section>
-  <!-- Post Banner Area Ends -->
+    <h1 class="um-page-hero__title">গ্রামবাসীর মতামত</h1>
+    <p class="um-page-hero__subtitle">আমাদের গ্রামের মানুষের অভিজ্ঞতা ও অনুভূতি</p>
+  </div>
+</section>
 
-
-  <!-- Testimonials Area Starts -->
-  <section class="testimonial-area">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>প্রশংসা পত্র</h2> 
-        <p>নিচে ইউজারের দেওয়া প্রশংসা পত্রের সকল তথ্য দেখতে ইউজারের নামের উপর ক্লিক করুন।</p>
-      </div>
-
-      <div class="row">
-@foreach($testimonials as $test)
-        <div class="test-details col-md-6 col-sm-6">
-        <a href="{{route('web-testimonial-single', $test->id)}}">  <div class="single-test-details shadow">
-            <img src="{{ asset('uploads/testimonial/'.$test->image) }}" alt="Testimonial Image">
-            <div class="test-content">
-              <h4>{{$test->name}}</h4>
-              <small>{{$test->designation}}</small>
-              <p><i class="fa-solid fa-quote-left"></i>{{ Str::limit($test->message, 100) }}<i class="fa-solid fa-quote-right"></i></p>
+<section class="um-section">
+  <div class="um-container">
+    @if($testimonials->isNotEmpty())
+      <div class="um-testimonial-grid">
+        @foreach($testimonials as $test)
+          <div class="um-testimonial-card" data-reveal data-reveal-delay="{{ ($loop->index % 3) + 1 }}">
+            <div class="um-testimonial-card__quote-mark">"</div>
+            <div class="um-testimonial-card__stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-          </div></a>
-        </div>
-     @endforeach
-
-        </div>
+            <p class="um-testimonial-card__text">{{ \Illuminate\Support\Str::limit(strip_tags($test->message), 220) }}</p>
+            <div class="um-testimonial-card__author">
+              @if($test->image)
+                <img src="{{ umonpur_asset('uploads/testimonial/' . $test->image, 'testimonial') }}" alt="{{ $test->name }}" class="um-testimonial-card__avatar">
+              @else
+                <div class="um-testimonial-card__avatar" style="background: var(--emerald-600); color: #fff; display:flex; align-items:center; justify-content:center; font-weight:700;">{{ strtoupper(substr($test->name, 0, 1)) }}</div>
+              @endif
+              <div>
+                <div class="um-testimonial-card__name">{{ $test->name }}</div>
+                <div class="um-testimonial-card__role">{{ $test->designation }}</div>
+              </div>
+            </div>
+          </div>
+        @endforeach
       </div>
-      <!-- Pagination -->
-      <div class="row p-5">
-        <div class="table-pagination py-4 p-5">
-        {!! $testimonials->links() !!}
-        </div>
+      <div class="um-pagination">{{ $testimonials->links() }}</div>
+    @else
+      <div class="um-empty">
+        <div class="um-empty__icon"><i class="fa-solid fa-quote-right"></i></div>
+        <h3 class="um-empty__title">কোন মতামত নেই</h3>
       </div>
-
-    </div>
-  </section>
-  <!-- Testimonial Area Ends -->
+    @endif
+  </div>
+</section>
 
 @endsection
-     

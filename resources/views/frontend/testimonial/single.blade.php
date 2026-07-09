@@ -1,46 +1,41 @@
 @extends('frontend.main')
 
+@section('title', $test->name ?? 'মতামত')
+
 @section('content')
-   <!-- Post Banner Area Starts -->
-   <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2><span> সম্পর্কে</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
-        <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সম্পর্কে</span></p>
-      </div>
+
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span>
+      <a href="{{ route('web-testimonial') }}">মতামত</a> <span>/</span>
+      <span>{{ $test->name }}</span>
     </div>
-  </section>
-  <!-- Post Banner Area Ends -->
+  </div>
+</section>
 
-
-  <!-- Testimonials Area Starts -->
-  <section class="testimonial-area pt-5">
-    <div class="container">
-      <div class="row">
-
-        <div class="test-details col-md-10 col-sm-10">
-          <div class="single-test-details shadow">
-            <img src="{{ asset('uploads/testimonial/'.$test->image) }}" alt="Testimonial Image">
-            <div class="test-content">
-              <h4>{{$test->name}}</h4>
-              <small>{{$test->designation}}</small>
-              <p><i class="fa-solid fa-quote-left"></i>{{$test->message}}<i class="fa-solid fa-quote-right"></i></p>
-            </div>
-          </div>
-        </div>
- 
-
+<section class="um-section">
+  <div class="um-container">
+    <div class="glass-card" style="background: #fff; max-width: 880px; margin: 0 auto;" data-reveal>
+      <div style="text-align: center; margin-bottom: 28px;">
+        @if($test->image)
+          <img src="{{ umonpur_asset('uploads/testimonial/' . $test->image, 'testimonial') }}" alt="{{ $test->name }}" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold-500); margin: 0 auto 16px;">
+        @endif
+        <h2 style="font-size: 26px; color: var(--emerald-900); margin: 0 0 4px;">{{ $test->name }}</h2>
+        <p style="color: var(--gold-600); margin: 0;">{{ $test->designation }}</p>
+        <div class="um-testimonial-card__stars" style="margin-top: 10px;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
       </div>
-      <!-- Pagination -->
- 
-
+      <div style="font-size: 18px; line-height: 1.9; color: var(--ink); text-align: center; font-style: italic;">
+        <i class="fa-solid fa-quote-left" style="color: var(--gold-500); font-size: 28px; margin-right: 8px;"></i>
+        {{ strip_tags($test->message) }}
+      </div>
     </div>
-  </section>
-  <!-- Testimonial Area Ends -->
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="{{ route('web-testimonial') }}" class="um-btn um-btn--ghost-dark"><i class="fa-solid fa-arrow-left"></i> সকল মতামত</a>
+    </div>
+  </div>
+</section>
 
 @endsection
-     
