@@ -19,8 +19,8 @@
                     <tr>
                      <th>SL</th>
                      <th>Date</th>
-                     <th>Transection No</th>
-                     <th>Transection phone</th>
+                     <th>Transection ID</th>
+                     <th>Transection By</th>
                      <th>
                       Amount
                      </th>
@@ -52,7 +52,7 @@
                         $user =   App\Models\User::find($income->approved_by) ;
                 
                         ?>
-                   {{  $user->name ?? '' ;}}
+                   {{  $user->name ?? '' }}
                        
                       </td>
                    

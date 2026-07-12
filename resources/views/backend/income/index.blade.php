@@ -73,7 +73,7 @@
                         $user =   App\Models\User::find($income->approved_by) ;
                 
                         ?>
-                   {{  $user->name ?? '' ;}}
+                   {{  $user->name ?? '' }}
                        
                       </td>
                      <td>
