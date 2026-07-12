@@ -205,7 +205,7 @@
             <a class="nav-link dropdown-indicator" href="#media" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="components">
                <div class="d-flex align-items-center">
                   <div class="dropdown-indicator-icon d-flex flex-center"><span class="fas fa-caret-right fs-0"></span></div>
-                  <span class="nav-link-icon"><span data-feather="package"></span></span><span class="nav-link-text">মিডিয়া</span>
+                  <span class="nav-link-icon"><span data-feather="package"></span></span><span class="nav-link-text">গ্যালারী</span>
                </div>
             </a>
             <ul class="nav collapse parent" id="media">
@@ -218,13 +218,13 @@
             <a class="nav-link dropdown-indicator" href="#donate" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="components">
                <div class="d-flex align-items-center">
                   <div class="dropdown-indicator-icon d-flex flex-center"><span class="fas fa-caret-right fs-0"></span></div>
-                  <span class="nav-link-icon"><span data-feather="package"></span></span><span class="nav-link-text">সকল ডনেশন</span>
+                  <span class="nav-link-icon"><span data-feather="package"></span></span><span class="nav-link-text">সকল ডুনেশন</span>
                </div>
             </a>
             <ul class="nav collapse parent" id="donate">
                <li class="nav-item">
                   <a class="nav-link" href="{{route('donate.index')}}" data-bs-toggle="" aria-expanded="false">
-                     <div class="d-flex align-items-center"><span class="nav-link-text">ডনেশন রিকুয়েস্ট</span></div>
+                     <div class="d-flex align-items-center"><span class="nav-link-text">ডনেশন রিকুয়েস্ট সমূহ</span></div>
                   </a>
                </li>
             </ul>

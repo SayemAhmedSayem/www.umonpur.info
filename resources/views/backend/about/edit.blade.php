@@ -1,5 +1,6 @@
 @extends('layouts.header')
 @section('content')
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 <div class="content">
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
@@ -39,8 +40,13 @@
    </div>
    <div class="mb-0">
       <label class="form-label" for="exampleTextarea">বিস্তারিত</label> 
-      <textarea class="form-control" name="description" rows="3"> {{$about->description}}</textarea>
+      {{-- <textarea class="form-control" name="description" rows="3"> {{$about->description}}</textarea> --}}
+      <textarea name="description">{!! $about->description !!}</textarea>
+         <script>
+                 CKEDITOR.replace( 'description' );
+         </script>
    </div>
+   
    <div class="mb-3">
       <label class="form-label" for="customFile">সম্পর্কিত ফটো</label>
    

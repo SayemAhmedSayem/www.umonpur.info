@@ -29,7 +29,7 @@
                   </div>
                   <div class="post-content">
                     <h4><a href="{{route('web-event-show', $event->id)}}">{{$event->title}}</a></h4>
-                    <p>{{$event->description}}</p>
+                    <p>{!! $event->description !!}</p>
                   </div>
                 </div>
               </div>

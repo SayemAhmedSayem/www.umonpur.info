@@ -134,8 +134,8 @@
 							<tr>
 								<td>
 									www.umonpur.info<br />
-									Umonpur,Horipur<br />
-									Sylhet, 1220
+									Umonpur - উমনপুর<br />
+									Sylhet, 3152
 								</td>
                                <?php 
                                $user = App\Models\User::find($income->user_id);
@@ -151,8 +151,8 @@
 				</tr>
 
 				<tr class="heading">
-					<td>Transection No</td>
-                    <td>Transection phone</td>
+					<td>Transection ID</td>
+                    <td>Transection By</td>
 					
 				</tr>
 
@@ -164,7 +164,7 @@
 				</tr>
 
 				<tr class="heading">
-					<td>Item</td>
+					<td>বিষয়</td>
 
 					<td>Amount</td>
 				</tr>

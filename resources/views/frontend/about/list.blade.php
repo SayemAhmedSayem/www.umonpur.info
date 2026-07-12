@@ -6,11 +6,8 @@
     <div class="container">
       <div class="banner-title">
         <h2><span> সম্পর্কে</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
         <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i><a href="about.html">সম্পর্কে</a>
-          <i class="fa fa-angle-right"></i> <span>সম্পর্কে_আরো</span></p>
+          <i class="fa fa-angle-right"></i> <span>সম্পর্কে_আরো তালিকা</span></p>
       </div>
     </div>
   </section>
@@ -20,10 +17,9 @@
   <section class="">
     <div class="container">
       <div class="section-title">
-        <a href="about_details.html">
         <h2>আমাদের সম্পর্কে</h2>
-        <p>গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের ব্যবস্থা চালু হয়।</p>
-        </a>
+        <p>এই পোর্শনে গ্রামের নির্দিষ্ট বিষয়ের তথ্য লিস্টের সর্বশেষ হগালনাগাদ</p>
+        
       </div>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 about-post">
@@ -35,10 +31,9 @@
             </div>
             <div class="about-post-desc">
             <h3>{{$about->title}}</h3>
-            <p>{{ Str::limit($about->description, 130) }}</p>
+            <p>{!! Str::limit($about->description, 100) !!}</p>
               <a href="{{route('web-about-show', $about->id)}}" class="btn btn-box">বিস্তারিত</a>
             </div>
-
           </div>
         </div>
         @endforeach

@@ -21,7 +21,7 @@
     <div class="container">
       <div class="section-title">
         <h2>ভিডিও</h2>
-        <p>এ্যালবাম অনুস্বারে সকল ভিডিও অত্যন্ত সুন্দরভাবে তালিকাভুক্ত করা হয়েছে। </p>
+        <p>সকল ভিডিও এর সর্বশেষ হালনাগাদ।</p>
       </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         @foreach(App\Models\Video::where('album_id', $album->id)->orderBy('created_at','desc')->paginate(9) as $video)

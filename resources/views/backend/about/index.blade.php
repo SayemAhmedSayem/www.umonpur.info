@@ -47,7 +47,7 @@
                             <td>{{$about->user->name}}</td>
                             <td>{{$about->title}}</td>
                            
-                            <td>{{ Str::limit($about->description, 10) }}</td>
+                            <td>{!! Str::limit($about->description, 10) !!}</td>
                             <td>
                                <div class="button-group" style="display:flex !important;">
                                <form action="{{route('about.destroy',$about->id)}}" method="POST">

@@ -52,28 +52,28 @@
   <section class="top-content">
     <div class="container">
       <div class="section-title">
-        <h2>নোটিশ</h2>
-        <p>সর্বশেষ হালনাগাদের মধ্য দিয়ে উমনপুর গ্রামের সকল খবর, নোটিশ করে অবগত করে এবং একটি ইভেন্টের মধ্য দিয়ে সবাই মিলিত হোন।   </p>
+        <h2>নোটিশ বোর্ড</h2>
+        <p>নোটিশ বোর্ডটি তিনটি সেকশনে বিভক্ত: সর্বশেষ আপডেট, নোটিশ, এবং ইভেন্ট।</p>
       </div>
       <div class="row">
         <!-- First Content -->
         <div class="col-md-4 .first-content">
           <div class="sm-title">
-            <h3><i class="fa-solid fa-calendar-days"></i>এইমাত্র পাওয়া খাবর</h3>
+            <h3><i class="fa-solid fa-calendar-days"></i>সর্বশেষ আপডেট</h3>
           </div>
           <div class="content">
-            @foreach($latests as $post)
+           @foreach($latests as $post)
             <div class="single-post">
-              <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="Blog Image">
-              <div class="post-content-news">
-                <h4><a href="{{route('web-post-show', $post->id)}}">{{$post->title}}</a></h4>
-                <p>{{ Str::limit($post->description, 80) }}</p>
-              </div>
+                <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="Blog Image">
+                <div class="post-content-news">
+                    <h4><a href="{{ route('web-post-show', $post->id) }}">{{$post->title}}</a></h4>
+                    {{ Str::limit(strip_tags(html_entity_decode($post->description)), 80) }}
+                </div>
             </div>
-        @endforeach
+            @endforeach
           </div>
           <div class="post-btn">
-            <a href="{{route('web-post-list')}}" class="btn-post">সকল খাবর দেখুন</a>
+            <a href="{{route('web-post-list')}}" class="btn-post">সকল খবর দেখুন</a>
           </div>
         </div>
         <!-- Second Content -->
@@ -87,7 +87,8 @@
 
               <div class="post-content-announce">
                 <h4><a href="{{route('web-notice-show', $notice->id)}}">{{$notice->title}}</a></h4>
-                <p>{{ Str::limit($notice->description, 200) }}</p>
+                {{-- <p>{{ Str::limit($notice->description, 200) }}</p> --}}
+                <p>{!! Str::limit($notice->description, 100) !!}</p>
               </div>
             </div>
             @endforeach
@@ -111,7 +112,8 @@
                 </div>
                 <div class="post-content">
                   <h4><a href="{{route('web-event-show', $event->id)}}">{{$event->title}}</a></h4>
-                  <p>{{ Str::limit($event->description, 80) }}</p>
+                  {{-- <p>{{ Str::limit($event->description, 80) }}</p> --}}
+                  <p>{!! Str::limit($event->description, 80) !!}</p>
                 </div>
               </div>
             </div>
@@ -132,8 +134,8 @@
   <section class="post-area">
     <div class="container-sm">
       <div class="section-title">
-        <h2>আমাদের সর্বশেষ পোস্ট</h2>
-        <p> ক্যাটাগরি অনুসারে সকল পোস্টের সর্বশেষ হালনাগাদ </p>
+        <h2>আমাদের ক্যাটাগরি</h2>
+        <p> ক্যাটাগরি অনুসারে আমাদের সর্বশেষ হালনাগাদ </p>
       </div>
       <!-- First Category Content Post -->
       <?php 
@@ -155,11 +157,12 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -189,11 +192,13 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <h5 class="card-title">{{ Str::limit($village->title, 40) }}</h5> -->
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -221,11 +226,12 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$village->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -253,11 +259,12 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <!-- <p class="card-text">{{ Str::limit($village->description, 110) }}</p> -->
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -271,7 +278,7 @@
      $ht =  $healths[0]->cat_id;
       ?>
       <div class="post_category_title">
-        <h2><a href="{{route('web-post-category', $ht)}}">আমাদের <span>স্বাস্থ্য কপ্লেক্স</span></a></h2>
+        <h2><a href="{{route('web-post-category', $ht)}}">আমাদের <span>স্বাস্থ্য কমপ্লেক্স</span></a></h2>
       </div>
       <div class="row  post-slide">
       @foreach($healths as $village)
@@ -285,11 +292,12 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$village->user->name}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$village->title}}</h5>
-              <p class="card-text">{{ Str::limit($village->description, 110) }}</p>
+              <p class="card-text">{!! Str::limit($village->description, 90) !!}</p>
+              
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $village->id)}}">আরও পড়ুন...</a>
@@ -309,7 +317,7 @@
     <div class="container">
       <div class="section-title">
         <a href="{{route('web-testimonial')}}"><h2>প্রশংসা পত্র</h2></a>
-        <p>সর্বশেষ হালনাগাদ প্রশংসা পত্রের রেকর্ড</p>
+        <p>সর্বশেষ হালনাগাদ প্রশংসা পত্রের রেকর্ড দেখতে উপরের প্রশংসা পত্র টেক্সটের উপর ক্লিক করুন।</p>
       </div>
       <div class="test-slide">
        @foreach($testimonials as $testimonial)
@@ -318,7 +326,8 @@
           <div class="test-content">
             <h4>{{$testimonial->name}}</h4>
             <small>{{$testimonial->designation}}</small>
-            <p><i class="fa-solid fa-quote-left"></i>{{$testimonial->message}} <i class="fa-solid fa-quote-right"></i></p>
+            <!-- <p><i class="fa-solid fa-quote-left"></i>{{$testimonial->message}} <i class="fa-solid fa-quote-right"></i></p> -->
+            <p><i class="fa-solid fa-quote-left"></i>{{ Str::limit($testimonial->message, 100) }} <i class="fa-solid fa-quote-right"></i></p>
 
           </div>
         </div>

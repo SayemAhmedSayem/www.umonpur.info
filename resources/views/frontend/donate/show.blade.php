@@ -45,9 +45,7 @@
     <div class="container">
       <div class="banner-title">
         <h2><span> {{$donate->name}}</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
+        <!-- <h2><span> {!! Str::limit($donate->name, 20) !!}</span></h2> -->
         <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সাহায্য করুন</span></p>
       </div>
     </div>
@@ -116,7 +114,7 @@
                         <div class="" style="padding-right:15px;"><img style="border-radius:5px; height:70px; width:100px;padding-right:2px;" src="{{ asset('uploads/members/'.$user->nid->image) }}" alt=""></div>
                         <div class="statis-sayem">
                           <span class="" style="color:green;font-weight:900;">৳{{$income->amount}}</span> </br><span class="" style="font-size:14x"> {{$user->nid->name}}</span>
-                          <br><div style="font-size:12px;color:#ff7720;font-weigt:500;"> {{$time->created_at->format('Y-m-d - H:i A');}}</div>
+                          <br><div style="font-size:12px;color:#ff7720;font-weigt:500;"> {{$time->created_at->format('Y-m-d - H:i A')}}</div>
                       </div>
                         
                   </div>
@@ -146,7 +144,7 @@
             <input type="hidden" name="income_type" value="{{$donate->name}}">
             <input type="hidden" name="donate_id" value="{{$donate->id}}">
             <div class="sm-title">
-              <h2>টাকার পরিমাণ</h2>
+              <h2>টাকার পরিমাণ নির্বাচন করুন</h2>
             </div>
             <div class="money-amount">
               <div class="row">
@@ -189,34 +187,43 @@
               </div> -->
             </div>
             <div class="billing-address">
-              <div class="sm-title">
-                <h2 style="font-size: 21px;font-weight: bold;">বিকাশ/নগদ/রকেট -</br> ০১৬৮৭৮৩৮১৬১</h2>
+              <div class="sm-title" style="border:1px sold; background-color:#ff7720; padding:5px;">
+                <h2 style="font-size: 21px;font-weight: bold; margin:10px">বিকাশ/নগদ/রকেট - হলে খরচ সহ নিচে দেওয়া নাম্বারে টাকা পাঠিয়ে দিন এবং ফরম পূরণ করে সেন্ড করুন।
+                  <br>01511 838 161<br>--------------------<br>ব্যাংকে পাঠাতে হলে অগ্রনী ব্যাংক হরিপুর গ্যাস ফিল্ড শাখা। <br> A/C No - 0200021507827</h2>
               </div>
+
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে পাঠিয়েছেন</label>
-                    <input type="text" class="form-control" name="transection_phone" id="cardNo" required>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
-                    <input type="text" class="form-control" name="transection_no" required>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="CitySelect" class="form-label">ধরন</label>
+                    <label for="CitySelect" class="form-label">টাকা পাঠানোর ধরন নির্বাচন করুন</label>
                     <select name="payment_type" class="form-select" id="CitySelect" required>
-                      <!-- <option selected disabled>নির্বাচন করুন</option> -->
+                    
+                      {{-- <option selected="selected">নির্বাচন করুন</option> --}}
+                      
                       <option value="1">বিকাশ</option>
                       <option value="2">নগদ</option>
                       <option value="3">রকেট</option>
-                      <option value="4">অন্যান্য</option>
+                      <option value="4">ব্যাংক</option>
                     </select>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="cardNo" class="form-label">যেই নাম্বার থেকে টাকা পাঠিয়েছেন</label>
+                    <input type="text" class="form-control" name="transection_phone" id="cardNo" >
+                  </div>
+                </div>
+
+                
+
+              </div>
+
+              <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                    <label for="securityCode" class="form-label">ট্রানজেকশন নাম্বার</label>
+                    <input type="text" class="form-control" name="transection_no" >
                   </div>
                 </div>
                 <div class="col">
@@ -226,6 +233,9 @@
                   </div>
                 </div>
               </div>
+              
+              
+
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
@@ -235,7 +245,7 @@
                 </div>
                 <div class="col">
                   <div class="mb-3">
-                    <label for="userEmail" class="form-label">ফোন নম্বর</label>
+                    <label for="userEmail" class="form-label">ফোন নাম্বার</label>
                     <input type="number" value="{{Auth::user()->nid->phone}}" class="form-control" id="userEmail"  readonly>
                   </div>
                 </div>
@@ -351,7 +361,7 @@
       <div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
+						<img src="{{asset('frontend/logo/logo-1.png')}}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
@@ -361,7 +371,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input id="email" type="email" class="form-control input_user form-icon-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="আপনার ইমেইল লিখুন" required autocomplete="email" autofocus>
                     
                       @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -373,27 +383,29 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+              <input id="password" type="password" class="form-control input_pass form-icon-input @error('password') is-invalid @enderror" name="password" placeholder=" আপনার পাসওয়ার্ড লিখুন" required autocomplete="current-password">
                     
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+								<label class="custom-control-label" for="customControlInline">সাইনইন মনে রাখুন</label>
 							</div>
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn">Login</button>
+				 	<button type="submit" name="button" class="btn login_btn">সাইনইন করুন</button>
 				   </div>
 					</form>
 				</div>
 		
 				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{{route('register')}}" class="ml-2">Sign Up</a>
+					<div class="d-flex justify-content-center links">যদি আপনার কোন একাউন্ট না থাকে<br>
+            <a href="{{route('register')}}" class="ml-2" style="font-weight:bold; color:green; margin-left: 5px"> রেজিস্ট্রেশন করুন</a>
 					</div>
-					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
+					<div class="d-flex justify-content-center links">পাসওয়ার্ড ভুলে গিয়েছেন?
+						@if (Route::has('password.request'))
+            <a href="{{ route('password.request') }}" style="font-weight:bold; color: red; margin-left: 5px">এইখানে দেখুন </a>
+            @endif
 					</div>
 				</div>
 			</div>

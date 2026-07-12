@@ -129,7 +129,7 @@
 					        <div class="app-card-header p-3">
 						        <div class="row justify-content-between align-items-center">
 							        <div class="col-auto">
-						                <h4 class="app-card-title">সর্বশেষ মেম্বার</h4>
+						                <h4 class="app-card-title">সর্বশেষ সদস্য</h4>
 							        </div><!--//col-->
 							        <div class="col-auto">
 								        <div class="card-header-action">

@@ -329,7 +329,7 @@
               <thead class="table-success">
                 <tr>
                   <th scope="col">ক্রমিক নং</th>
-                  <th scope="col">ছবি</th>
+                  <th scope="col">প্রোফাইল</th>
                   <th scope="col">নাম</th>
                   <th scope="col">মোবাইল নং</th>
                   <th scope="col">দানের পরিমান</th>

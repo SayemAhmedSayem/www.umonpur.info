@@ -67,7 +67,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="footer-description">
-                     <p>&copy; 2022, Design and Developed by <a href="#" class="credit"><span style="font-size:30px;color:white;">S</span>ayem Ahme<span style="font-size:50px;color:green;">d</span></a></p>
+                     <p>&copy; 2020 - 2024, Design and Developed by <a href="#" class="credit"><span style="font-size:30px;color:white;">S</span>ayem Ahme<span style="font-size:50px;color:green;">d</span></a></p>
                   </div>
                </div>
             </div>

@@ -8,9 +8,7 @@
     <div class="container">
       <div class="banner-title">
         <h2><span> সম্পর্কে</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
+        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস </p> -->
         <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সম্পর্কে</span></p>
       </div>
     </div>
@@ -34,7 +32,8 @@
             <h2>{{$ab->title}}</h2>
           </div>
           <div class="about-content">
-          <p>{{ Str::limit($ab->description, 530) }}</p>
+          {{-- <p>{{ Str::limit($ab->description, 530) }}</p> --}}
+          <p>{!! Str::limit($ab->description, 530) !!}</p>
             <a href="{{route('web-about-show', $ab->id)}}" class="btn btn-box">আরও পড়ুন...</a>
           </div>
         </div>
@@ -49,7 +48,8 @@
             </div>
             <div class="about-post-desc">
               <h3>{{$about->title}}</h3>
-              <p>{{ Str::limit($about->description, 130) }}</p>
+              {{-- <p>{{ Str::limit($about->description, 130) }}</p> --}}
+              <p>{!! Str::limit($about->description, 130) !!}</p>
               <a href="{{route('web-about-show', $about->id)}}" class="btn btn-box">বিস্তারিত</a>
             </div>
 
@@ -71,8 +71,8 @@
   <section class="profile-category">
     <div class="container">
       <div class="section-title">
-        <h2>আমাদের প্রোফাইল</h2>
-        <p>আমাদের সদস্যরা সবসময় তাদের কাজের প্রতি খুবই নিষ্ঠাবান এবং তারা খুবই পরিশ্রমী </p>
+        <h2>প্রোফাইল</h2>
+        <p>উমনপুর গ্রাম এবং গ্রামের ভিতরে শিক্ষা প্রতিষ্ঠান, হাসপাতাল, মসজিদ এবং বিভিন্ন অঙ্গ সংগঠন পরিচালনা পরিষদের প্রোফাইল সর্বশেষ হালনাগাদ।</p>
       </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         @foreach($profiles as $profile)
@@ -96,9 +96,8 @@
   <section class="statis-area banner-section" style="background-image: url('assets/img/slide1.png')">
     <div class="container">
       <div class="section-title">
-        <h2>আমাদের পরিসংখ্যান</h2>
-        <p>উমনপুর গ্রামের পরিসংখ্যান তালিকা অত্যন্ত সুন্দরভাবে সাজিয়ে তুলা হয়েছে।
-        </p>
+        <h2>পরিসংখ্যান</h2>
+        <p>উমনপুর গ্রামের উল্লেখযোগ্য বিষয়ের পরিসংখ্যান তালিকা সর্বশেষ হালনাগাদ।</p>
       </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 statics">
 
@@ -123,7 +122,7 @@
     <div class="container">
       <div class="section-title">
       <a href="{{route('web-testimonial')}}"><h2>প্রশংসা পত্র</h2></a>
-        <p>উমনপুর গ্রাম নিয়ে বক্তার প্রশংসনীয় বক্তব্য। উমনপুর একটি ডিজিটাল/নেটিজেন গ্রাম।</p>
+        <p>উমনপুর গ্রাম নিয়ে বিভিন্ন ব্যাক্তির বিভিন্ন ধরনের প্রশংসনীয় বক্তবের সর্বশেষ।</p>
       </div>
       <div class="test-slide">
       @foreach($testimonials as $testimonial)
@@ -149,13 +148,13 @@
   <section class="donarlist-area">
     <div class="container">
       <div class="section-title">
-        <h2>আমাদের দাতাগণের তালিকা</h2>
-        <p>ওয়েবসাইট উদ্বোধনের পর থেকে গ্রামে আর্থ দিয়ে সাহায্য করেছেন তাদের তালিকা</p>
+        <h2>দাতাগণের তালিকা</h2>
+        <p>আমাদের প্ল্যাটফর্মে বিভিন্ন সময়ে যারা আর্থিকভাবে সাহায্য করেছেন তাদের প্রোফাইলের সর্বশেষ রেকর্ড।</p>
       </div>
       <div class="row">
         <div class="col">
           <div class="sm-title">
-            <h2>দানকরুন তালিকা</h2>
+            <h2>তহবিলে দাতাগণের তালিকা</h2>
           </div>
           <div class="table-responsive">
             <table class="table table-hover">
@@ -193,7 +192,7 @@
       
         <div class="col">
           <div class="sm-title">
-            <h2>সাহায্য করুন তালিকা</h2>
+            <h2>বিভিন্ন খাতে আর্থিক সাহায্যে দাতাগণের তালিকা</h2>
           </div>
           <div class="table-responsive">
         

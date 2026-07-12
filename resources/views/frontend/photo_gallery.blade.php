@@ -20,8 +20,8 @@
   <section class="gallery-album-area">
     <div class="container">
       <div class="section-title">
-        <h2>গ্যালারি এ্যালবাম</h2>
-        <p>উমনপুর গ্রামের স্তির চিত্রের রেকর্ড এ্যালবাম অনুস্বারে বাৎসরিক রেকর্ড।</p>
+        <h2>ছবির এ্যালবাম</h2>
+        <p>উমনপুর গ্রামের স্তির চিত্রের রেকর্ড এ্যালবাম অনুস্বারে বাৎসরিক রেকর্ড রাখা হয়েছে।</p>
       </div>
       <div class="albums">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">

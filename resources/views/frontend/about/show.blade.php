@@ -29,7 +29,8 @@
               <small class="text-muted"><i class="fa-solid fa-clock"></i><span>{{ Carbon\Carbon::parse($about->date)->format('d-M-Y') }}</span></small>
             </div>
             <div class="blog-desc">
-            <p>{{$about->description}}</p>
+            {{-- <p>{{$about->description}}</p> --}}
+            <p>{!! $about->description !!}</p>
             </div>
             <div class="blog-share">
               <h5>শেয়ার করুনঃ</h5>

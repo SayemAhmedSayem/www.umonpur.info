@@ -20,8 +20,8 @@
   <section class="gallery-album-area">
     <div class="container">
       <div class="section-title">
-        <h2>গ্যালারি এ্যালবাম</h2>
-        <p>ভিডিও এ্যালবামকে চারটি ভাগে ভিবক্ত করা হয়েছে - উমনপুর, স্কুল, মাদ্রাসা, খেলাধুলা ও স্বাস্থ্য কপ্লেক্স।</p>
+        <h2>ভিডিও এ্যালবাম</h2>
+        <p>ভিডিও অ্যালবাম অনুযায়ী সর্বশেষ হালনাগাদ।</p>
       </div>
       <div class="albums">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">

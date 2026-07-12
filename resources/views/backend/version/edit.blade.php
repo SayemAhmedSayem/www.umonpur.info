@@ -1,5 +1,6 @@
 @extends('layouts.header')
 @section('content')
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 <div class="content">
    <div class="row align-items-center justify-content-between g-3 mb-4">
       <div class="col-auto">
@@ -20,7 +21,7 @@
     <div class="form-group">
        <div class="row">
           <div class="col-sm-6">
-             <label class="form-label" for="date">ভার্সনের বছর </label>
+             <label class="form-label" for="date">রিলিজ ভার্সনের বছর </label>
              <input class="form-control"  name="year" value="{{$version->year}}" type="text">
           </div>
           <div class="col-sm-6">
@@ -29,19 +30,19 @@
           </div>
 
           <div class="col-sm-12">
-             <label class="form-label" for="date">ভার্সন শিরোনাম </label>
+             <label class="form-label" for="date">রিলিজ ভার্সন নাম </label>
              <input class="form-control" type="text" value="{{$version->version_title}}" name="version_title">
           </div>
           <div class="col-sm-12">
-             <label class="form-label" for="date">ভার্সন শিরোনাম ২ </label>
+             <label class="form-label" for="date">রিলিজ ভার্সন সংকিপ্ত বিবরণ </label>
              <input class="form-control" type="text" value="{{$version->version_subtitle}}" name="version_subtitle">
           </div>
           <div class="col-sm-6">
-             <label class="form-label" for="date">ভার্সন শিরোনাম ৩ </label>
+             <label class="form-label" for="date">ভার্সন শিরোনাম </label>
              <input class="form-control" type="text" value="{{$version->description_title_p1}}" name="description_title_p1">
           </div>
           <div class="col-sm-6">
-             <label class="form-label" for="date">ভার্সন শিরোনাম ৪ </label>
+             <label class="form-label" for="date">ভার্সন প্রকাশের সাল</label>
              <input class="form-control" type="text" value="{{$version->description_title_p2}}" name="description_title_p2">
           </div>
        </div>
@@ -49,10 +50,15 @@
  </div>
  <div class="mb-0">
     <label class="form-label" for="exampleTextarea">বিস্তারিত বর্ণনা</label> 
-    <textarea class="form-control" name="description_details" rows="3">{{$version->description_details}} </textarea>
+    <!-- <textarea class="form-control" name="description_details" rows="3">{{$version->description_details}} </textarea> -->
+    <textarea name="description_details">{!! $version->description_details !!} </textarea>
+    <script>
+            CKEDITOR.replace( 'description_details' );
+    </script>
  </div>
+ 
  <div class="mb-3">
-    <label class="form-label" for="customFile"> ভার্সন স্ক্রিনশট</label>
+    <label class="form-label" for="customFile"> ভার্সন স্ক্রিনশর্ট</label>
  
                                   <input type="file" class="form-control dropify" name="image">
                              

@@ -36,7 +36,7 @@
           <div class="sm-title">
             <h2>{{$version->description_title_p1}} <span>{{$version->description_title_p2}}</span></h2>
           </div>
-          <p>{{$version->description_details}}।</p>
+          <p>{!! $version->description_details !!}</p>
         </div>
       </div>
     </div>

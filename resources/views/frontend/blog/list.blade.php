@@ -33,11 +33,11 @@
                 </div>
                 <div class="post-content">
                   <h4><i class="fa-solid fa-user"></i>{{$post->user->name ?? ''}}</h4>
-                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'অ্যাডমিন'}}</small>
+                  <small class="text-muted"><i class="fa-solid fa-tag"></i>{{$post->user->role->name ?? 'এডমিন'}}</small>
                 </div>
               </div>
               <h5 class="card-title">{{$post->title}}</h5>
-              <p>{{ Str::limit($post->description, 200) }}</p>
+              <p>{!! Str::limit($post->description, 200) !!}</p>
             </div>
             <div class="post-btn">
               <a class="btn-post" href="{{route('web-post-show', $post->id)}}">আরও পড়ুন...</a>

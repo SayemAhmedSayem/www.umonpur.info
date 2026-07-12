@@ -155,27 +155,27 @@
             
         <div class="row">
           <div class="col-12">
-            <div class="single-voter-card2">
-              <div class="voter-card-header1">
-                <div class="voter-print">
-                  <img src="{{asset('frontend/logo/logo.png')}}"  style="max-width:100px;" alt="Voter Image">
-                  <p>www.umonpur.info</p>
-                </div>
-                <div class="voter-right">
-                  <p></p>
-                </div>
-              </div>
-            </div>
+            <!--<div class="single-voter-card2">-->
+            <!--  <div class="voter-card-header1">-->
+                <!--<div class="voter-print">-->
+                <!--  <img src="{{asset('frontend/logo/logo.png')}}"  style="max-width:100px;" alt="Voter Image">-->
+                <!--  <p>www.umonpur.info</p>-->
+                <!--</div>-->
+                <!--<div class="voter-right">-->
+                <!--  <p></p>-->
+                <!--</div>-->
+            <!--  </div>-->
+            <!--</div>-->
             <!-- Voter Card Layout -->
             <div class="single-voter-card">
               <div class="voter-card-header">
                 <div class="voter-card-header-img">
-                  <img src="{{asset('frontend/assets/img/nid-header-logo.jpg')}}" alt="NID Header">
+                  <img src="{{asset('frontend/assets/img/UP L3_40x40 22.png')}}" alt="NID Header">
                 </div>
-                <div class="header-content">
-                  <h4>গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</h4>
-                  <p>Government of the People's Republic of Bangladesh</p>
-                  <p><span>National ID Card</span> / জাতীয় পরিচয় পত্র</p>
+                 <div class="header-content">
+                  <h4>www.umonpur.info</h4>
+                  <p>উমনপুর গ্রামের ওয়েবসাইটে আপনার ভোটার তালিকার সিরিয়াল অন্তর্ভুক্ত।</p>
+                  <p>  উমনপুর গ্রামে আপনার পরিচয় পত্র</p>
                 </div>
               </div>
               <div class="main-voter-info">

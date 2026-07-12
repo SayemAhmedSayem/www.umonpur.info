@@ -26,16 +26,16 @@
           <div class="row">
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="formName" class="form-label">আপনার নাম</label>
-                <input type="text" name="name" class="form-control" id="formName" placeholder="নাম">
+                <label for="formName" class="form-label">আপনার নাম *</label>
+                <input type="text" name="name" class="form-control" id="formName" placeholder="নাম" required>
               </div>
               <div class="mb-3">
-                <label for="formEmail" class="form-label">আপনার ইমেইল</label>
-                <input type="email" name="email" class="form-control" id="formEmail" placeholder="ইমেইল">
+                <label for="formEmail" class="form-label">আপনার ইমেইল *</label>
+                <input type="email" name="email" class="form-control" id="formEmail" placeholder="ইমেইল" required>
               </div>
               <div class="mb-3">
-                <label for="formPhoneNumber" class="form-label">আপনার মোবাইল নং</label>
-                <input type="number" class="form-control" name="phone" id="formPhoneNumber" placeholder="মোবাইল নং">
+                <label for="formPhoneNumber" class="form-label">আপনার মোবাইল নাম্বার *</label>
+                <input type="number" class="form-control" name="phone" id="formPhoneNumber" placeholder="মোবাইল নং ইংরেজীতে দিন" required>
               </div>
 
               <div class="mb-3">
@@ -46,12 +46,12 @@
             </div>
             <div class="col-md-6">
             <div class="mb-3">
-                <label for="formPhoneNumber" class="form-label">বিষয়</label>
-                <input type="text" class="form-control" name="subject" id="formPhoneNumber" placeholder="বিষয়">
+                <label for="formPhoneNumber" class="form-label">বিষয় *</label>
+                <input type="text" class="form-control" name="subject" id="formPhoneNumber" placeholder="বিষয়" required>
               </div>
               <div class="mb-3">
-                <label for="messageArea" class="form-label">আপনার বার্তা</label>
-                <textarea name="message" class="form-control" cols="5" rows="5" name="message" id="messageArea" placeholder="Your Message"></textarea>
+                <label for="messageArea" class="form-label">আপনার বার্তা *</label>
+                <textarea name="message" class="form-control" cols="5" rows="5" name="message" id="messageArea" placeholder="Your Message" required></textarea>
 
               </div>
             </div>
@@ -77,7 +77,7 @@
               <i class="fa-solid fa-location-dot"></i>
               <div class="adres-content">
                 <h2>ঠিকানা</h2>
-                <p>উমনপুর, চিকনাগুল, জৈন্তাপুর,সিলেট।</p>
+                <p>উমনপুর, চিকনাগুল, জৈন্তাপুর, সিলেট।</p>
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@
             <div class="single-address">
               <i class="fa-solid fa-phone"></i>
               <div class="adres-content">
-                <h2>মোবাইল নং</h2>
-                <p>০১৬৮৭ ৮৩৮ ১৬১, ০১৭১৬ ৬৮৮ ৫৫৬</p>
+                <h2>যোগাযোগ নাম্বার</h2>
+                <p>01687 838 161<br>01716 688 556<br>01739 113 605</p>
               </div>
             </div>
           </div>

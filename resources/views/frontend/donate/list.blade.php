@@ -113,7 +113,7 @@
   <!-- About Area Starts  -->
   <section class="about-area">
     <div class="container">
-  <h1>অনুদান  সংগ্রহীত </h1>
+  <h1>সংগৃহীত অনুদান </h1>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 about-post" style="font-family: lato;">
       @foreach($donatesc as $donate)
     

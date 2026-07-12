@@ -23,7 +23,8 @@
             <div class="single-post">
               <div class="post-content-announce">
                 <h4><a href="{{route('web-notice-show', $notice->id)}}">{{$notice->title}}</a> <i class="fa-solid fa-bullhorn"></i></h4>
-                <p>{{$notice->description}}</p>
+                {{-- <p>{{ Str::limit($notice->description, 100) }}</p> --}}
+                <p>{!! Str::limit($notice->description, 100) !!}</p>
               </div>
             </div>
             @endforeach

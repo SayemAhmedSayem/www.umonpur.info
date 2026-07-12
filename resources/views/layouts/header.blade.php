@@ -18,6 +18,9 @@
       body {
         opacity: 0;
       }
+         .cke_notifications_area{
+      display: none !important;
+   }
     </style>
        @stack('style')
   </head>
