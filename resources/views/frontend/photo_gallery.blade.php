@@ -1,49 +1,54 @@
 @extends('frontend.main')
 
+@section('title', 'ছবি গ্যালারি')
+
 @section('content')
 
+@php $albums = \App\Models\Album::where('type', 'Photo')->latest()->get(); @endphp
 
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2><span>গ্যালারি</span></h2>
-        <p><a href="{{route('web-home')}}">হোম</a> <i class="fa fa-angle-right"></i> গ্যালারি <i class="fa fa-angle-right"></i>
-          <span>ছবি</span>
-        </p>
-      </div>
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span> <span>ছবি গ্যালারি</span>
     </div>
-  </section>
-  <!-- Post Banner Area Ends -->
+    <h1 class="um-page-hero__title">ছবি গ্যালারি</h1>
+    <p class="um-page-hero__subtitle">গ্রামের নানা মুহূর্তের স্থিরচিত্র সংগ্রহ</p>
+  </div>
+</section>
 
-  <!-- Gallery Album Area Starts -->
-  <section class="gallery-album-area">
-    <div class="container">
-      <div class="section-title">
-        <h2>ছবির এ্যালবাম</h2>
-        <p>উমনপুর গ্রামের স্তির চিত্রের রেকর্ড এ্যালবাম অনুস্বারে বাৎসরিক রেকর্ড রাখা হয়েছে।</p>
+<section class="um-section">
+  <div class="um-container">
+    @if($albums->isNotEmpty())
+      <div class="um-news-grid">
+        @foreach($albums as $album)
+          @php
+            $yearCount = \App\Models\Year::where('album_id', $album->id)->count();
+            $yearIds = \App\Models\Year::where('album_id', $album->id)->pluck('id');
+            $coverPhoto = \App\Models\Photo::whereIn('year_id', $yearIds)->latest()->first();
+          @endphp
+          <a href="{{ route('web-year', $album->id) }}" class="um-news-card" data-reveal data-reveal-delay="{{ ($loop->index % 4) + 1 }}">
+            <div class="um-news-card__img">
+              @if($coverPhoto && $coverPhoto->image)
+                <img src="{{ umonpur_asset('uploads/album/photos/' . $coverPhoto->image, 'photo') }}" alt="{{ $album->name }}">
+              @else
+                <img src="https://images.unsplash.com/photo-1530088787231-7b99c5f0c0b4?w=600&q=80" alt="">
+              @endif
+              <span class="um-badge um-badge--gold um-news-card__badge"><i class="fa-regular fa-image"></i> {{ $yearCount }} বছর</span>
+            </div>
+            <div class="um-news-card__body">
+              <h3 class="um-news-card__title">{{ $album->name }}</h3>
+              <span class="um-news-card__more">বিস্তারিত দেখুন <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+        @endforeach
       </div>
-      <div class="albums">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-            @foreach(App\Models\Album::where('type', 'Photo')->get() as $album)
-          <div class="col">
-            <a href="{{route('web-year', $album->id)}}">
-              <div class="single-album">
-                <img src="{{ asset('uploads/album/thumbnail/'.$album->thumbnail) }}" alt="Photo Album">
-                <div class="album-title">
-                  <h2>{{$album->name}}</h2>
-                </div>
-              </div>
-            </a>
-          </div>
-          @endforeach
-    
-          
-        </div>
+    @else
+      <div class="um-empty">
+        <div class="um-empty__icon"><i class="fa-regular fa-image"></i></div>
+        <h3 class="um-empty__title">কোন অ্যালবাম নেই</h3>
       </div>
-    </div>
-  </section>
-  <!-- Gallery Album Area Ends -->
+    @endif
+  </div>
+</section>
 
 @endsection
-     

@@ -1,52 +1,57 @@
 @extends('frontend.main')
 
+@section('title', $album->name ?? 'ভিডিও')
+
 @section('content')
 
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-    <div class="banner-title">
-        <h2><span>গ্যালারি</span></h2>
-        <p><a href="{{route('web-home')}}">হোম</a> <i class="fa fa-angle-right"></i> <span>গ্যালারি</span> <i class="fa fa-angle-right"></i>
-          <a href="{{route('web-video')}}">ভিডিও</a><i class="fa fa-angle-right"></i><span>{{$album->name}}</span>
-        </p>
-      </div>
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span>
+      <a href="{{ route('web-video') }}">ভিডিও গ্যালারি</a> <span>/</span>
+      <span>{{ $album->name }}</span>
     </div>
-    </div>
-  </section>
+    <h1 class="um-page-hero__title">{{ $album->name }}</h1>
+    <p class="um-page-hero__subtitle">{{ $videos->total() }} টি ভিডিও</p>
+  </div>
+</section>
 
-
-  <!-- Photo Area Starts -->
-  <section class="photo-area">
-    <div class="container">
-      <div class="section-title">
-        <h2>ভিডিও</h2>
-        <p>সকল ভিডিও এর সর্বশেষ হালনাগাদ।</p>
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-        @foreach(App\Models\Video::where('album_id', $album->id)->orderBy('created_at','desc')->paginate(9) as $video)
-        <div class="col">
-          <div class="single-photo">
-            <a href="{{$video->url}}" class="video"><img src="{{ asset('uploads/album/videos/'.$video->image) }}" alt="Photo"></a>
-            <div class="photo-desc">
-              <h4>{{$video->title}}</h4>
-              <p>{{$video->description}}</p>
-              <div class="video-post-info">
-                <p><i class="fa-solid fa-calendar-days"></i><span class="video-post-date">{{ Carbon\Carbon::parse($video->date)->format('d-M-Y') }}</span></p>
-                <p><i class="fa-solid fa-user"></i><span class="video-posted-by">{{$video->user->name}}</span></p>
-              </div>
+<section class="um-section">
+  <div class="um-container">
+    @if($videos->isNotEmpty())
+      <div class="um-news-grid">
+        @foreach($videos as $video)
+          <div class="um-news-card" data-reveal data-reveal-delay="{{ ($loop->index % 4) + 1 }}">
+            <div class="um-news-card__img" style="position:relative;">
+              @if($video->image)
+                <img src="{{ umonpur_asset('uploads/album/videos/' . $video->image, 'video') }}" alt="{{ $video->title }}">
+              @else
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=80" alt="">
+              @endif
+              @if($video->url)
+                <a href="{{ $video->url }}" target="_blank" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; background:rgba(11,110,79,0.85); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:24px;"><i class="fa-solid fa-play"></i></a>
+              @endif
+              <span class="um-badge um-badge--gold um-news-card__badge"><i class="fa-solid fa-video"></i> ভিডিও</span>
+            </div>
+            <div class="um-news-card__body">
+              <div class="um-news-card__date"><i class="fa-regular fa-calendar"></i> {{ \Carbon\Carbon::parse($video->date ?? $video->created_at)->format('d M, Y') }}</div>
+              <h3 class="um-news-card__title">{{ $video->title }}</h3>
+              <p class="um-news-card__excerpt">{{ strip_tags($video->description) }}</p>
+              @if($video->url)
+                <a href="{{ $video->url }}" target="_blank" class="um-news-card__more">ভিডিও দেখুন <i class="fa-solid fa-play"></i></a>
+              @endif
             </div>
           </div>
-        </div>
-    @endforeach
+        @endforeach
       </div>
-    </div>
-  </section>
-  <!-- Photo Area Ends -->
-  <!-- Photo Area Ends -->
-@push('scripts')
+      <div class="um-pagination">{{ $videos->links() }}</div>
+    @else
+      <div class="um-empty">
+        <div class="um-empty__icon"><i class="fa-solid fa-video"></i></div>
+        <h3 class="um-empty__title">এই অ্যালবামে কোন ভিডিও নেই</h3>
+      </div>
+    @endif
+  </div>
+</section>
 
-<script src="{{asset('template/assets/js/magnific_popup.min.js')}}"></script>
-@endpush
 @endsection
-     

@@ -1,176 +1,67 @@
 @extends('frontend.main')
 
+@section('title', 'সাহায্য করুন')
+
 @section('content')
 
-  <style>
-   
-    .btn-sayem{
-      margin-bottom: 20px;
-                  margin-top: 20px;    background: #fc7437;    font-size: 11px !important;
-    padding: 8px 15px !important;
-    border-radius: 30px;
-    display: inline-block;
-    color: #fff;
-    font-size: 12px;
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 12px 35px;
-    border: 2px solid transparent;
-    }
-    .pull-left {
-    float: left!important;
-}
-.pull-right {
-    float: right!important;
-}
-.progress {
+@php $donates = \App\Models\Donate::orderBy('created_at', 'desc')->paginate(6); @endphp
 
-    height: 1.8rem !important;
-    font-size: 1rem !important;
-
-
-}
-
-  </style>
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2><span> সাহায্য করুন</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস আগে লঞ্চ পারাপারের
-          ব্যবস্থা চালু হয়। বালাসীঘাটে
-          তিনটি লঞ্চ রয়েছে</p> -->
-        <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সাহায্য করুন</span></p>
-      </div>
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span> <span>সাহায্য করুন</span>
     </div>
-  </section>
+    <h1 class="um-page-hero__title">তহবিলে সাহায্য করুন</h1>
+    <p class="um-page-hero__subtitle">গ্রামের উন্নয়ন ও জনকল্যাণে আপনিও অবদান রাখুন</p>
+  </div>
+</section>
 
-  
-
-  <!-- About Area Starts  -->
-  <section class="about-area">
-    <div class="container">
-     
-<h1>অনুদান প্রয়োজন</h1>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 about-post" style="font-family: lato;">
-      @foreach($donates as $donate)
-    
-
-      <?php
-      $income = App\Models\Income::where('donate_id', $donate->id)->where('status',1)->sum('amount');
-      $percent = $income/$donate->goal * 100;
-      $sum =  App\Models\Income::where('donate_id', $donate->id)->where('status', 1)->select(DB::raw('count(user_id) as count'))
-      ->groupBy('user_id')->get();
-
-    
-      ?>
-      <?php $number = 0; ?>
-@foreach ($sum as $Rating)
-<?php $number++ ?>   
-@endforeach
-@if($donate->goal > $income)
-        <div class="col">
-          <div class="about-single shadow-sm">
-            <div class="about-post-img">
-            <img src="{{ asset('uploads/donate/'.$donate->image) }}">
+<section class="um-section">
+  <div class="um-container">
+    @if($donates->isNotEmpty())
+      <div class="um-donate-grid">
+        @foreach($donates as $donate)
+          @php
+            $raised = \App\Models\Income::where('donate_id', $donate->id)->where('status', 1)->sum('amount');
+            $goal = $donate->goal ?: 1;
+            $percent = min(100, round(($raised / $goal) * 100));
+            $donorCount = \App\Models\Income::where('donate_id', $donate->id)->where('status', 1)->distinct('user_id')->count('user_id');
+          @endphp
+          <div class="um-donate-card" data-reveal data-reveal-delay="{{ ($loop->index % 3) + 1 }}">
+            <div class="um-donate-card__img">
+              @if($donate->image)
+                <img src="{{ umonpur_asset('uploads/donate/' . $donate->image, 'donate') }}" alt="{{ $donate->name }}">
+              @else
+                <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" alt="">
+              @endif
             </div>
-            <div class="about-post-desc">
-              <h4>{{$donate->name}}</h4>
-              <p>{{ Str::limit($donate->description, 80) }}</p>
-              <div class="mb-3">
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:{{intval($percent)}}%;" aria-valuenow="{{intval($percent)}}" aria-valuemin="0" aria-valuemax="100">{{intval($percent)}}%</div>
+            <div class="um-donate-card__body">
+              <h3 class="um-donate-card__title">{{ $donate->name }}</h3>
+              <p class="um-donate-card__excerpt">{{ strip_tags($donate->description) }}</p>
+              <div class="um-progress">
+                <div class="um-progress__top">
+                  <span class="raised">৳ {{ number_format($raised) }}</span>
+                  <span class="goal">৳ {{ number_format($goal) }}</span>
                 </div>
+                <div class="um-progress__bar"><div class="um-progress__fill" style="width: {{ $percent }}%"></div></div>
               </div>
-              <ul class="" style="padding-left: 0px !important;">
-                <li class="clearfix border-bottom"><span class="pull-left">দাতাগণ -</span> <strong class="pull-right">{{ $number }}</strong></li>
-                <li class="clearfix border-bottom"><span class="pull-left">আমাদের লক্ষ্য -</span> <strong class="pull-right">৳{{$donate->goal}}</strong></li>
-                <li class="clearfix border-bottom"><span class="pull-left">সংগৃহীত -</span> <strong class="pull-right">৳{{$income}}</strong></li>
-              <div class="row">
-                <div class="col-sm-12">
-                  <a href="{{route('web-donate-show', $donate->id)}}" class="btn btn-box btn-sayem pull-right" >বিস্তারিত দেখুন</a>
-                </div>
+              <div class="um-donate-card__meta">
+                <span><i class="fa-solid fa-users"></i> {{ $donorCount }} জন দাতা</span>
+                <span><i class="fa-solid fa-percent"></i> {{ $percent }}%</span>
               </div>
+              <a href="{{ route('web-donate-show', $donate->id) }}" class="um-btn um-btn--gold" style="width:100%"><i class="fa-solid fa-heart"></i> দান করুন</a>
             </div>
-
           </div>
-        </div>
-        @endif
         @endforeach
-    
       </div>
-      <div class="row">
-      <div class="post-content">
-        {!! $donates->links() !!}
-        </div>
+      <div class="um-pagination">{{ $donates->links() }}</div>
+    @else
+      <div class="um-empty">
+        <div class="um-empty__icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3 class="um-empty__title">বর্তমানে কোন তহবিল সংগ্রহ চলছে না</h3>
       </div>
-    </div>
-  </section>
-
-  <!-- Completed Donation List  -->
-  <!-- About Area Starts  -->
-  <section class="about-area">
-    <div class="container">
-  <h1>অনুদান সংগ্রহীত </h1>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 about-post" style="font-family: lato;">
-      @foreach($donatesc as $donate)
-    
-
-      <?php
-      $income = App\Models\Income::where('donate_id', $donate->id)->where('status',1)->sum('amount');
-      $percent = $income/$donate->goal * 100;
-      $sum =  App\Models\Income::where('donate_id', $donate->id)->where('status', 1)->select(DB::raw('count(user_id) as count'))
-      ->groupBy('user_id')->get();
-
-    
-      ?>
-      <?php $number = 0; ?>
-@foreach ($sum as $Rating)
-<?php $number++ ?>   
-@endforeach
-@if($donate->goal <= $income)
-        <div class="col">
-          <div class="about-single shadow-sm">
-            <div class="about-post-img">
-            <img src="{{ asset('uploads/donate/'.$donate->image) }}">
-            </div>
-            <div class="about-post-desc">
-              <h4>{{$donate->name}}</h4>
-              <p>{{ Str::limit($donate->description, 80) }}</p>
-              <div class="mb-3">
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:{{intval($percent)}}%;" aria-valuenow="{{intval($percent)}}" aria-valuemin="0" aria-valuemax="100">{{intval($percent)}}%</div>
-                </div>
-              </div>
-              <ul class="" style="padding-left: 0px !important;">
-                <li class="clearfix border-bottom"><span class="pull-left">দাতাগণ -</span> <strong class="pull-right">{{ $number }}</strong></li>
-                <li class="clearfix border-bottom"><span class="pull-left">লক্ষ্য -</span> <strong class="pull-right">৳{{$donate->goal}}</strong></li>
-                <li class="clearfix border-bottom"><span class="pull-left">সংগৃহীত -</span> <strong class="pull-right">৳{{$income}}</strong></li>
-              <div class="row">
-       
-                <div class="col-sm-12">
-                  <a href="{{route('web-donate-show', $donate->id)}}" class="btn btn-box btn-sayem pull-right" >বিস্তারিত দেখুন</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        @endif
-        @endforeach
-    
-      </div>
-      <div class="row">
-      <div class="post-content">
-      
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Completed Donation List  -->
-
+    @endif
+  </div>
+</section>
 
 @endsection
-     

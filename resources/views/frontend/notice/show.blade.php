@@ -1,39 +1,42 @@
 @extends('frontend.main')
 
+@section('title', $notice->title ?? 'নোটিশ')
+
 @section('content')
 
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2>বিস্তারিত <span>নোটিশ</span></h2>
-        <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i><a href="top_second_content.html">সকল নোটিশ</a>
-          <i class="fa fa-angle-right"></i> <span>বিস্তারিত নোটিশ</span></p>
-      </div>
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span>
+      <a href="{{ route('web-notice-list') }}">নোটিশ</a> <span>/</span>
+      <span>{{ \Illuminate\Support\Str::limit($notice->title, 50) }}</span>
     </div>
-  </section>
-  <!-- Post Banner Area Ends -->
-
-  <!-- Top First Content Area Starts -->
-  <div class="top_first_content_area">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="content">
-            <div class="single-post">
-              <div class="post-content-announce">
-                <h4><a href="#">{{$notice->title}}</a> <i class="fa-solid fa-bullhorn"></i></h4>
-                {{-- <p>{{$notice->description}}</p> --}}
-                <p>{!! $notice->description !!}</p>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
+    <h1 class="um-page-hero__title">{{ $notice->title }}</h1>
+    <div style="display: flex; gap: 18px; align-items: center; margin-top: 16px; color: rgba(255,255,255,0.85); font-size: 14px; flex-wrap: wrap;">
+      <span><i class="fa-regular fa-calendar"></i> {{ \Carbon\Carbon::parse($notice->date ?? $notice->created_at)->format('d M, Y') }}</span>
+      <span><i class="fa-regular fa-user"></i> {{ $notice->user->name ?? 'অজানা' }}</span>
     </div>
   </div>
-  <!-- Top First Content Area Ends-->
+</section>
+
+<section class="um-section">
+  <div class="um-container">
+    <article class="um-article" data-reveal>
+      @if($notice->image)
+        <div class="um-article__hero"><img src="{{ umonpur_asset('uploads/posts/' . $notice->image, 'post') }}" alt="{{ $notice->title }}"></div>
+      @endif
+      <div class="um-article__body">{!! $notice->description !!}</div>
+      <div class="um-article__share">
+        <span style="font-weight: 600; color: var(--emerald-900);">শেয়ার করুন:</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/?text={{ urlencode($notice->title . ' ' . request()->fullUrl()) }}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:?subject={{ urlencode($notice->title) }}&body={{ urlencode(request()->fullUrl()) }}"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </article>
+    <div style="max-width: 760px; margin: 40px auto 0;">
+      <a href="{{ route('web-notice-list') }}" class="um-btn um-btn--ghost-dark"><i class="fa-solid fa-arrow-left"></i> সকল নোটিশ</a>
+    </div>
+  </div>
+</section>
 
 @endsection
-     

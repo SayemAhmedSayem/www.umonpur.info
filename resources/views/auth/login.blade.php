@@ -1,65 +1,112 @@
+@extends('frontend.main')
 
-@extends('layouts.login.header')
+@section('title', 'লগইন')
+
 @section('content')
-<main class="main" id="top">
-   <div class="container-fluid px-0">
-      <div class="container">
-         <div class="row flex-center min-vh-100 py-5">
-            <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3">
-               <a class="d-flex flex-center text-decoration-none mb-4" href="../../../index.php">
-                  <div class="d-flex align-items-center"><img src="{{asset('frontend/logo/logo.png')}}" alt="logo" width="58"></div>
-               </a>
-               <div class="text-center mb-7">
-                  <h3>সাইনইন করুন</h3>
-                  <p class="text-700"> নিচের ফরমে আপনার ইমেইল এবং পাসওয়ার্ড দিন <br>ইতিপূর্বে রেজিস্ট্রেশন করে থাকলে।</p>
-               </div>
-               <!-- <button class="btn btn-phoenix-secondary w-100 mb-3"><span class="fab fa-google text-danger me-2 fs--1"></span>Sign in with google</button><button class="btn btn-phoenix-secondary w-100"><span class="fab fa-facebook text-primary me-2 fs--1"></span>Sign in with facebook</button>
-               <div class="position-relative mt-4">
-                  <hr class="bg-200">
-                  <div class="divider-content-center">or use email</div>
-               </div> -->
-               <form method="POST" action="{{ route('login') }}">
-                        @csrf
 
-               <div class="mb-3 text-start">
-                  <label class="form-label" for="email">আপনার ইমেইল দিন</label>
-                  <div class="form-icon-container">
-                  <input id="email" type="email" class="form-control form-icon-input @error('email') is-invalid @enderror" name="email" placeholder="আপনার ইমেইল লিখুন" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                      <span class="fas fa-user text-900 fs--1 form-icon"></span>
-                      @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                   </div>
-               </div>
-               <div class="mb-3 text-start">
-                  <label class="form-label" for="password">আপনার পাসওয়ার্ড দিন</label>
-                  <div class="form-icon-container">
-                  <input id="password" type="password" class="form-control form-icon-input @error('password') is-invalid @enderror" name="password" placeholder="আপনার পাসওয়ার্ড লিখুন" required autocomplete="current-password">
-                      <span class="fas fa-user text-900 fs--1 form-icon"></span>
-                    </div>
-               </div>
-               <div class="row flex-between-center mb-7">
-                  <div class="col-auto">
-                     <div class="form-check mb-0">
-                      
-                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+<style>
+.um-auth {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: -76px;
+}
+@media (max-width: 992px) { .um-auth { grid-template-columns: 1fr; } }
 
-                         <label class="form-check-label mb-0" for="basic-checkbox">সাইনইন মনে রাখুন</label></div>
-                  </div>
-                  @if (Route::has('password.request'))
-                  <div class="col-auto"><a class="fs--1 fw-semi-bold" href="{{ route('password.request') }}">পাসওয়ার্ড ভুলে গিয়েছেন?</a></div>
-                                    
-                                @endif
-             
-               </div>
-               <button class="btn btn-primary w-100 mb-3" type="submit">সাইনইন</button>
-               <div class="text-center">যদি আপনার কোন একাউন্ট না থাকে<a class="fs--1 fw-bold" href="{{route('register')}}"> <span style="font-size:20px;"><br>রেজিস্ট্রেশন করুন </span></a> <br>একজন সদস্য হতে চাইলে।</div>
-            </div>
-            </form>
-         </div>
+.um-auth__media {
+  background: linear-gradient(135deg, var(--emerald-900), var(--emerald-700));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 56px;
+  color: #fff;
+}
+.um-auth__media::before {
+  content: ""; position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(226,168,83,0.3) 0%, transparent 70%);
+}
+.um-auth__media::after {
+  content: ""; position: absolute; bottom: -150px; left: -100px;
+  width: 350px; height: 350px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%);
+}
+.um-auth__brand { display: flex; align-items: center; gap: 14px; margin-bottom: 60px; position: relative; z-index: 2; }
+.um-auth__brand img { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--gold-500); }
+.um-auth__brand strong { font-size: 24px; color: #fff; }
+.um-auth__brand small { display: block; font-size: 12px; color: rgba(255,255,255,0.8); }
+.um-auth__quote { position: relative; z-index: 2; }
+.um-auth__quote h2 { font-size: 36px; line-height: 1.3; margin: 0 0 18px; }
+.um-auth__quote p { font-size: 16px; opacity: 0.9; line-height: 1.8; margin: 0; }
+.um-auth__quote-by { margin-top: 24px; font-size: 13px; color: var(--gold-400); }
+
+.um-auth__form-side {
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px 40px;
+  background: var(--cream);
+}
+.um-auth__card {
+  width: 100%; max-width: 420px;
+}
+.um-auth__title { font-size: 30px; color: var(--emerald-900); margin: 0 0 8px; font-weight: 700; }
+.um-auth__sub { font-size: 15px; color: var(--ink-soft); margin: 0 0 32px; }
+.um-auth__foot { margin-top: 24px; text-align: center; font-size: 14px; color: var(--ink-soft); }
+.um-auth__foot a { color: var(--gold-600); font-weight: 600; }
+@media (max-width: 992px) { .um-auth__media { display: none; } }
+</style>
+
+<div class="um-auth">
+  <!-- Left: brand media -->
+  <div class="um-auth__media">
+    <div class="um-auth__brand">
+      <img src="{{ asset('frontend/logo/logo.png') }}" alt="উমনপুর">
+      <div>
+        <strong>উমনপুর</strong>
+        <small>একটি আদর্শ গ্রামের নাম</small>
       </div>
-   </div>
-</main>
+    </div>
+    <div class="um-auth__quote">
+      <h2>স্বাগতম ফিরে আসায়</h2>
+      <p>আপনার অ্যাকাউন্টে সাইন ইন করে গ্রামের সাথে যুক্ত হোন। দান করুন, পোস্ট করুন, আপনার মতামত শেয়ার করুন।</p>
+      <div class="um-auth__quote-by">— উমনপুর আইটি পরিচালনা পরিষদ</div>
+    </div>
+  </div>
+
+  <!-- Right: form -->
+  <div class="um-auth__form-side">
+    <div class="um-auth__card">
+      <h1 class="um-auth__title">সাইনইন করুন</h1>
+      <p class="um-auth__sub">আপনার ইমেইল ও পাসওয়ার্ড দিয়ে লগইন করুন</p>
+
+      <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="um-form-group">
+          <label class="um-form-label">ইমেইল</label>
+          <input type="email" name="email" class="um-form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="আপনার ইমেইল" required autofocus>
+          @error('email') <span class="um-invalid">{{ $message }}</span> @enderror
+        </div>
+        <div class="um-form-group">
+          <label class="um-form-label">পাসওয়ার্ড</label>
+          <input type="password" name="password" class="um-form-control" placeholder="পাসওয়ার্ড" required>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> মনে রাখুন
+          </label>
+          @if (Route::has('password.request'))
+            <a href="{{ route('password.request') }}" style="font-size: 13px; color: var(--gold-600);">পাসওয়ার্ড ভুলে গেছেন?</a>
+          @endif
+        </div>
+        <button type="submit" class="um-btn um-btn--emerald um-btn--lg" style="width:100%"><i class="fa-solid fa-right-to-bracket"></i> সাইনইন করুন</button>
+      </form>
+
+      <div class="um-auth__foot">
+        নতুন এখানে? <a href="{{ route('register') }}">রেজিস্ট্রেশন করুন</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection
