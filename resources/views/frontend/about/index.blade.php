@@ -1,238 +1,199 @@
 @extends('frontend.main')
 
+@section('title', 'আমাদের সম্পর্কে')
+
 @section('content')
 
-  
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2><span> সম্পর্কে</span></h2>
-        <!-- <p class="banner-title-desc">গাইবান্ধার বালাসী থেকে জামালপুরের বাহাদুরাবাদ নৌরুটে এক মাস </p> -->
-        <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সম্পর্কে</span></p>
-      </div>
+@php
+  $abouts = \App\Models\About::where('status', 0)->latest()->paginate(6);
+  $profiles = \App\Models\Profile::all();
+  $statistics = \App\Models\Statistic::all();
+  $testimonials = \App\Models\Testimonial::orderBy('created_at', 'desc')->get();
+  $dbypayer = DB::table('incomes')->where('income_type', '!=', 'general')
+    ->select(DB::raw('sum(amount) as amount, user_id'))
+    ->groupBy('user_id')->orderBy('amount','desc')->limit(4)->get();
+  $gbypayer = DB::table('incomes')->where('income_type', 'general')
+    ->select(DB::raw('sum(amount) as amount, user_id'))
+    ->groupBy('user_id')->orderBy('amount','desc')->limit(4)->get();
+@endphp
+
+<!-- Page hero -->
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span> <span>আমাদের সম্পর্কে</span>
     </div>
-  </section>
-  <!-- Post Banner Area Ends -->
+    <h1 class="um-page-hero__title">আমাদের সম্পর্কে</h1>
+    <p class="um-page-hero__subtitle">উমনপুর গ্রামের ইতিহাস, সংস্কৃতি, জনগোষ্ঠী ও প্রতিষ্ঠান সম্পর্কে বিস্তারিত জানুন।</p>
+  </div>
+</section>
 
-  <!-- About Area Starts  -->
-  <section class="about-area">
-    <div class="container">
-   <?php 
-   $ab = App\Models\About::where('status', 1)->first();
-   ?>
-      <div class="row about-section">
-        <div class="col-md-6">
-          <div class="about-img">
-            <img src="{{ asset('uploads/about/'.$ab->image) }}" alt="About Image">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="section-title-aside">
-            <h2>{{$ab->title}}</h2>
-          </div>
-          <div class="about-content">
-          {{-- <p>{{ Str::limit($ab->description, 530) }}</p> --}}
-          <p>{!! Str::limit($ab->description, 530) !!}</p>
-            <a href="{{route('web-about-show', $ab->id)}}" class="btn btn-box">আরও পড়ুন...</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 about-post">
+<!-- About content -->
+<section class="um-section">
+  <div class="um-container">
+    <div class="um-list-layout" style="grid-template-columns: 1fr 280px;">
+      <!-- Main -->
+      <div data-reveal>
         @foreach($abouts as $about)
-        <div class="col">
-          <div class="about-single shadow-sm">
-            <div class="about-post-img">
-              <img src="{{ asset('uploads/about/'.$about->image) }}" alt="About Image">
+          <article class="glass-card--flat" style="background:#fff; border:1px solid var(--line); border-radius: var(--r-lg); padding: 32px; margin-bottom: 28px;">
+            @if($about->image)
+              <img src="{{ umonpur_asset('uploads/about/' . $about->image, 'about') }}" alt="{{ $about->title }}" style="width: 100%; border-radius: var(--r-md); margin-bottom: 20px; max-height: 380px; object-fit: cover;">
+            @endif
+            <div class="um-badge um-badge--gold" style="margin-bottom: 12px;">{{ $about->date ? \Carbon\Carbon::parse($about->date)->format('d M, Y') : 'প্রকাশিত' }}</div>
+            <h2 style="font-size: 26px; color: var(--emerald-900); margin: 0 0 16px;">{{ $about->title }}</h2>
+            <div style="font-size: 16px; line-height: 1.9; color: var(--ink);">
+              {!! $about->description !!}
             </div>
-            <div class="about-post-desc">
-              <h3>{{$about->title}}</h3>
-              {{-- <p>{{ Str::limit($about->description, 130) }}</p> --}}
-              <p>{!! Str::limit($about->description, 130) !!}</p>
-              <a href="{{route('web-about-show', $about->id)}}" class="btn btn-box">বিস্তারিত</a>
+            <div style="margin-top: 18px;">
+              <a href="{{ route('web-about-show', $about->id) }}" class="um-btn um-btn--ghost-dark um-btn--sm">বিস্তারিত পড়ুন <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-
-          </div>
-        </div>
- @endforeach
-      </div>
-      <div class="row">
-        <div class="post-content">
-          <a href="{{route('web-about-list')}}" class="btn-post">আরও দেখতে এইখানে ক্লিক করুন</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <hr>
-  <!-- About Area Ends  -->
-
-  <!-- Profile Category Area Starts -->
-  <section class="profile-category">
-    <div class="container">
-      <div class="section-title">
-        <h2>প্রোফাইল</h2>
-        <p>উমনপুর গ্রাম এবং গ্রামের ভিতরে শিক্ষা প্রতিষ্ঠান, হাসপাতাল, মসজিদ এবং বিভিন্ন অঙ্গ সংগঠন পরিচালনা পরিষদের প্রোফাইল সর্বশেষ হালনাগাদ।</p>
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        @foreach($profiles as $profile)
-        <div class="col">
-          <a href="{{route('profile-webshow', $profile->id)}}">
-            <div class="prof-cate">
-              <img src="{{ asset('uploads/profile/'.$profile->image) }}" alt="Logo Image">
-              <p>{{$profile->name}}</p>
-            </div>
-          </a>
-        </div>
-     @endforeach
-
-
-      </div>
-    </div>
-  </section>
-  <!-- Profile Category Area Ends -->
-
-  <!-- Statistics Area Starts -->
-  <section class="statis-area banner-section" style="background-image: url('assets/img/slide1.png')">
-    <div class="container">
-      <div class="section-title">
-        <h2>পরিসংখ্যান</h2>
-        <p>উমনপুর গ্রামের উল্লেখযোগ্য বিষয়ের পরিসংখ্যান তালিকা সর্বশেষ হালনাগাদ।</p>
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 statics">
-
-      @foreach($statistics as $sta)
-        <div class="col">
-          <div class="single-statis">
-            <div class="statis-icon"><i class="{{$sta->image}}"></i></div>
-            <div class="statis-desc">
-              <p>{{$sta->name}}</p>
-              <h2 class="statis-number"><span class="counter">{{$sta->value}}</span></h2>
-            </div>
-          </div>
-        </div>
+          </article>
         @endforeach
+        @if($abouts->isEmpty())
+          <div class="um-empty">
+            <div class="um-empty__icon"><i class="fa-solid fa-newspaper"></i></div>
+            <h3 class="um-empty__title">শীঘ্রই আসছে</h3>
+            <p>বিস্তারিত তথ্য যোগ করা হবে।</p>
+          </div>
+        @endif
+        <div style="margin-top: 24px;">{{ $abouts->links() }}</div>
       </div>
+
+      <!-- Sidebar -->
+      <aside class="um-sidebar">
+        <div class="um-sidebar-block" data-reveal data-reveal-delay="1">
+          <h4>পরিসংখ্যান</h4>
+          @foreach($statistics->take(4) as $stat)
+            <div style="display:flex; justify-content:space-between; padding: 10px 0; border-bottom: 1px dashed var(--line);">
+              <span style="color: var(--ink-soft); font-size: 14px;">{{ $stat->name }}</span>
+              <strong style="color: var(--emerald-700); font-family: var(--f-en);">{{ $stat->value }}</strong>
+            </div>
+          @endforeach
+        </div>
+
+        <div class="um-sidebar-block" data-reveal data-reveal-delay="2">
+          <h4>দ্রুত লিংক</h4>
+          <a href="{{ route('web-post-list') }}" class="um-cat-chip">সংবাদ</a>
+          <a href="{{ route('web-notice-list') }}" class="um-cat-chip">নোটিশ</a>
+          <a href="{{ route('web-event-list') }}" class="um-cat-chip">ইভেন্ট</a>
+          <a href="{{ route('web-photo') }}" class="um-cat-chip">ছবি গ্যালারি</a>
+          <a href="{{ route('web-video') }}" class="um-cat-chip">ভিডিও</a>
+          <a href="{{ route('web-donate') }}" class="um-cat-chip">দান করুন</a>
+        </div>
+
+        <div class="um-sidebar-block" data-reveal data-reveal-delay="3" style="background: linear-gradient(135deg, var(--emerald-700), var(--emerald-900)); color: #fff; border: none;">
+          <h4 style="color: #fff; border-bottom-color: var(--gold-400);">যোগাযোগ করুন</h4>
+          <p style="font-size: 14px; opacity: 0.9; margin: 0 0 14px;">আপনার যেকোনো প্রশ্ন বা পরামর্শ আমাদের জানান।</p>
+          <a href="{{ route('web-message') }}" class="um-btn um-btn--gold um-btn--sm" style="width:100%"><i class="fa-solid fa-envelope"></i> বার্তা পাঠান</a>
+        </div>
+      </aside>
     </div>
-  </section>
-  <!-- Statistics Area Ends -->
+  </div>
+</section>
 
-  <!-- Testimonials Area Starts -->
-  <section class="testimonial-area">
-    <div class="container">
-      <div class="section-title">
-      <a href="{{route('web-testimonial')}}"><h2>প্রশংসা পত্র</h2></a>
-        <p>উমনপুর গ্রাম নিয়ে বিভিন্ন ব্যাক্তির বিভিন্ন ধরনের প্রশংসনীয় বক্তবের সর্বশেষ।</p>
+<!-- Stats band -->
+@if($statistics->count() > 0)
+<section class="um-section um-section--emerald-gradient" style="padding: 60px 0;">
+  <div class="um-container">
+    <div class="um-stats" style="margin-top: 0;">
+      @foreach($statistics->take(4) as $stat)
+        <div class="glass-card--emerald um-stat" data-reveal data-reveal-delay="{{ $loop->index + 1 }}">
+          <div class="um-stat__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="um-stat__value um-counter" style="color: var(--gold-400);">{{ $stat->value }}</div>
+          <p class="um-stat__label" style="color: rgba(255,255,255,0.85);">{{ $stat->name }}</p>
+        </div>
+      @endforeach
+    </div>
+  </div>
+</section>
+@endif
+
+<!-- Top donors -->
+@if($gbypayer->count() > 0 || $dbypayer->count() > 0)
+<section class="um-section um-section--cream">
+  <div class="um-container">
+    <div class="um-section-head" data-reveal>
+      <span class="um-section-head__eyebrow">সম্মাননা</span>
+      <h2 class="um-section-head__title">শীর্ষ দাতাগণ</h2>
+      <p class="um-section-head__subtitle">গ্রামের উন্নয়নে অবদান রাখা ব্যক্তিবর্গ</p>
+    </div>
+
+    <div class="um-list-layout" style="grid-template-columns: 1fr 1fr;">
+      @if($gbypayer->count() > 0)
+      <div data-reveal>
+        <h3 style="font-size: 22px; color: var(--emerald-900); margin: 0 0 20px;"><i class="fa-solid fa-medal" style="color: var(--gold-600);"></i> তহবিলে দাতাকারী</h3>
+        <div class="glass-card--flat" style="background: #fff;">
+          @foreach($gbypayer as $i => $row)
+            @php $u = \App\Models\User::find($row->user_id); @endphp
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line);">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: {{ $i === 0 ? 'var(--gold-500)' : ($i === 1 ? '#C0C0C0' : ($i === 2 ? '#CD7F32' : 'var(--cream-2)')) }}; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--f-en);">{{ $i + 1 }}</div>
+              <div style="flex:1;">
+                <div style="font-weight: 600; color: var(--emerald-900);">{{ $u ? $u->name : 'অজানা' }}</div>
+              </div>
+              <strong style="color: var(--emerald-700); font-family: var(--f-en);">৳ {{ number_format($row->amount) }}</strong>
+            </div>
+          @endforeach
+        </div>
+        <div style="margin-top: 14px; text-align: right;">
+          <a href="{{ route('web-about-donate-g') }}" class="um-btn um-btn--ghost-dark um-btn--sm">সম্পূর্ণ তালিকা <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="test-slide">
-      @foreach($testimonials as $testimonial)
-      <a href="{{route('web-testimonial-single', $testimonial->id)}}">
-        <div class="single-slide shadow">
-         <img src="{{ asset('uploads/testimonial/'.$testimonial->image) }}" alt="" height="80" width="80">
-          <div class="test-content">
-            <h4>{{$testimonial->name}}</h4>
-            <small>{{$testimonial->designation}}</small>
-            <p><i class="fa-solid fa-quote-left"></i>{{ Str::limit($testimonial->message, 100) }} <i class="fa-solid fa-quote-right"></i></p>
+      @endif
 
+      @if($dbypayer->count() > 0)
+      <div data-reveal data-reveal-delay="2">
+        <h3 style="font-size: 22px; color: var(--emerald-900); margin: 0 0 20px;"><i class="fa-solid fa-hand-holding-heart" style="color: var(--gold-600);"></i> আর্থিক সহায়তা দাতা</h3>
+        <div class="glass-card--flat" style="background: #fff;">
+          @foreach($dbypayer as $i => $row)
+            @php $u = \App\Models\User::find($row->user_id); @endphp
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line);">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: {{ $i === 0 ? 'var(--gold-500)' : ($i === 1 ? '#C0C0C0' : ($i === 2 ? '#CD7F32' : 'var(--cream-2)')) }}; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--f-en);">{{ $i + 1 }}</div>
+              <div style="flex:1;">
+                <div style="font-weight: 600; color: var(--emerald-900);">{{ $u ? $u->name : 'অজানা' }}</div>
+              </div>
+              <strong style="color: var(--emerald-700); font-family: var(--f-en);">৳ {{ number_format($row->amount) }}</strong>
+            </div>
+          @endforeach
+        </div>
+        <div style="margin-top: 14px; text-align: right;">
+          <a href="{{ route('web-about-donate-d') }}" class="um-btn um-btn--ghost-dark um-btn--sm">সম্পূর্ণ তালিকা <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      @endif
+    </div>
+  </div>
+</section>
+@endif
+
+<!-- Committee -->
+@if($profiles->isNotEmpty())
+<section class="um-section">
+  <div class="um-container">
+    <div class="um-section-head" data-reveal>
+      <span class="um-section-head__eyebrow">পরিচালনা পরিষদ</span>
+      <h2 class="um-section-head__title">উমনপুর আইটি কমিটি</h2>
+      <p class="um-section-head__subtitle">গ্রামের ডিজিটাল রূপান্তরে নিয়োজিত ব্যক্তিবর্গ</p>
+    </div>
+
+    <div class="um-profile-grid">
+      @foreach($profiles as $profile)
+        <div class="um-profile-card" data-reveal data-reveal-delay="{{ ($loop->index % 4) + 1 }}">
+          @if($profile->image)
+            <img src="{{ umonpur_asset('uploads/profile/' . $profile->image, 'profile') }}" alt="{{ $profile->name }}" class="um-profile-card__avatar">
+          @else
+            <div class="um-profile-card__avatar" style="background: var(--emerald-600); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:32px;">{{ strtoupper(substr($profile->name, 0, 1)) }}</div>
+          @endif
+          <h4 class="um-profile-card__name">{{ $profile->name }}</h4>
+          <p class="um-profile-card__role">{{ \Illuminate\Support\Str::limit(strip_tags($profile->description), 50) }}</p>
+          <div class="um-profile-card__social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
-        </a>
-     @endforeach
-     
-      </div>
+      @endforeach
     </div>
-  </section>
-  <!-- Testimonial Area Ends -->
-
-  <!-- Donar List Area Starts -->
-  <section class="donarlist-area">
-    <div class="container">
-      <div class="section-title">
-        <h2>দাতাগণের তালিকা</h2>
-        <p>আমাদের প্ল্যাটফর্মে বিভিন্ন সময়ে যারা আর্থিকভাবে সাহায্য করেছেন তাদের প্রোফাইলের সর্বশেষ রেকর্ড।</p>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="sm-title">
-            <h2>তহবিলে দাতাগণের তালিকা</h2>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-hover">
-              <thead class="table-success">
-                <tr>
-                  <th scope="col">ক্রমিক নং</th>
-                  <th scope="col">ছবি</th>
-                  <th scope="col">নাম</th>
-                  <th scope="col">মোবাইল নং</th>
-                  <th scope="col">দানের পরিমান</th>
-                </tr>
-              </thead>
-              <tbody>
-              @foreach($gbypayer as $key => $d)
-                <?php 
-                $user = App\Models\User::find($d->user_id);
-                
-                ?>
-                <tr>
-                  <th scope="row">{{$key + 1}}</th>
-                  <td><img src="{{ asset('uploads/members/'.$user->nid->image) }}" alt="Donar Img" height="100" width="100"></td>
-                  <td>{{  $user->name ?? ''}}</td>
-                  <td>{{  $user->nid->phone ?? ''}}</td>
-                  <td>৳{{  $d->amount ?? ''}}</td>
-                </tr>
-           @endforeach
-          
-              </tbody>
-            </table>
-          </div>
-          <div class="post-btn">
-            <a class="btn-post" href="{{route('web-about-donate-g')}}">সম্পূর্ণ তালিকা</a>
-          </div>
-        </div>
-      
-        <div class="col">
-          <div class="sm-title">
-            <h2>বিভিন্ন খাতে আর্থিক সাহায্যে দাতাগণের তালিকা</h2>
-          </div>
-          <div class="table-responsive">
-        
-            <table class="table table-hover">
-              <thead class="table-success">
-                <tr>
-                  <th scope="col">ক্রমিক নং</th>
-                  <th scope="col">ছবি</th>
-                  <th scope="col">নাম</th>
-                  <th scope="col">মোবাইল নং</th>
-                  <th scope="col">দানের পরিমান</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($dbypayer as $key => $d)
-                <?php 
-                $user = App\Models\User::find($d->user_id);
-                
-                ?>
-                <tr>
-                  <th scope="row">{{$key + 1}}</th>
-                  <td><img src="{{ asset('uploads/members/'.$user->nid->image) }}" alt="Donar Img" height="100" width="100"></td>
-                  <td>{{  $user->name ?? ''}}</td>
-                  <td>{{  $user->nid->phone ?? ''}}</td>
-                  <td>৳{{  $d->amount ?? ''}}</td>
-                </tr>
-           @endforeach
-              </tbody>
-            </table>
-         
-          </div>
-          <div class="post-btn">
-            <a class="btn-post" href="{{route('web-about-donate-d')}}">সম্পূর্ণ তালিকা</a>
-          </div>
-        </div>
-       
-      </div>
-    </div>
-  </section>
-  <!-- Donar List Area Ends -->
+  </div>
+</section>
+@endif
 
 @endsection
-     

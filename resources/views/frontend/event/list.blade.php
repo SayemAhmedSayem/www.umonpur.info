@@ -1,47 +1,49 @@
 @extends('frontend.main')
 
+@section('title', 'ইভেন্ট')
+
 @section('content')
 
-  
-  <!-- Post Banner Area Starts -->
-  <section class="post-banner-area banner-section" style="background-image: url('assets/img/blog1.jpg');">
-    <div class="container">
-      <div class="banner-title">
-        <h2>সকল <span>ইভেন্ট</span></h2>
-        <p><a href="index.html">হোম</a> <i class="fa fa-angle-right"></i> <span>সকল ইভেন্ট</span></p>
-      </div>
+<section class="um-page-hero">
+  <div class="um-container">
+    <div class="um-page-hero__breadcrumb">
+      <a href="{{ route('web-home') }}">হোম</a> <span>/</span> <span>ইভেন্ট</span>
     </div>
-  </section>
-  <!-- Post Banner Area Ends -->
+    <h1 class="um-page-hero__title">গ্রামের ইভেন্ট</h1>
+    <p class="um-page-hero__subtitle">উমনপুর গ্রামের সকল আয়োজন ও ইভেন্ট</p>
+  </div>
+</section>
 
-  <!-- Top First Content Area Starts -->
-  <div class="top_first_content_area third_content_area">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="news">
-          @foreach($events as $event)
-            <div class="single-news-post">
-              <div class="single-news-content">
-                <div class="title-post">
-                  <div class="date">
-                  <h5>  {{ Carbon\Carbon::parse($event->date)->format('d') }}</h5><span>{{ Carbon\Carbon::parse($event->date)->format('M , Y') }}</span>
-                  </div>
-                  <div class="post-content">
-                    <h4><a href="{{route('web-event-show', $event->id)}}">{{$event->title}}</a></h4>
-                    <p>{!! $event->description !!}</p>
-                  </div>
-                </div>
+<section class="um-section">
+  <div class="um-container" style="max-width: 920px;">
+    @if($events->isNotEmpty())
+      <div class="um-event-grid" style="grid-template-columns: 1fr;">
+        @foreach($events as $event)
+          <a href="{{ route('web-event-show', $event->id) }}" class="um-event-card" data-reveal data-reveal-delay="{{ ($loop->index % 3) + 1 }}">
+            <div class="um-event-card__date">
+              <div class="um-event-card__day">{{ \Carbon\Carbon::parse($event->date ?? $event->created_at)->format('d') }}</div>
+              <div class="um-event-card__month">{{ \Carbon\Carbon::parse($event->date ?? $event->created_at)->format('M') }}</div>
+            </div>
+            <div class="um-event-card__body">
+              <div class="um-notice-item__badges" style="margin-bottom: 6px;"><span class="um-badge um-badge--gold">ইভেন্ট</span></div>
+              <h4 class="um-event-card__title" style="font-size: 18px;">{{ $event->title }}</h4>
+              @if($event->sub_title) <p style="color: var(--ink-soft); font-size: 14px; margin: 0 0 8px;">{{ $event->sub_title }}</p> @endif
+              <div class="um-event-card__meta">
+                <span><i class="fa-solid fa-location-dot"></i> উমনপুর</span>
+                <span><i class="fa-regular fa-clock"></i> {{ \Carbon\Carbon::parse($event->date ?? $event->created_at)->format('d M, Y h:i A') }}</span>
               </div>
             </div>
-            <hr>
-            @endforeach
-          </div>
-        </div>
+            <div style="align-self: center; color: var(--gold-600);"><i class="fa-solid fa-arrow-right"></i></div>
+          </a>
+        @endforeach
       </div>
-    </div>
+    @else
+      <div class="um-empty">
+        <div class="um-empty__icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+        <h3 class="um-empty__title">কোন ইভেন্ট নেই</h3>
+      </div>
+    @endif
   </div>
-  <!-- Top First Content Area Ends-->
+</section>
 
 @endsection
-     
